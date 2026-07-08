@@ -1,0 +1,16 @@
+[
+  { "id": "mumbai", "name": "Mumbai", "tier": 1 },
+  { "id": "delhi-ncr", "name": "Delhi NCR", "tier": 1 },
+  { "id": "bengaluru", "name": "Bengaluru", "tier": 1 },
+  { "id": "hyderabad", "name": "Hyderabad", "tier": 1 },
+  { "id": "ahmedabad", "name": "Ahmedabad", "tier": 1 },
+  { "id": "chennai", "name": "Chennai", "tier": 1 },
+  { "id": "kolkata", "name": "Kolkata", "tier": 1 },
+  { "id": "pune", "name": "Pune", "tier": 2 },
+  { "id": "jaipur", "name": "Jaipur", "tier": 2 },
+  { "id": "lucknow", "name": "Lucknow", "tier": 2 },
+  { "id": "gurugram", "name": "Gurugram", "tier": 1 },
+  { "id": "noida", "name": "Noida", "tier": 1 },
+  { "id": "chandigarh", "name": "Chandigarh", "tier": 2 },
+  { "id": "kochi", "name": "Kochi", "tier": 2 }
+]

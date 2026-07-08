@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "category": "Premium",
+    "question": "What factors influence my health insurance premium?",
+    "answer": "Your health insurance premium is primarily calculated based on your age, geographical location (city), medical history (pre-existing diseases), type of coverage (individual vs family), sum insured amount, and habits like smoking or tobacco use."
+  },
+  {
+    "id": 2,
+    "category": "Premium",
+    "question": "Why does my premium increase with age?",
+    "answer": "As individuals age, the statistical risk of falling ill and requiring medical treatment increases. Insurance companies compensate for this higher risk by setting higher premium slabs for older age groups."
+  },
+  {
+    "id": 3,
+    "category": "Premium",
+    "question": "Can I lock my premium rates so they do not increase?",
+    "answer": "Certain new-age plans like 'Niva Bupa ReAssure 2.0' offer a 'Lock the Premium' feature. This locks the premium rate based on the age you entered the policy, until a claim is filed or you reach a certain age threshold."
+  },
+  {
+    "id": 4,
+    "category": "Premium",
+    "question": "What is a co-payment clause, and does it reduce my premium?",
+    "answer": "Co-payment is a clause where the policyholder agrees to pay a predefined percentage (e.g., 10% or 20%) of the total claim amount out of pocket, while the insurer pays the rest. Choosing a co-pay clause reduces your premium, but you pay more during hospitalization."
+  },
+  {
+    "id": 5,
+    "category": "Premium",
+    "question": "What is a deductible in health insurance?",
+    "answer": "A deductible is a fixed amount you must pay out-of-pocket before your insurance policy starts paying for medical expenses. Deductibles are most common in Top-Up and Super Top-Up plans."
+  },
+  {
+    "id": 6,
+    "category": "Claims",
+    "question": "How do cashless claims work?",
+    "answer": "For cashless claims, you must get admitted to a network hospital. The hospital's insurance desk will submit pre-authorization forms to your insurer. Once approved, the insurance company settles the bills directly with the hospital, excluding non-medical expenses."
+  },
+  {
+    "id": 7,
+    "category": "Claims",
+    "question": "What is the procedure for reimbursement claims?",
+    "answer": "If you are admitted to a non-network hospital, you must pay the bills yourself first. Collect all bills, discharge summary, reports, and claim forms, and upload them to the insurer within 15-30 days of discharge. The insurer will reimburse the approved amount directly to your bank account."
+  },
+  {
+    "id": 8,
+    "category": "Claims",
+    "question": "What is Claim Settlement Ratio (CSR) and why is it important?",
+    "answer": "Claim Settlement Ratio (CSR) is the percentage of total claims received by an insurer that they successfully paid out in a financial year. A higher CSR (e.g., above 95%) indicates a reliable insurer who is likely to honor your claims."
+  },
+  {
+    "id": 9,
+    "category": "Claims",
+    "question": "Within what time frame should I inform the insurer about hospitalization?",
+    "answer": "For planned hospitalizations, you must inform the insurer 48 to 72 hours before admission. For emergency admissions, the insurer should be notified within 24 hours of hospitalization."
+  },
+  {
+    "id": 10,
+    "category": "Claims",
+    "question": "Can my claim be rejected if I hide medical history?",
+    "answer": "Yes, health insurance is based on the principle of utmost good faith. If you conceal pre-existing illnesses like diabetes, hypertension, or past surgeries, the insurer has the right to reject your claim and cancel your policy."
+  },
+  {
+    "id": 11,
+    "category": "Coverage",
+    "question": "What is covered under pre-hospitalization and post-hospitalization?",
+    "answer": "Pre-hospitalization covers medical costs (diagnostics, doctor fees, medicines) incurred up to 30-60 days before getting admitted. Post-hospitalization covers costs (follow-up consults, recovery drugs, physiotherapy) for 60-180 days after discharge, relevant to the same illness."
+  },
+  {
+    "id": 12,
+    "category": "Coverage",
+    "question": "What is Restore or Recharge benefit in health insurance?",
+    "answer": "Restore benefit automatically reinstates your sum insured to 100% once it gets exhausted due to claims in a policy year. Some plans restore it for the same illness, while others cover only unrelated illnesses."
+  },
+  {
+    "id": 13,
+    "category": "Coverage",
+    "question": "What are waiting periods in health insurance?",
+    "answer": "A waiting period is the time during which you cannot make claims. Types include: Initial waiting period (30 days for any illness except accidents), Specific disease waiting period (2 years for cataracts, hernia, etc.), and Pre-existing disease waiting period (1 to 4 years)."
+  },
+  {
+    "id": 14,
+    "category": "Coverage",
+    "question": "Is maternity cover included in all health insurance plans?",
+    "answer": "No, maternity cover is a specialized benefit. It is only included in specific family plans or as an add-on rider, and it typically comes with a waiting period ranging from 9 months to 4 years."
+  },
+  {
+    "id": 15,
+    "category": "Coverage",
+    "question": "Are alternative treatments like Ayurveda covered?",
+    "answer": "Yes, most modern health insurance policies cover AYUSH (Ayurveda, Yoga, Unani, Siddha, and Homeopathy) treatments, provided they are undergone in a government-recognized healthcare institute."
+  },
+  {
+    "id": 16,
+    "category": "Tax",
+    "question": "How can I save tax with health insurance?",
+    "answer": "Under Section 80D of the Income Tax Act, you can claim deductions on health insurance premiums: up to ₹25,000 for self, spouse, and children, and an additional ₹25,000 (or ₹50,000 if senior citizens) for parents."
+  },
+  {
+    "id": 17,
+    "category": "Tax",
+    "question": "Can I claim tax deduction for cash premium payments?",
+    "answer": "No, to claim tax benefits under Section 80D, the health insurance premium must be paid using digital modes, cards, net banking, or cheques. Premium paid in cash is not eligible for tax deductions."
+  },
+  {
+    "id": 18,
+    "category": "Tax",
+    "question": "What is the maximum tax deduction limit under Section 80D?",
+    "answer": "The maximum deduction you can claim is ₹1,00,000. This happens if both the policyholder (plus family) and their parents are senior citizens (above 60 years of age), allowing ₹50,000 + ₹50,000 deductions."
+  },
+  {
+    "id": 19,
+    "category": "Tax",
+    "question": "Is the GST on health insurance premiums tax-deductible?",
+    "answer": "Yes, the total premium amount you pay, which includes the 18% GST, is eligible for deduction under Section 80D up to the maximum applicable limit."
+  },
+  {
+    "id": 20,
+    "category": "Tax",
+    "question": "Are preventive health checkups tax-deductible?",
+    "answer": "Yes, you can claim a deduction of up to ₹5,000 within the overall Section 80D limit for expenses incurred on preventive health checkups for self, spouse, children, or parents."
+  },
+  {
+    "id": 21,
+    "category": "Hospitals",
+    "question": "What is a network hospital?",
+    "answer": "A network hospital is a hospital that has signed an agreement with an insurance company (or its Third Party Administrator) to offer cashless medical treatments to its policyholders at negotiated package rates."
+  },
+  {
+    "id": 22,
+    "category": "Hospitals",
+    "question": "Can I get cashless treatment at a non-network hospital?",
+    "answer": "No, cashless treatment is strictly limited to network hospitals. If you are admitted to a non-network hospital, you must settle all bills directly and then file a reimbursement claim with your insurer."
+  },
+  {
+    "id": 23,
+    "category": "Hospitals",
+    "question": "What is room rent limit in hospital stays?",
+    "answer": "Room rent limit is the maximum daily amount the insurer will pay for your hospital room. If a plan has a room rent limit (e.g., 1% of Sum Insured), and you choose a costlier room, you pay the difference not just for the room, but also a proportional share of overall treatment costs."
+  },
+  {
+    "id": 24,
+    "category": "Hospitals",
+    "question": "What are non-medical expenses in hospital bills?",
+    "answer": "Non-medical expenses are items like gloves, gowns, administrative fees, food for companions, syringes, and toiletries. Most standard plans do not cover these unless you have a plan with a 'Consumables Cover' or 'Safeguard' rider."
+  },
+  {
+    "id": 25,
+    "category": "Hospitals",
+    "question": "How do I check if a hospital in my city is cashless for my plan?",
+    "answer": "You can use our website's Network Hospitals search tool. Select your city and your insurance provider to see a list of accredited cashless hospitals, or check the latest directory PDF on the insurer's app."
+  }
+]

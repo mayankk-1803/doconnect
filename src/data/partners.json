@@ -1,0 +1,10 @@
+[
+  { "id": "star-health", "name": "Star Health", "tagline": "The Health Insurance Specialist" },
+  { "id": "care-health", "name": "Care Health", "tagline": "Health Ki Guarantee" },
+  { "id": "niva-bupa", "name": "Niva Bupa", "tagline": "Zindagi Ko Claim Karle" },
+  { "id": "hdfc-ergo", "name": "HDFC Ergo", "tagline": "Take It Easy" },
+  { "id": "icici-lombard", "name": "ICICI Lombard", "tagline": "Nibhaye Vaade" },
+  { "id": "tata-aig", "name": "Tata AIG", "tagline": "With You Always" },
+  { "id": "bajaj-allianz", "name": "Bajaj Allianz", "tagline": "Relationship Beyond Insurance" },
+  { "id": "sbi-general", "name": "SBI General", "tagline": "Suraksha Aur Bharosa Dono" }
+]

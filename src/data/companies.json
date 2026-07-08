@@ -1,0 +1,10 @@
+[
+  { "id": "star-health", "name": "Star Health", "rating": 4.6, "claimRatio": "98.2%", "hospitals": "14,000+", "logo": "⭐ Star Health" },
+  { "id": "care-health", "name": "Care Health", "rating": 4.4, "claimRatio": "95.4%", "hospitals": "11,000+", "logo": "🛡️ Care Health" },
+  { "id": "niva-bupa", "name": "Niva Bupa", "rating": 4.5, "claimRatio": "96.5%", "hospitals": "10,000+", "logo": "✨ Niva Bupa" },
+  { "id": "hdfc-ergo", "name": "HDFC Ergo", "rating": 4.8, "claimRatio": "99.1%", "hospitals": "12,000+", "logo": "🏢 HDFC Ergo" },
+  { "id": "icici-lombard", "name": "ICICI Lombard", "rating": 4.6, "claimRatio": "97.8%", "hospitals": "9,500+", "logo": "🏛️ ICICI Lombard" },
+  { "id": "tata-aig", "name": "Tata AIG", "rating": 4.5, "claimRatio": "96.2%", "hospitals": "8,900+", "logo": "⚙️ Tata AIG" },
+  { "id": "bajaj-allianz", "name": "Bajaj Allianz", "rating": 4.4, "claimRatio": "95.1%", "hospitals": "8,200+", "logo": "🌀 Bajaj Allianz" },
+  { "id": "sbi-general", "name": "SBI General", "rating": 4.3, "claimRatio": "94.8%", "hospitals": "7,800+", "logo": "🏦 SBI General" }
+]
