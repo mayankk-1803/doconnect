@@ -21,7 +21,7 @@ const MainLayout = () => {
         <Navbar />
 
         {/* Dynamic page container */}
-        <main className="flex-grow pt-24">
+        <main className="flex-grow">
           <Suspense fallback={<PageLoader />}>
             <Outlet />
           </Suspense>

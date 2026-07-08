@@ -164,7 +164,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef} 
-      className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-28 bg-[#F8FBFF] flex items-center min-h-[90vh] w-full"
+      className="relative overflow-hidden pt-20 pb-16 lg:pt-24 lg:pb-28 bg-[#F8FBFF] flex items-center min-h-[90vh] w-full"
     >
       
       {/* Ambient background glows */}
