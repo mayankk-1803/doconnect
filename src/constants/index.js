@@ -56,11 +56,14 @@ export const NAV_LINKS = [
 ];
 
 export const CATEGORIES = [
-  { id: 'health', title: 'Health Insurance', icon: 'Shield', path: '/health-insurance', ctaText: 'Health Plan' },
-  { id: 'life', title: 'Life Insurance', icon: 'Heart', path: '/life', ctaText: 'Life Plan' },
-  { id: 'motor', title: 'Motor Insurance', icon: 'Car', path: '/motor', ctaText: 'Car Plan' },
-  { id: 'travel', title: 'Travel Insurance', icon: 'Plane', path: '/travel', ctaText: 'Travel Plan' },
-  { id: 'pet', title: 'Pet Insurance', icon: 'PawPrint', path: '/pet', ctaText: 'Pet Insurance' }
+  { id: 'health', title: 'Health Insurance', icon: 'Shield', path: '/health-insurance', ctaText: 'Compare Health', badge: 'Popular', desc: 'Secure cashless treatments for your family at 10,000+ top hospitals.', image: 'https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' },
+  { id: 'car', title: 'Car Insurance', icon: 'Car', path: '/motor', ctaText: 'Get Car Quote', badge: 'Instant', desc: 'Protect your car against damage, theft, and third-party liabilities.', image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' },
+  { id: 'bike', title: 'Bike Insurance', icon: 'Bike', path: '/motor', ctaText: 'Get Bike Quote', badge: 'New', desc: 'Quick two-wheeler coverage with instant policy delivery online.', image: 'https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' },
+  { id: 'term', title: 'Term Insurance', icon: 'Clock', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20a%20Term%20Insurance%20plan.', ctaText: 'Check Cover', badge: 'High Cover', desc: 'High-value financial security for your loved ones at affordable premiums.', image: 'https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' },
+  { id: 'life', title: 'Life Insurance', icon: 'Heart', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20a%20Life%20Insurance%20plan.', ctaText: 'Consult Expert', badge: 'Tax Saving', desc: 'Life protection plans combined with wealth accumulation options.', image: 'https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' },
+  { id: 'investment', title: 'Investment Plans', icon: 'Coins', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20an%20Investment%20Plan.', ctaText: 'Grow Wealth', badge: 'High Return', desc: 'Save for your major future milestones with tax-saving capital growth plans.', image: 'https://images.pexels.com/photos/1602726/pexels-photo-1602726.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' },
+  { id: 'travel', title: 'Travel Insurance', icon: 'Plane', path: '/travel', ctaText: 'Explore Travel', badge: 'Secure', desc: 'International travel cover protecting against medical emergencies & cancellations.', image: 'https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' },
+  { id: 'business', title: 'Business Insurance', icon: 'Briefcase', path: '/contact', ctaText: 'Get Quote', badge: 'New', desc: 'Custom liability and property covers for startups, shops, and enterprises.', image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop' }
 ];
 
 export const STATS = [

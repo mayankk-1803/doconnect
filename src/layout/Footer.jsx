@@ -238,8 +238,8 @@ const Footer = () => {
           {/* Column 1: Logo & Corporate Details */}
           <div className="footer-grid-column space-y-5 text-left">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-105 transition duration-300">
-                S
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-105 transition duration-300">
+                D
               </div>
               <span className="font-display font-extrabold text-2xl text-white">
                 {BRAND_CONFIG.name}
@@ -252,8 +252,8 @@ const Footer = () => {
               India's premium insurance comparison and advisory platform. Find, analyze, and lock policies with expert advisor support.
             </p>
             <div className="bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm rounded-xl p-3.5 text-[10px] text-slate-500 leading-normal space-y-1 select-none">
-              <p className="font-semibold text-slate-400">SecureHealth Compliance</p>
-              <p>IRDAI Reg: IRDAI/SH/PR/2026/045</p>
+              <p className="font-semibold text-slate-400">{BRAND_CONFIG.name} Compliance</p>
+              <p>IRDAI Reg: IRDAI/DC/PR/2026/045</p>
               <p>CIN: U67200HR2026PTC123456</p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { WHY_CHOOSE_US } from '../constants';
+import { WHY_CHOOSE_US, BRAND_CONFIG } from '../constants';
 import FeatureCard from '../components/cards/FeatureCard';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-[60px] md:py-[90px] lg:py-[120px] bg-white relative">
+    <section ref={sectionRef} className="py-[60px] md:py-[90px] lg:py-[120px] bg-white relative border-b border-slate-100/50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
             Our Advantage
           </span>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-dark mt-4">
-            Why Millions Trust SecureHealth
+            Why Millions Trust {BRAND_CONFIG.name}
           </h2>
           <p className="text-slate-500 text-sm md:text-base mt-3 leading-relaxed">
             We simplify complex jargon to help you choose the best plans. Secure your family's health with India's most transparent insurance advisors.

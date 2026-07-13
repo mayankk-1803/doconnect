@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { ShoppingCart, HeartPulse, Send, UploadCloud, CheckCircle, Wallet } from 'lucide-react';
+import { Search, GitCompare, CreditCard, Zap } from 'lucide-react';
+import { BRAND_CONFIG } from '../constants';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -55,62 +56,48 @@ const Timeline = () => {
   const steps = [
     {
       num: '1',
-      title: 'Buy Policy',
-      desc: 'Compare plans and secure your policy instantly via WhatsApp quote desk.',
-      icon: <ShoppingCart className="w-5 h-5" />,
+      title: 'Choose Plan',
+      desc: 'Browse and select from top-rated health, motor, life, travel, or pet plans tailored for you.',
+      icon: <Search className="w-5 h-5" />,
       color: 'bg-primary text-white border-primary/20'
     },
     {
       num: '2',
-      title: 'Hospitalization',
-      desc: 'Get admitted to any cashless network hospital or non-network empanelled clinic.',
-      icon: <HeartPulse className="w-5 h-5" />,
+      title: 'Compare Quotes',
+      desc: 'Evaluate premiums, benefits, cashless network hospitals, and claim ratios side-by-side.',
+      icon: <GitCompare className="w-5 h-5" />,
       color: 'bg-secondary text-white border-secondary/20'
     },
     {
       num: '3',
-      title: 'Inform Insurer',
-      desc: 'Pre-authorize cashless approval desk or send emergency alerts within 24 hours.',
-      icon: <Send className="w-5 h-5" />,
+      title: 'Buy Online',
+      desc: 'Lock in your direct-to-customer rate with zero broker commission and paperless checkout.',
+      icon: <CreditCard className="w-5 h-5" />,
       color: 'bg-accent text-white border-accent/20'
     },
     {
       num: '4',
-      title: 'Upload Documents',
-      desc: 'Submit claims forms, bills, and discharge summaries online or at the desk.',
-      icon: <UploadCloud className="w-5 h-5" />,
+      title: 'Instant Policy',
+      desc: 'Get your official policy document sent straight to your email address and WhatsApp within 60 seconds.',
+      icon: <Zap className="w-5 h-5" />,
       color: 'bg-amber-500 text-white border-amber-500/20'
-    },
-    {
-      num: '5',
-      title: 'Approval Check',
-      desc: 'Our claims relation desk evaluates details and issues pre-authorization clearances.',
-      icon: <CheckCircle className="w-5 h-5" />,
-      color: 'bg-emerald-500 text-white border-emerald-500/20'
-    },
-    {
-      num: '6',
-      title: 'Claim Settlement',
-      desc: 'The insurer clears bills directly with the hospital or reimburses your bank account.',
-      icon: <Wallet className="w-5 h-5" />,
-      color: 'bg-indigo-500 text-white border-indigo-500/20'
     }
   ];
 
   return (
-    <section ref={containerRef} className="py-20 md:py-28 bg-[#F8FBFF] relative overflow-hidden">
+    <section ref={containerRef} className="py-20 md:py-28 bg-[#F8FBFF] relative overflow-hidden border-b border-slate-100/50">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full inline-block">
-            Claim Roadmap
+            Simple Process
           </span>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-dark mt-4">
-            How Our Health Claims Process Works
+            How {BRAND_CONFIG.name} Works
           </h2>
           <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
-            Painless claims approvals in six simple steps. We stand by you during medical emergencies with round-the-clock claim assistance.
+            Get your insurance policy in four easy steps. Our digital workflow guarantees instant approvals and direct pricing.
           </p>
         </div>
 
@@ -121,7 +108,7 @@ const Timeline = () => {
           
           {/* GSAP scroll-drawn progress indicator line */}
           <div
-            className="absolute left-7 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-primary via-secondary to-emerald-500 -translate-x-1/2 rounded-full origin-top timeline-progress"
+            className="absolute left-7 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-primary via-secondary to-accent -translate-x-1/2 rounded-full origin-top timeline-progress"
             style={{ transform: 'scaleY(0)' }}
           />
 
@@ -139,7 +126,7 @@ const Timeline = () => {
                   {/* Left spacer for desktop */}
                   <div className="w-full md:w-1/2 hidden md:block" />
 
-                  {/* Central Node Avatar (Centered at 28px on mobile, half on desktop) */}
+                  {/* Central Node Avatar */}
                   <div className="absolute left-0 md:left-1/2 top-1.5 md:top-1/2 md:-translate-y-1/2 md:-translate-x-1/2 z-10">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg border-4 border-white ${step.color}`}>
                       {step.icon}

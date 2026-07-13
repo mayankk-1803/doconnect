@@ -84,7 +84,7 @@ const Categories = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {CATEGORIES.map((cat, idx) => {
             const IconComponent = Icons[cat.icon] || Icons.Shield;
             
@@ -94,24 +94,49 @@ const Categories = () => {
                 ref={(el) => (cardRefs.current[idx] = el)}
                 onMouseEnter={() => handleCardMouseEnter(idx)}
                 onMouseLeave={() => handleCardMouseLeave(idx)}
-                className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col items-center text-center transition-all duration-300 select-none h-full"
+                className="bg-white border border-slate-100 rounded-3xl p-6 md:p-8 shadow-sm flex flex-col items-center text-center transition-all duration-300 select-none h-full relative group overflow-hidden"
               >
+                {/* Badge Tag */}
+                {cat.badge && (
+                  <span className="absolute top-4 right-4 bg-secondary/10 text-primary border border-secondary/20 text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded-full select-none transition group-hover:scale-95 duration-300">
+                    {cat.badge}
+                  </span>
+                )}
+
+                {/* Accent glow line at top */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                 {/* Large rounded icon with blue gradient */}
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white shadow-lg shadow-primary/15 mb-6 shrink-0">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white shadow-lg shadow-primary/15 mb-6 shrink-0 group-hover:rotate-[6deg] transition-transform duration-300">
                   <IconComponent className="w-7 h-7" />
                 </div>
 
-                <h3 className="font-display font-extrabold text-dark text-base md:text-lg mb-6 leading-tight">
+                <h3 className="font-display font-extrabold text-dark text-sm md:text-base mb-2 leading-tight">
                   {cat.title}
                 </h3>
 
-                {/* Full-width blue rounded button below card */}
-                <Link
-                  to={cat.path}
-                  className="px-5 py-3 rounded-xl bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-all duration-300 w-full mt-auto block text-center shadow-md shadow-primary/10 hover:shadow-lg active:scale-[0.98] cursor-pointer"
-                >
-                  {cat.ctaText}
-                </Link>
+                <p className="text-slate-500 text-xs leading-relaxed mb-6">
+                  {cat.desc}
+                </p>
+
+                {/* Button Link */}
+                {cat.path.startsWith('http') ? (
+                  <a
+                    href={cat.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-3 rounded-xl bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-all duration-300 w-full mt-auto block text-center shadow-md shadow-primary/10 hover:shadow-lg active:scale-[0.98]"
+                  >
+                    {cat.ctaText}
+                  </a>
+                ) : (
+                  <Link
+                    to={cat.path}
+                    className="px-5 py-3 rounded-xl bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-all duration-300 w-full mt-auto block text-center shadow-md shadow-primary/10 hover:shadow-lg active:scale-[0.98] cursor-pointer"
+                  >
+                    {cat.ctaText}
+                  </Link>
+                )}
               </div>
             );
           })}

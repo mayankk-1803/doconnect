@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Shield } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { BRAND_CONFIG, NAV_LINKS } from '../constants';
 import gsap from 'gsap';
 import { generateWhatsAppLink } from '../utils/whatsapp';
@@ -77,14 +77,26 @@ const Navbar = () => {
     }
   };
 
+  const handleGetQuoteClick = (e) => {
+    e.preventDefault();
+    if (pathname === '/') {
+      const el = document.getElementById('categories-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = '/#categories-section';
+    }
+  };
+
   return (
     <>
       <header
         ref={navRef}
-        className={`fixed top-0 left-0 w-full z-50 border-t-4 border-t-primary transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white shadow-md py-3.5'
-            : 'bg-white py-5'
+            ? 'glass-navbar py-3.5'
+            : 'bg-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -94,19 +106,21 @@ const Navbar = () => {
             to="/"
             ref={logoRef}
             className="flex items-center gap-2 group focus:outline-none"
-            aria-label="SecureHealth Home"
+            aria-label="DoConnect Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
-              S
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
+              D
             </div>
-            <span className="font-display font-extrabold text-2xl text-dark group-hover:text-primary transition-colors">
+            <span className={`font-display font-extrabold text-2xl group-hover:text-primary transition-colors ${
+              scrolled ? 'text-dark' : 'text-[#0F172A]'
+            }`}>
               {BRAND_CONFIG.logoText}
             </span>
           </Link>
 
           {/* Desktop Links Navigation */}
           <nav className="hidden lg:flex items-center gap-7">
-            {NAV_LINKS.map((link, idx) => {
+            {NAV_LINKS.filter(l => l.label !== 'Login').map((link, idx) => {
               if (link.hasDropdown) {
                 return (
                   <div
@@ -143,21 +157,6 @@ const Navbar = () => {
                 );
               }
 
-              if (link.isButton) {
-                return (
-                  <a
-                    key={link.label}
-                    ref={(el) => (menuItemsRef.current[idx] = el)}
-                    href={generateWhatsAppLink('general')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-2 rounded-xl font-bold bg-primary hover:bg-primary-dark text-white text-xs shadow-md shadow-primary/10 transition duration-300 cursor-pointer"
-                  >
-                    {link.label}
-                  </a>
-                );
-              }
-
               return (
                 <NavLink
                   key={link.label}
@@ -182,10 +181,28 @@ const Navbar = () => {
             })}
           </nav>
 
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a
+              href={generateWhatsAppLink('general')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold text-slate-700 hover:text-primary transition-colors py-2 px-3 cursor-pointer"
+            >
+              Login
+            </a>
+            <button
+              onClick={handleGetQuoteClick}
+              className="px-5 py-2.5 rounded-xl font-bold bg-primary hover:bg-primary-dark text-white text-xs shadow-md shadow-primary/10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            >
+              Get Quote
+            </button>
+          </div>
+
           {/* Mobile Hamburgers */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-slate-700 hover:text-primary transition focus:outline-none"
+            className="lg:hidden p-2 text-slate-700 hover:text-primary transition focus:outline-none cursor-pointer"
             aria-label="Toggle Navigation"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -219,14 +236,14 @@ const Navbar = () => {
             </div>
             <button
               onClick={() => setMobileOpen(false)}
-              className="p-1 rounded-full hover:bg-slate-100"
+              className="p-1 rounded-full hover:bg-slate-100 cursor-pointer"
             >
               <X className="w-5 h-5 text-slate-400" />
             </button>
           </div>
 
           <nav className="mt-8 flex flex-col gap-4">
-            {NAV_LINKS.map((link) => {
+            {NAV_LINKS.filter(l => l.label !== 'Login').map((link) => {
               if (link.hasDropdown) {
                 return (
                   <div key={link.label} className="flex flex-col gap-2">
@@ -265,6 +282,26 @@ const Navbar = () => {
               );
             })}
           </nav>
+
+          <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col gap-3">
+            <a
+              href={generateWhatsAppLink('general')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 rounded-xl font-bold text-slate-700 hover:text-primary text-xs text-center border border-slate-200 transition cursor-pointer"
+            >
+              Login
+            </a>
+            <button
+              onClick={(e) => {
+                setMobileOpen(false);
+                handleGetQuoteClick(e);
+              }}
+              className="w-full py-3 rounded-xl font-bold bg-primary text-white text-xs text-center shadow-md shadow-primary/10 transition cursor-pointer"
+            >
+              Get Quote
+            </button>
+          </div>
         </div>
       </div>
     </>
