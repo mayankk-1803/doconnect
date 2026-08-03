@@ -11,7 +11,9 @@ import {
   Mail, 
   Target, 
   Sparkles,
-  ShieldCheck
+  ShieldCheck,
+  Award,
+  CheckCircle2
 } from 'lucide-react';
 import { FaLinkedin } from 'react-icons/fa';
 import { BRAND_CONFIG } from '../../constants';
@@ -26,7 +28,7 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // General animations
+      // General scroll animations
       const scrollItems = containerRef.current.querySelectorAll('.animate-on-scroll');
       scrollItems.forEach((item) => {
         gsap.fromTo(
@@ -69,54 +71,54 @@ const About = () => {
   const whyChooseUsCards = [
     {
       title: 'Trusted Insurance Partners',
-      desc: 'Compare and purchase policies from 35+ of India’s leading, government-approved insurers.',
+      desc: 'Compare and purchase insurance policies from 35+ of India’s leading, government-approved insurers with full price transparency.',
       icon: <Building className="w-6 h-6 text-primary" />
     },
     {
-      title: 'Expert Insurance Advisors',
-      desc: 'Get unbiased recommendations from certified insurance specialists dedicated to your needs.',
+      title: 'Expert Advisors',
+      desc: 'Get unbiased recommendations from certified insurance specialists dedicated to finding the perfect plan for your family.',
       icon: <Users className="w-6 h-6 text-primary" />
     },
     {
-      title: 'Instant Quote Comparison',
-      desc: 'Evaluate premiums, claim ratios, and cover options side-by-side in under 60 seconds.',
+      title: 'Instant Comparison',
+      desc: 'Evaluate premiums, coverage features, claim settlement ratios, and cashless hospital networks in under 60 seconds.',
       icon: <Zap className="w-6 h-6 text-primary" />
     },
     {
-      title: 'Secure Digital Process',
-      desc: 'Protect your medical and payment credentials with standard IRDAI certified encryption.',
+      title: 'Secure Process',
+      desc: 'Protect your medical and payment credentials with standard IRDAI certified bank-grade digital encryption.',
       icon: <Lock className="w-6 h-6 text-primary" />
     },
     {
       title: 'Fast Claim Assistance',
-      desc: 'Enjoy dedicated mediation assistance from our relations desk during planned or emergency hospitalizations.',
+      desc: 'Enjoy dedicated mediation assistance from our 24/7 claim relations desk during planned or emergency hospitalizations.',
       icon: <Heart className="w-6 h-6 text-primary" />
     },
     {
-      title: 'Customer-First Support',
-      desc: 'Our lines are active 24/7. No cold calls, no spam databases, just honest advisor consulting.',
+      title: 'Customer Support',
+      desc: 'Our support teams are active 24/7 via phone and WhatsApp. Zero cold calls, zero spam databases, just honest consulting.',
       icon: <Headphones className="w-6 h-6 text-primary" />
     }
   ];
 
   return (
-    <div ref={containerRef} className="bg-[#F8FAF8] min-h-screen text-[#1E293B]">
+    <div ref={containerRef} className="bg-[#F8FAFC] min-h-screen text-[#0F172A]">
       <SEO
-        title={`About Us | ${BRAND_CONFIG.name} Insurance`}
-        description={`Learn more about ${BRAND_CONFIG.name}, India's trusted digital insurance marketplace. Discover our mission, values, and leadership.`}
-        keywords="about doconnect, insurance marketplace India, Shubham Chauhan director"
+        title={`About Us | ${BRAND_CONFIG.name} Digital Insurance Marketplace`}
+        description={`Learn more about ${BRAND_CONFIG.name}, India's trusted digital insurance marketplace helping customers compare & purchase plans with transparency, expert advice, and digital support.`}
+        keywords="about doconnect, insurance marketplace India, Shubham Chauhan director, insurance comparison"
         path="/about"
       />
 
       {/* Breadcrumb Header */}
-      <div className="bg-[#F3F8F2] border-b border-slate-200/60 py-10">
+      <div className="bg-[#F1F5F9] border-b border-slate-200/80 py-12">
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumb items={breadcrumbItems} />
-          <h1 className="font-display font-extrabold text-3xl md:text-4xl text-dark mt-2">
+          <h1 className="font-display font-extrabold text-3xl md:text-5xl text-dark mt-3 tracking-tight">
             About Our Journey & Vision
           </h1>
-          <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mt-1.5 font-medium">
-            Bridging the gap between complex policy details and families seeking trusted, direct-to-customer protection.
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl mt-2 font-medium">
+            Helping families across India compare and purchase the right insurance plans with transparent pricing, expert advice, and technology-driven service.
           </p>
         </div>
       </div>
@@ -125,57 +127,61 @@ const About = () => {
       <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7 space-y-6 animate-on-scroll">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full inline-block">
-            Who We Are
+            Company Overview
           </span>
-          <h2 className="font-display font-extrabold text-2xl md:text-3.5xl text-dark leading-tight">
-            A Trusted Marketplace for Simple, Unbiased Coverage
+          <h2 className="font-display font-extrabold text-2xl md:text-4xl text-dark leading-tight">
+            India's Trusted Digital Insurance Marketplace
           </h2>
-          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-            {BRAND_CONFIG.name} stands as a trusted digital insurance marketplace designed to help customers seamlessly compare and purchase insurance plans from India's leading insurance providers. Built on principles of complete transparency, expert advisor guidance, digital-first services, and customer-centric claim support, we clear away complex jargon to let you make informed decisions.
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+            {BRAND_CONFIG.name} is a trusted digital insurance marketplace dedicated to helping customers compare and purchase insurance plans from India's leading insurance companies with transparent pricing, expert advice, and technology-driven service. Built on principles of complete clarity, unbiased consulting, and customer-first support, we simplify complex policy terms so you can make informed decisions.
           </p>
           <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-            By shifting buying power directly to the consumer and utilizing direct WhatsApp channels, we provide immediate expert advice without exposing your phone number to spam cold-call databases.
+            Whether securing health insurance for your parents, two-wheeler protection, family floaters, or term life covers, {BRAND_CONFIG.name} connects you directly to top-tier policies with zero sales pressure and instant WhatsApp guidance.
           </p>
         </div>
 
-        {/* Mission and Vision Grid Column */}
-        <div className="lg:col-span-5 bg-white border border-slate-200/60 rounded-[32px] p-8 shadow-sm flex flex-col justify-center animate-on-scroll relative overflow-hidden">
-          <div className="absolute top-[-30px] right-[-30px] w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none" />
+        {/* Mission and Vision Cards */}
+        <div className="lg:col-span-5 bg-white border border-slate-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-center animate-on-scroll relative overflow-hidden">
+          <div className="absolute top-[-30px] right-[-30px] w-28 h-28 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
           
           <div className="mb-6 space-y-2">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-5 h-5 text-primary shrink-0" />
+            <div className="flex items-center gap-2.5 mb-2">
+              <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                <Sparkles className="w-4 h-4" />
+              </div>
               <h3 className="font-display font-extrabold text-dark text-lg">Our Mission</h3>
             </div>
-            <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
-              To provide affordable, transparent, secure, and customer-first insurance solutions through robust technology integrations and trusted insurer partnerships.
+            <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+              Provide transparent, affordable, and customer-first insurance solutions through direct technology integrations and trusted insurer partnerships.
             </p>
           </div>
 
           <div className="pt-6 border-t border-slate-100 space-y-2">
-            <div className="flex items-center gap-2 mb-2">
-              <Target className="w-5 h-5 text-secondary shrink-0" />
+            <div className="flex items-center gap-2.5 mb-2">
+              <div className="w-8 h-8 rounded-xl bg-secondary/20 flex items-center justify-center text-primary">
+                <Target className="w-4 h-4" />
+              </div>
               <h3 className="font-display font-extrabold text-dark text-lg">Our Vision</h3>
             </div>
-            <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
-              To become India's most trusted digital insurance marketplace by simplifying the entire lifecycle of insurance comparison, purchase, renewal, and cashless claim assistance.
+            <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+              Become India's most trusted insurance comparison platform by simplifying policy discovery, purchase, renewal, and cashless claim assistance.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="bg-[#F3F8F2] py-16 md:py-24 border-y border-slate-200/80">
+      {/* Why Choose Us Grid */}
+      <section className="bg-[#F1F5F9] py-16 md:py-24 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full inline-block">
               Why Choose Us
             </span>
-            <h2 className="font-display font-extrabold text-2xl md:text-3xl text-dark mt-4">
-              Premium Benefits for Millions of Families
+            <h2 className="font-display font-extrabold text-2xl md:text-4xl text-dark mt-4">
+              Built on Trust, Transparency & Convenience
             </h2>
-            <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
-              We focus on building customer trust by ensuring digital transparency throughout your search.
+            <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium">
+              We empower millions of customers across India with unbiased comparisons and digital-first claim support.
             </p>
           </div>
 
@@ -191,7 +197,7 @@ const About = () => {
                 <h3 className="font-display font-extrabold text-dark text-base mb-2.5 leading-tight">
                   {card.title}
                 </h3>
-                <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+                <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium">
                   {card.desc}
                 </p>
               </div>
@@ -200,43 +206,43 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership Section */}
+      {/* Leadership Spotlight Section */}
       <section className="py-20 md:py-28 max-w-5xl mx-auto px-6 text-center">
-        <div className="max-w-3xl mx-auto mb-16 animate-on-scroll">
+        <div className="max-w-3xl mx-auto mb-14 animate-on-scroll">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full inline-block">
-            Our Leadership
+            Leadership
           </span>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-dark mt-4">
-            Meet the Visionary Behind {BRAND_CONFIG.name}
+            Executive Leadership
           </h2>
-          <p className="text-slate-500 text-xs md:text-sm mt-3">
-            Building reliable, technology-driven solutions for a secure tomorrow.
+          <p className="text-slate-500 text-xs md:text-sm mt-3 font-medium">
+            Guiding {BRAND_CONFIG.name}'s mission towards simple, transparent, and technology-driven protection.
           </p>
         </div>
 
         {/* Shubham Chauhan Director Card */}
-        <div className="leadership-card bg-white border border-slate-200/60 rounded-[36px] p-8 md:p-12 shadow-sm hover:shadow-md transition-all duration-300 max-w-3xl mx-auto text-left grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div className="leadership-card bg-white border border-slate-200/80 rounded-[36px] p-8 md:p-12 shadow-sm hover:shadow-md transition-all duration-300 max-w-4xl mx-auto text-left grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
-          {/* Avatar Placeholder Area */}
+          {/* Professional Photo / Avatar Placeholder */}
           <div className="md:col-span-4 flex justify-center">
-            <div className="w-40 h-40 rounded-full bg-gradient-to-br from-primary/10 to-secondary/15 border-4 border-[#F3F8F2] flex items-center justify-center text-primary font-display font-black text-4xl shadow-inner select-none relative group overflow-hidden">
-              <span>SC</span>
-              {/* Overlay styling */}
-              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="w-44 h-44 rounded-3xl bg-gradient-to-br from-primary to-accent border-4 border-[#F3F8F2] flex flex-col items-center justify-center text-white font-display font-black shadow-lg select-none relative group overflow-hidden">
+              <span className="text-5xl">SC</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest mt-1 opacity-90">Director</span>
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
 
-          {/* Bio Content Area */}
+          {/* Biography & Contact Links */}
           <div className="md:col-span-8 space-y-4">
             <div>
-              <h3 className="font-display font-extrabold text-2xl text-dark">Shubham Chauhan</h3>
-              <span className="text-xs font-extrabold text-primary bg-primary/10 border border-primary/20 px-3.5 py-0.5 rounded-full inline-block mt-1 uppercase tracking-wider">
+              <h3 className="font-display font-extrabold text-2xl md:text-3xl text-dark">Shubham Chauhan</h3>
+              <span className="text-xs font-extrabold text-primary bg-primary/10 border border-primary/20 px-3.5 py-1 rounded-full inline-block mt-1.5 uppercase tracking-wider">
                 Director
               </span>
             </div>
             
             <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
-              Shubham Chauhan serves as the Director of the organization, leading the vision of making insurance simple, transparent, and accessible for individuals and businesses across India. With a strong focus on innovation, customer satisfaction, and digital transformation, he oversees strategic partnerships, business expansion, and operational excellence. His leadership is dedicated to building long-term customer trust while delivering reliable, technology-driven insurance solutions.
+              Shubham Chauhan serves as the Director of DoConnect, leading the company's vision of making insurance simple, transparent, and accessible for individuals and businesses across India. With a strong focus on innovation, customer satisfaction, and digital transformation, he oversees strategic partnerships, operational excellence, and long-term growth while building customer trust through technology-driven insurance solutions.
             </p>
 
             {/* Social Icons */}
@@ -245,17 +251,17 @@ const About = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-primary/5 hover:border-primary transition"
+                className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-500 hover:text-primary hover:bg-primary/5 hover:border-primary transition cursor-pointer"
                 title="LinkedIn Profile"
               >
-                <FaLinkedin className="w-4.5 h-4.5" />
+                <FaLinkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:shubham@doconnect.com"
-                className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-primary/5 hover:border-primary transition"
+                href={`mailto:${BRAND_CONFIG.emails.find(e => e.label === 'Director')?.value || BRAND_CONFIG.supportEmail}`}
+                className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-500 hover:text-primary hover:bg-primary/5 hover:border-primary transition cursor-pointer"
                 title="Email Director"
               >
-                <Mail className="w-4.5 h-4.5" />
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>

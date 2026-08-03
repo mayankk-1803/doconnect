@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Star, Heart, Check, Plus, AlertCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Check, Plus } from 'lucide-react';
 import partnerCompanies from '../data/partners.json';
 import plansData from '../data/plans.json';
 import { useCompare } from '../context/CompareContext';
@@ -42,12 +42,12 @@ const Partners = () => {
   // Reset index when changing tabs
   useEffect(() => {
     setCurrentIndex(0);
-    // Animate active cards coming in
+    // Animate active cards coming in smoothly
     if (carouselTrackRef.current) {
       gsap.fromTo(
         carouselTrackRef.current.children,
         { opacity: 0, y: 15, scale: 0.98 },
-        { opacity: 1, y: 0, scale: 1, stagger: 0.05, duration: 0.5, ease: 'power2.out' }
+        { opacity: 1, y: 0, scale: 1, stagger: 0.05, duration: 0.4, ease: 'power2.out' }
       );
     }
   }, [activeTab]);
@@ -77,23 +77,20 @@ const Partners = () => {
   const handleTouchEnd = () => {
     const swipeDistance = touchStartX.current - touchEndX.current;
     if (swipeDistance > 50) {
-      // Swiped left, go next
       handleNext();
     } else if (swipeDistance < -50) {
-      // Swiped right, go prev
       handlePrev();
     }
   };
 
   // Compare plan handler
   const handleCompareClick = (company) => {
-    // Find the first plan belonging to this company in plans.json
     const matchingPlan = plansData.find(
       (plan) => plan.companyId === company.id || plan.companyName.toLowerCase() === company.name.toLowerCase()
     );
 
     if (!matchingPlan) {
-      toast.error(`No comparative plans found in our database for ${company.name} under ${activeTab} category.`);
+      toast.error(`No comparative plans found in database for ${company.name} under ${activeTab} category.`);
       return;
     }
 
@@ -107,25 +104,25 @@ const Partners = () => {
   };
 
   return (
-    <section className="py-[60px] md:py-[90px] bg-[#F3F8F2] border-b border-slate-200/80 relative overflow-hidden select-none">
+    <section id="partners-section" className="py-[70px] md:py-[100px] bg-[#F3F8F2] border-b border-slate-200/80 relative overflow-hidden select-none">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full inline-block">
-            Our Network
+          <span className="text-xs font-bold text-[#276F27] uppercase tracking-widest bg-[#276F27]/10 border border-[#276F27]/20 px-3.5 py-1.5 rounded-full inline-block">
+            Our Insurance Network
           </span>
-          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-dark mt-4">
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#1E293B] mt-4">
             Our Insurance Partners
           </h2>
-          <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
-            Compare quotes from 35+ top-rated insurers. Enjoy cashless network hospitalizations and instant online policy validation.
+          <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium">
+            Compare policies from 35+ of India's leading IRDAI-approved insurance providers with zero sales pressure and instant digital issuance.
           </p>
         </div>
 
         {/* Dynamic Category Tabs */}
         <div className="mb-10 max-w-5xl mx-auto overflow-x-auto scrollbar-none" ref={tabsContainerRef}>
-          <div className="flex items-center justify-between sm:justify-center gap-2 p-1.5 bg-white border border-slate-200/60 rounded-[20px] shadow-sm min-w-max">
+          <div className="flex items-center justify-between sm:justify-center gap-2 p-1.5 bg-white border border-slate-200/80 rounded-[20px] shadow-xs min-w-max">
             {TABS.map((tab) => {
               const isActive = activeTab === tab;
               return (
@@ -134,8 +131,8 @@ const Partners = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-5 py-2.5 rounded-[14px] text-xs font-extrabold transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'bg-primary text-white shadow-md shadow-primary/20'
-                      : 'text-slate-500 hover:text-primary hover:bg-slate-50'
+                      ? 'bg-[#276F27] text-white shadow-md shadow-[#276F27]/20 scale-[1.02]'
+                      : 'text-slate-600 hover:text-[#276F27] hover:bg-[#F3F8F2]'
                   }`}
                 >
                   {tab}
@@ -163,7 +160,6 @@ const Partners = () => {
               }}
             >
               {filteredCompanies.map((company) => {
-                // Find matching plan id for check icon
                 const matchingPlan = plansData.find(
                   (plan) => plan.companyId === company.id || plan.companyName.toLowerCase() === company.name.toLowerCase()
                 );
@@ -177,11 +173,11 @@ const Partners = () => {
                       width: `calc(${100 / visibleCards}% - ${(24 * (visibleCards - 1)) / visibleCards}px)`
                     }}
                   >
-                    <div className="bg-white border border-slate-100 hover:border-primary/20 rounded-[28px] p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-[270px] relative overflow-hidden group">
+                    <div className="bg-white border border-slate-100 hover:border-[#276F27]/30 rounded-[28px] p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-[280px] relative overflow-hidden group">
                       
                       {/* Logo & Rating Header */}
                       <div className="flex items-center justify-between mb-4">
-                        <div className="w-12 h-12 rounded-xl border border-slate-100 overflow-hidden flex items-center justify-center bg-white p-1 shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300 relative">
+                        <div className="w-14 h-14 rounded-2xl border border-slate-100 overflow-hidden flex items-center justify-center bg-white p-2 shadow-xs shrink-0 group-hover:scale-105 transition-transform duration-300 relative">
                           <img 
                             src={`https://logo.clearbit.com/${company.domain}?size=100`} 
                             alt={company.name} 
@@ -193,30 +189,31 @@ const Partners = () => {
                             }}
                           />
                           {/* Fallback container if logo is missing */}
-                          <div className="fallback-logo hidden absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/15 items-center justify-center text-primary font-display font-black text-sm select-none">
+                          <div className="fallback-logo hidden absolute inset-0 bg-gradient-to-br from-[#276F27]/10 to-[#8ECA3C]/20 items-center justify-center text-[#276F27] font-display font-black text-base select-none">
                             {company.name.charAt(0)}
                           </div>
                         </div>
-                        <div className="flex items-center gap-1 bg-amber-50 border border-amber-100 rounded-lg px-2 py-0.5 text-amber-600 font-extrabold text-[10px]">
+                        
+                        <div className="flex items-center gap-1 bg-amber-50 border border-amber-100 rounded-lg px-2.5 py-1 text-amber-700 font-extrabold text-[11px]">
                           <Star className="w-3.5 h-3.5 fill-amber-500 stroke-none" />
                           <span>{company.rating}</span>
                         </div>
                       </div>
 
                       {/* Name */}
-                      <h3 className="font-display font-extrabold text-dark text-sm md:text-base group-hover:text-primary transition duration-300 leading-tight mb-4">
+                      <h3 className="font-display font-extrabold text-[#1E293B] text-base group-hover:text-[#276F27] transition duration-300 leading-tight mb-3">
                         {company.name}
                       </h3>
 
                       {/* Details specs */}
-                      <div className="space-y-2 mb-6 text-xs text-slate-500">
+                      <div className="space-y-2 mb-6 text-xs text-slate-500 font-medium">
                         <div className="flex justify-between items-center">
                           <span>Claim Settled:</span>
-                          <span className="font-extrabold text-primary">{company.claimRatio}</span>
+                          <span className="font-extrabold text-[#276F27]">{company.claimRatio}</span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span>Cashless Hospitals:</span>
-                          <span className="font-bold text-dark">{company.hospitals}</span>
+                          <span className="font-bold text-[#1E293B]">{company.hospitals}</span>
                         </div>
                       </div>
 
@@ -225,18 +222,18 @@ const Partners = () => {
                         onClick={() => handleCompareClick(company)}
                         className={`w-full mt-auto py-3 px-4 rounded-xl font-extrabold text-xs transition flex items-center justify-center gap-2 cursor-pointer border ${
                           isSelected
-                            ? 'bg-secondary border-secondary text-white'
-                            : 'bg-slate-50 border-slate-200/60 hover:bg-primary/5 hover:border-primary text-slate-700 hover:text-primary'
+                            ? 'bg-[#276F27] border-[#276F27] text-white shadow-md'
+                            : 'bg-slate-50 border-slate-200/80 hover:bg-[#276F27]/5 hover:border-[#276F27] text-slate-700 hover:text-[#276F27]'
                         }`}
                       >
                         {isSelected ? (
                           <>
-                            <Check className="w-3.5 h-3.5 stroke-[3]" />
+                            <Check className="w-4 h-4 stroke-[3]" />
                             <span>Comparing Plan</span>
                           </>
                         ) : (
                           <>
-                            <Plus className="w-3.5 h-3.5" />
+                            <Plus className="w-4 h-4" />
                             <span>Compare Desk</span>
                           </>
                         )}
@@ -253,7 +250,7 @@ const Partners = () => {
           {currentIndex > 0 && (
             <button
               onClick={handlePrev}
-              className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition cursor-pointer z-20"
+              className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#276F27] hover:border-[#276F27] transition cursor-pointer z-20"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -263,7 +260,7 @@ const Partners = () => {
           {currentIndex < maxIndex && (
             <button
               onClick={handleNext}
-              className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition cursor-pointer z-20"
+              className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#276F27] hover:border-[#276F27] transition cursor-pointer z-20"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

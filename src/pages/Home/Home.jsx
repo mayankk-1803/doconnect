@@ -1,10 +1,10 @@
 import React from 'react';
 import SEO from '../../components/common/SEO';
 import Hero from '../../sections/Hero';
+import Categories from '../../sections/Categories';
 import Partners from '../../sections/Partners';
 import WhyChooseUs from '../../sections/WhyChooseUs';
 import Timeline from '../../sections/Timeline';
-import Testimonials from '../../sections/Testimonials';
 import FaqSection from '../../sections/FaqSection';
 import CtaSection from '../../sections/CtaSection';
 import { BRAND_CONFIG } from '../../constants';
@@ -19,12 +19,12 @@ const Home = () => {
         path=""
       />
       
-      {/* Redesigned Premium Homepage Sections */}
+      {/* Strict Homepage Section Flow as per Enterprise Specification */}
       <Hero />
+      <Categories />
       <Partners />
       <WhyChooseUs />
       <Timeline />
-      <Testimonials />
       <FaqSection />
       <CtaSection />
     </>

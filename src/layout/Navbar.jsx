@@ -7,6 +7,7 @@ import { generateWhatsAppLink } from '../utils/whatsapp';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const { pathname } = useLocation();
@@ -15,16 +16,30 @@ const Navbar = () => {
   const logoRef = useRef(null);
   const menuItemsRef = useRef([]);
   const dropdownRefs = useRef({});
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      const currentScrollY = window.scrollY;
+
+      // Determine scrolled past top threshold
+      if (currentScrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+
+      // Hide navbar when scrolling down, show when scrolling up
+      if (currentScrollY > 100 && currentScrollY > lastScrollY.current) {
+        setHidden(true); // scrolling down
+      } else {
+        setHidden(false); // scrolling up or near top
+      }
+
+      lastScrollY.current = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -39,7 +54,7 @@ const Navbar = () => {
     return () => ctx.revert();
   }, []);
 
-  // Close menus on transition
+  // Close menus on route change
   useEffect(() => {
     setMobileOpen(false);
     setActiveDropdown(null);
@@ -80,12 +95,10 @@ const Navbar = () => {
   const handleGetQuoteClick = (e) => {
     e.preventDefault();
     if (pathname === '/') {
-      const el = document.getElementById('categories-section');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+      const el = document.getElementById('partners-section') || document.body;
+      el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = '/#categories-section';
+      window.location.href = '/#partners-section';
     }
   };
 
@@ -93,29 +106,30 @@ const Navbar = () => {
     <>
       <header
         ref={navRef}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 transform ${
+          hidden ? '-translate-y-full' : 'translate-y-0'
+        } ${
           scrolled
-            ? 'glass-navbar py-3.5'
+            ? 'glass-navbar-dark py-3.5'
             : 'bg-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
-          {/* Logo */}
+          {/* Official Brand Logo */}
           <Link
             to="/"
             ref={logoRef}
-            className="flex items-center gap-2 group focus:outline-none"
+            className="flex items-center gap-3 group focus:outline-none"
             aria-label="DoConnect Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
-              D
-            </div>
-            <span className={`font-display font-extrabold text-2xl group-hover:text-primary transition-colors ${
-              scrolled ? 'text-dark' : 'text-[#0F172A]'
-            }`}>
-              {BRAND_CONFIG.logoText}
-            </span>
+            <img 
+              src="/Logo.png" 
+              alt={BRAND_CONFIG.name}
+              className={`h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+                scrolled ? 'brightness-0 invert' : ''
+              }`}
+            />
           </Link>
 
           {/* Desktop Links Navigation */}
@@ -130,10 +144,16 @@ const Navbar = () => {
                     onMouseEnter={() => handleDropdownEnter(link.label)}
                     onMouseLeave={() => handleDropdownLeave(link.label)}
                   >
-                    <button className="flex items-center gap-1 text-[14px] font-bold text-slate-700 hover:text-primary transition-colors focus:outline-none cursor-pointer">
+                    <button 
+                      className={`flex items-center gap-1 text-[14px] font-bold transition-colors focus:outline-none cursor-pointer ${
+                        scrolled ? 'text-white/90 hover:text-[#8ECA3C]' : 'text-slate-800 hover:text-primary'
+                      }`}
+                    >
                       {link.label}
                       <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                        activeDropdown === link.label ? 'rotate-180 text-primary' : 'text-slate-400'
+                        activeDropdown === link.label 
+                          ? 'rotate-180 text-[#8ECA3C]' 
+                          : scrolled ? 'text-white/50' : 'text-slate-400'
                       }`} />
                     </button>
 
@@ -147,7 +167,7 @@ const Navbar = () => {
                         <Link
                           key={item.label}
                           to={item.path}
-                          className="block w-full text-left px-3.5 py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-primary hover:bg-slate-50 transition whitespace-nowrap"
+                          className="block w-full text-left px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-[#276F27] hover:bg-[#F3F8F2] transition whitespace-nowrap"
                         >
                           {item.label}
                         </Link>
@@ -164,7 +184,9 @@ const Navbar = () => {
                   to={link.path}
                   className={({ isActive }) =>
                     `text-[14px] font-bold transition-colors relative py-1 cursor-pointer ${
-                      isActive ? 'text-primary' : 'text-slate-700 hover:text-primary'
+                      scrolled
+                        ? (isActive ? 'text-[#8ECA3C] font-extrabold' : 'text-white/90 hover:text-[#8ECA3C]')
+                        : (isActive ? 'text-[#276F27] font-extrabold' : 'text-slate-800 hover:text-[#276F27]')
                     }`
                   }
                 >
@@ -172,7 +194,9 @@ const Navbar = () => {
                     <>
                       {link.label}
                       {isActive && (
-                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full animate-pulse" />
+                        <span className={`absolute bottom-0 left-0 w-full h-0.5 rounded-full animate-pulse ${
+                          scrolled ? 'bg-[#8ECA3C]' : 'bg-[#276F27]'
+                        }`} />
                       )}
                     </>
                   )}
@@ -187,22 +211,30 @@ const Navbar = () => {
               href={generateWhatsAppLink('general')}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold text-slate-700 hover:text-primary transition-colors py-2 px-3 cursor-pointer"
+              className={`text-xs font-bold transition-colors py-2 px-3 cursor-pointer ${
+                scrolled ? 'text-white/90 hover:text-[#8ECA3C]' : 'text-slate-800 hover:text-[#276F27]'
+              }`}
             >
               Login
             </a>
             <button
               onClick={handleGetQuoteClick}
-              className="px-5 py-2.5 rounded-xl font-bold bg-primary hover:bg-primary-dark text-white text-xs shadow-md shadow-primary/10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              className={`px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${
+                scrolled 
+                  ? 'bg-[#8ECA3C] hover:bg-[#77AD2D] text-[#1E293B] shadow-[#8ECA3C]/20'
+                  : 'bg-[#276F27] hover:bg-[#1B4D1B] text-white shadow-[#276F27]/20'
+              }`}
             >
               Get Quote
             </button>
           </div>
 
-          {/* Mobile Hamburgers */}
+          {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-slate-700 hover:text-primary transition focus:outline-none cursor-pointer"
+            className={`lg:hidden p-2 transition focus:outline-none cursor-pointer ${
+              scrolled ? 'text-white hover:text-[#8ECA3C]' : 'text-slate-800 hover:text-[#276F27]'
+            }`}
             aria-label="Toggle Navigation"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -212,28 +244,25 @@ const Navbar = () => {
 
       {/* Drawer Overlay */}
       <div
-        className={`fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setMobileOpen(false)}
       />
 
-      {/* Drawer Side Container */}
+      {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[280px] bg-white z-50 shadow-2xl transition-transform duration-300 transform lg:hidden p-6 flex flex-col justify-between overflow-y-auto ${
+        className={`fixed top-0 right-0 h-full w-[290px] bg-white z-50 shadow-2xl transition-transform duration-300 transform lg:hidden p-6 flex flex-col justify-between overflow-y-auto ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div>
           <div className="flex items-center justify-between pb-6 border-b border-slate-100">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold">
-                S
-              </div>
-              <span className="font-display font-bold text-lg text-dark">
-                {BRAND_CONFIG.logoText}
-              </span>
-            </div>
+            <img 
+              src="/Logo.png" 
+              alt={BRAND_CONFIG.name} 
+              className="h-8 w-auto object-contain"
+            />
             <button
               onClick={() => setMobileOpen(false)}
               className="p-1 rounded-full hover:bg-slate-100 cursor-pointer"
@@ -242,7 +271,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <nav className="mt-8 flex flex-col gap-4">
+          <nav className="mt-6 flex flex-col gap-4">
             {NAV_LINKS.filter(l => l.label !== 'Login').map((link) => {
               if (link.hasDropdown) {
                 return (
@@ -250,13 +279,13 @@ const Navbar = () => {
                     <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                       {link.label}
                     </span>
-                    <div className="pl-3 border-l border-slate-100 flex flex-col gap-3 mt-1">
+                    <div className="pl-3 border-l-2 border-[#276F27]/20 flex flex-col gap-3 mt-1">
                       {link.dropdownItems.map((item) => (
                         <Link
                           key={item.label}
                           to={item.path}
                           onClick={() => setMobileOpen(false)}
-                          className="text-xs font-semibold text-slate-600 hover:text-primary transition"
+                          className="text-xs font-semibold text-slate-700 hover:text-[#276F27] transition"
                         >
                           {item.label}
                         </Link>
@@ -272,8 +301,8 @@ const Navbar = () => {
                   to={link.path}
                   onClick={() => setMobileOpen(false)}
                   className={({ isActive }) =>
-                    `text-[14px] font-bold py-1 transition-colors border-b border-transparent ${
-                      isActive ? 'text-primary font-bold' : 'text-slate-700 hover:text-primary'
+                    `text-[14px] font-bold py-1 transition-colors ${
+                      isActive ? 'text-[#276F27] font-extrabold' : 'text-slate-700 hover:text-[#276F27]'
                     }`
                   }
                 >
@@ -288,7 +317,7 @@ const Navbar = () => {
               href={generateWhatsAppLink('general')}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-xl font-bold text-slate-700 hover:text-primary text-xs text-center border border-slate-200 transition cursor-pointer"
+              className="w-full py-3 rounded-xl font-bold text-slate-700 hover:text-[#276F27] text-xs text-center border border-slate-200 transition cursor-pointer"
             >
               Login
             </a>
@@ -297,7 +326,7 @@ const Navbar = () => {
                 setMobileOpen(false);
                 handleGetQuoteClick(e);
               }}
-              className="w-full py-3 rounded-xl font-bold bg-primary text-white text-xs text-center shadow-md shadow-primary/10 transition cursor-pointer"
+              className="w-full py-3 rounded-xl font-bold bg-[#276F27] hover:bg-[#1B4D1B] text-white text-xs text-center shadow-md shadow-[#276F27]/20 transition cursor-pointer"
             >
               Get Quote
             </button>

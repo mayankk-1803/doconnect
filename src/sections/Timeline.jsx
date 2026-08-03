@@ -85,7 +85,7 @@ const Timeline = () => {
   ];
 
   return (
-    <section ref={containerRef} className="py-20 md:py-28 bg-[#F8FBFF] relative overflow-hidden border-b border-slate-100/50">
+    <section ref={containerRef} className="py-20 md:py-28 bg-[#F1F5F9] relative overflow-hidden border-b border-slate-200/60">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}

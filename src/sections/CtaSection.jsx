@@ -15,24 +15,24 @@ const CtaSection = () => {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Branding Column */}
             <div className="lg:col-span-7 space-y-4 md:space-y-6">
-              <span className="inline-flex items-center gap-1 bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-100">
-                <Heart className="w-3.5 h-3.5 text-accent" />
+              <span className="inline-flex items-center gap-1 bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-100">
+                <Heart className="w-3.5 h-3.5 text-secondary" />
                 Free Consultation
               </span>
               <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight text-white">
                 Need Help Choosing <br />
                 the Right Plan?
               </h2>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-xl">
+              <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-xl">
                 Our certified senior advisors are available to guide you. No spam calls, no pushy sales behavior—just clear, unbiased assistance.
               </p>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3.5 pt-2">
-                <div className="flex items-center gap-2 text-xs font-semibold text-blue-100">
-                  <ShieldCheck className="w-4 h-4 text-accent" />
+                <div className="flex items-center gap-2 text-xs font-semibold text-emerald-100">
+                  <ShieldCheck className="w-4 h-4 text-secondary" />
                   <span>Unbiased Comparison</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-semibold text-blue-100">
-                  <ShieldCheck className="w-4 h-4 text-accent" />
+                <div className="flex items-center gap-2 text-xs font-semibold text-emerald-100">
+                  <ShieldCheck className="w-4 h-4 text-secondary" />
                   <span>100% Free Consultation</span>
                 </div>
               </div>
