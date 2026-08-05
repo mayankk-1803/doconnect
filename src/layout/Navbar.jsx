@@ -207,16 +207,6 @@ const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={generateWhatsAppLink('general')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-xs font-bold transition-colors py-2 px-3 cursor-pointer ${
-                scrolled ? 'text-white/90 hover:text-[#8ECA3C]' : 'text-slate-800 hover:text-[#276F27]'
-              }`}
-            >
-              Login
-            </a>
             <button
               onClick={handleGetQuoteClick}
               className={`px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${
@@ -313,14 +303,6 @@ const Navbar = () => {
           </nav>
 
           <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col gap-3">
-            <a
-              href={generateWhatsAppLink('general')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-3 rounded-xl font-bold text-slate-700 hover:text-[#276F27] text-xs text-center border border-slate-200 transition cursor-pointer"
-            >
-              Login
-            </a>
             <button
               onClick={(e) => {
                 setMobileOpen(false);
