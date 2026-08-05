@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingWhatsApp from './FloatingWhatsApp';
@@ -11,6 +11,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MainLayout = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+
   return (
     <ErrorBoundary>
       <div className="flex flex-col min-h-screen bg-[#F8FAF8]">
@@ -21,7 +24,7 @@ const MainLayout = () => {
         <Navbar />
 
         {/* Dynamic page container */}
-        <main className="flex-grow">
+        <main className={`flex-grow ${isHome ? '' : 'pt-[88px] sm:pt-[96px]'}`}>
           <Suspense fallback={<PageLoader />}>
             <Outlet />
           </Suspense>
@@ -59,8 +62,8 @@ const PageLoader = () => {
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 bg-[#F8FAF8]">
       <div className="relative flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-[#276F27]/20 border-t-[#276F27] rounded-full animate-spin" />
-        <img src="/Logo.png" alt="DoConnect" className="w-8 h-auto object-contain absolute" />
+        <div className="w-20 h-20 border-4 border-[#276F27]/20 border-t-[#276F27] rounded-full animate-spin" />
+        <img src="/Logo.png" alt="DoConnect" className="w-10 h-auto object-contain absolute" />
       </div>
       <p className="text-slate-600 font-display font-bold text-xs uppercase tracking-wider animate-pulse">
         Loading DoConnect Marketplace...

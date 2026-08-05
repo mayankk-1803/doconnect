@@ -191,7 +191,7 @@ const Footer = () => {
               <img 
                 src="/Logo.png" 
                 alt={BRAND_CONFIG.name} 
-                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
+                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
               />
             </Link>
             <p className="text-xs font-bold text-[#8ECA3C] tracking-wide uppercase select-none">

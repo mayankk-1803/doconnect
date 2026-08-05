@@ -126,7 +126,7 @@ const Navbar = () => {
             <img 
               src="/Logo.png" 
               alt={BRAND_CONFIG.name}
-              className={`h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+              className={`h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
                 scrolled ? 'brightness-0 invert' : ''
               }`}
             />
@@ -261,7 +261,7 @@ const Navbar = () => {
             <img 
               src="/Logo.png" 
               alt={BRAND_CONFIG.name} 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
             <button
               onClick={() => setMobileOpen(false)}

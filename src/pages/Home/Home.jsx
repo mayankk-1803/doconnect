@@ -1,7 +1,6 @@
 import React from 'react';
 import SEO from '../../components/common/SEO';
 import Hero from '../../sections/Hero';
-import Categories from '../../sections/Categories';
 import Partners from '../../sections/Partners';
 import WhyChooseUs from '../../sections/WhyChooseUs';
 import Timeline from '../../sections/Timeline';
@@ -21,7 +20,6 @@ const Home = () => {
       
       {/* Strict Homepage Section Flow as per Enterprise Specification */}
       <Hero />
-      <Categories />
       <Partners />
       <WhyChooseUs />
       <Timeline />
