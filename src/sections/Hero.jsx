@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ShieldCheck, 
@@ -10,7 +10,7 @@ import { STATS } from '../constants';
 import gsap from 'gsap';
 import { generateWhatsAppLink } from '../utils/whatsapp';
 
-// Category Definitions mapping the PolicyBazaar layout style
+// Category Definitions mapping the main 8 categories
 const HERO_CATEGORIES = [
   { id: 'car', title1: 'Car', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor' },
   { id: 'bike', title1: 'Bike', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor' },
@@ -22,18 +22,7 @@ const HERO_CATEGORIES = [
   { id: 'travel', title1: 'Travel', title2: 'Insurance', badge: '', badgeColor: '', path: '/travel' }
 ];
 
-const EXPANDED_CATEGORIES = [
-  { id: 'critical_illness', title1: 'Critical', title2: 'Illness', badge: '', badgeColor: '', path: '/critical-illness' },
-  { id: 'senior_citizen', title1: 'Senior', title2: 'Citizen', badge: '', badgeColor: '', path: '/senior-citizen' },
-  { id: 'top_up', title1: 'Top Up', title2: 'Plans', badge: '', badgeColor: '', path: '/top-up' },
-  { id: 'pet', title1: 'Pet', title2: 'Insurance', badge: '', badgeColor: '', path: '/pet' },
-  { id: 'hospitals', title1: 'Network', title2: 'Hospitals', badge: '', badgeColor: '', path: '/hospitals' },
-  { id: 'claims', title1: 'Claims', title2: 'Guide', badge: '', badgeColor: '', path: '/claims' },
-  { id: 'compare', title1: 'Compare', title2: 'Plans', badge: '', badgeColor: '', path: '/compare' }
-];
-
 const Hero = () => {
-  const [expanded, setExpanded] = useState(false);
   const heroRef = useRef(null);
   const badgeRef = useRef(null);
   const headingRef = useRef(null);
@@ -202,119 +191,10 @@ const Hero = () => {
             <path d="M21.5 28L23.5 30.5L27 25" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         );
-      case 'critical_illness':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Shield background */}
-            <path d="M12 6L24 2L36 6V18C36 26.5 30.5 34.5 24 38.5C17.5 34.5 12 26.5 12 18V6Z" fill="#276F27" />
-            {/* Heartbeat pulse line */}
-            <path d="M17 21H21L23 16L25 26L27 20L28 22.5L31 21" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        );
-      case 'senior_citizen':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="18" cy="18" r="5" fill="#276F27" />
-            <path d="M10 32C10 27.5 13.5 24 18 24H20C22.5 24 24.5 25.5 24.5 27.5V32H10Z" fill="#276F27" />
-            {/* Elder partner (Lime) */}
-            <circle cx="30" cy="20" r="4.5" fill="#8ECA3C" />
-            <path d="M25 32C25 28.5 27.5 26 31 26H32C32.5 26 33 26.5 33 27V32H25Z" fill="#8ECA3C" />
-            {/* Walking Stick */}
-            <path d="M35 24V32" stroke="#8ECA3C" strokeWidth="2.5" strokeLinecap="round" />
-            <path d="M35 24C35 22.5 33.5 21.5 32 21.5" stroke="#8ECA3C" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-          </svg>
-        );
-      case 'top_up':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Plus-Shield for top-up benefit */}
-            <path d="M24 6L36 11V23C36 30.5 31 37.5 24 41C17 37.5 12 30.5 12 23V11L24 6Z" fill="#276F27" />
-            {/* Dynamic battery/bolt charge inside */}
-            <path d="M24 14L18 24H23.5L22 32L30 20H24.5L26 14H24Z" fill="#8ECA3C" />
-          </svg>
-        );
-      case 'pet':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="28" r="8" fill="#276F27" />
-            <circle cx="15" cy="18" r="3.5" fill="#8ECA3C" />
-            <circle cx="24" cy="14" r="3.5" fill="#8ECA3C" />
-            <circle cx="33" cy="18" r="3.5" fill="#8ECA3C" />
-            <circle cx="12" cy="27" r="3" fill="#276F27" />
-            <circle cx="36" cy="27" r="3" fill="#276F27" />
-          </svg>
-        );
-      case 'hospitals':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Hospital Building */}
-            <path d="M6 38V16C6 13.7909 7.79086 12 10 12H38C40.2091 12 42 13.7909 42 16V38H6Z" fill="#276F27" />
-            {/* Cross on top */}
-            <rect x="22" y="4" width="4" height="12" rx="1" fill="#8ECA3C" />
-            <rect x="18" y="8" width="12" height="4" rx="1" fill="#8ECA3C" />
-            {/* Windows */}
-            <rect x="12" y="18" width="6" height="6" rx="1.5" fill="#8ECA3C" opacity="0.8" />
-            <rect x="30" y="18" width="6" height="6" rx="1.5" fill="#8ECA3C" opacity="0.8" />
-            {/* Door */}
-            <path d="M20 38V28C20 26.8954 20.8954 26 22 26H26C27.1046 26 28 26.8954 28 28V38H20Z" fill="#1E293B" />
-          </svg>
-        );
-      case 'claims':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Document sheet */}
-            <rect x="10" y="8" width="28" height="32" rx="3" fill="#276F27" />
-            <line x1="16" y1="16" x2="32" y2="16" stroke="#8ECA3C" strokeWidth="3" strokeLinecap="round" />
-            <line x1="16" y1="22" x2="28" y2="22" stroke="#8ECA3C" strokeWidth="3" strokeLinecap="round" />
-            {/* Check circle */}
-            <circle cx="28" cy="28" r="7" fill="#8ECA3C" />
-            <path d="M25 28L27 30L31 26" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        );
-      case 'compare':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Scales */}
-            <path d="M24 10V38" stroke="#1E293B" strokeWidth="3.5" strokeLinecap="round" />
-            <path d="M12 38H36" stroke="#1E293B" strokeWidth="3.5" strokeLinecap="round" />
-            <path d="M14 16H34" stroke="#276F27" strokeWidth="3" strokeLinecap="round" />
-            <path d="M10 24C10 28.5 13.5 30 18 30C22.5 30 26 28.5 26 24H10Z" fill="#276F27" />
-            <path d="M22 24C22 28.5 25.5 30 30 30C34.5 30 38 28.5 38 24H22Z" fill="#8ECA3C" />
-          </svg>
-        );
-      case 'view_more':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="14" y="14" width="8" height="8" rx="2" fill="#276F27" />
-            <rect x="26" y="14" width="8" height="8" rx="2" fill="#276F27" />
-            <rect x="14" y="26" width="8" height="8" rx="2" fill="#276F27" />
-            <rect x="26" y="26" width="8" height="8" rx="2" fill="#8ECA3C" />
-          </svg>
-        );
-      case 'view_less':
-        return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="14" y="14" width="8" height="8" rx="2" fill="#8ECA3C" />
-            <rect x="26" y="14" width="8" height="8" rx="2" fill="#276F27" />
-            <rect x="14" y="26" width="8" height="8" rx="2" fill="#276F27" />
-            <path d="M26 30L29.5 26L33 30" stroke="#276F27" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-          </svg>
-        );
       default:
         return null;
     }
   };
-
-  const currentCategories = expanded 
-    ? [
-        ...HERO_CATEGORIES, 
-        ...EXPANDED_CATEGORIES, 
-        { id: 'view_less', title1: 'View Less', title2: '', badge: '', badgeColor: '', path: '#' }
-      ]
-    : [
-        ...HERO_CATEGORIES, 
-        { id: 'view_more', title1: 'View More', title2: '', badge: '', badgeColor: '', path: '#' }
-      ];
 
   return (
     <section 
@@ -400,34 +280,20 @@ const Hero = () => {
 
         {/* Categories Grid (Quick Access Shortcuts matching PolicyBazaar layout style) */}
         <div className="bg-white border border-slate-200/50 rounded-[32px] p-6 md:p-10 shadow-xl shadow-slate-100/50 max-w-5xl mx-auto mb-12 relative z-20">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-2 md:gap-x-6 gap-y-10 justify-items-center justify-center">
-            {currentCategories.map((cat, idx) => {
-              const isAction = cat.id === 'view_more' || cat.id === 'view_less';
-              const isExternal = !isAction && cat.path.startsWith('http');
-              
-              const handleClick = (e) => {
-                if (cat.id === 'view_more') {
-                  e.preventDefault();
-                  setExpanded(true);
-                } else if (cat.id === 'view_less') {
-                  e.preventDefault();
-                  setExpanded(false);
-                }
-              };
-
-              const ItemElement = isAction ? 'button' : (isExternal ? 'a' : Link);
-              const itemProps = isAction
-                ? { onClick: handleClick, type: 'button' }
-                : (isExternal
-                  ? { href: cat.path, target: '_blank', rel: 'noopener noreferrer' }
-                  : { to: cat.path });
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-10 justify-items-center justify-center">
+            {HERO_CATEGORIES.map((cat, idx) => {
+              const isExternal = cat.path.startsWith('http');
+              const ItemElement = isExternal ? 'a' : Link;
+              const itemProps = isExternal
+                ? { href: cat.path, target: '_blank', rel: 'noopener noreferrer' }
+                : { to: cat.path };
 
               return (
                 <ItemElement
                   {...itemProps}
                   key={cat.id}
                   ref={(el) => (cardsRef.current[idx] = el)}
-                  className="flex flex-col items-center group relative cursor-pointer select-none focus:outline-none"
+                  className="flex flex-col items-center group relative cursor-pointer select-none"
                 >
                   {/* Icon Container */}
                   <div className="relative mb-3 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
