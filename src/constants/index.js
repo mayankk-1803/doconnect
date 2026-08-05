@@ -50,7 +50,6 @@ export const NAV_LINKS = [
     ]
   },
   { label: 'Travel', path: '/travel' },
-  { label: 'Pet Insurance', path: '/pet' },
   { label: 'Contact', path: '/contact' },
   { label: 'Login', path: '#login', isButton: true }
 ];

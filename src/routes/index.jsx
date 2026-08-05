@@ -12,7 +12,6 @@ const TopUp = lazy(() => import('../pages/TopUp/TopUp'));
 const Claims = lazy(() => import('../pages/Claims/Claims'));
 const Motor = lazy(() => import('../pages/Motor/Motor'));
 const Travel = lazy(() => import('../pages/Travel/Travel'));
-const Pet = lazy(() => import('../pages/Pet/Pet'));
 const Hospitals = lazy(() => import('../pages/Hospitals/Hospitals'));
 const Compare = lazy(() => import('../pages/Compare/Compare'));
 const Blog = lazy(() => import('../pages/Blog/Blog'));
@@ -37,7 +36,6 @@ export const router = createBrowserRouter([
       { path: 'claims', element: <Claims /> },
       { path: 'motor', element: <Motor /> },
       { path: 'travel', element: <Travel /> },
-      { path: 'pet', element: <Pet /> },
       { path: 'hospitals', element: <Hospitals /> },
       { path: 'compare', element: <Compare /> },
       { path: 'blog', element: <Blog /> },
