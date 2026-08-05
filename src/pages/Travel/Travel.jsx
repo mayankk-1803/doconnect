@@ -161,7 +161,7 @@ Please share the best options.`;
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <InputField
                 label="Full Name"
-                placeholder="Rahul Sharma"
+                placeholder="Enter Your Name"
                 {...register('name', { required: 'Name is required' })}
                 error={errors.name}
               />
@@ -184,7 +184,7 @@ Please share the best options.`;
                 <InputField
                   label="Email Address"
                   type="email"
-                  placeholder="rahul@gmail.com"
+                  placeholder="Enter Your "
                   {...register('email', { required: 'Email is required' })}
                   error={errors.email}
                 />

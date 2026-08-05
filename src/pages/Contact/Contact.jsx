@@ -159,7 +159,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <InputField
                 label="Full Name"
-                placeholder="Rahul Sharma"
+                placeholder="Enter Your Name"
                 {...register('name', { required: 'Name is required' })}
                 error={errors.name}
               />
@@ -168,7 +168,7 @@ const Contact = () => {
                 <InputField
                   label="Mobile Number"
                   type="tel"
-                  placeholder="e.g. 9876543210"
+                  placeholder="Enter Your Number"
                   {...register('mobile', {
                     required: 'Mobile is required',
                     pattern: {
@@ -182,7 +182,7 @@ const Contact = () => {
                 <InputField
                   label="Email Address"
                   type="email"
-                  placeholder="rahul@gmail.com"
+                  placeholder="Enter Your "
                   {...register('email', {
                     required: 'Email is required',
                     pattern: {

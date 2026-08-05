@@ -335,28 +335,7 @@ const Footer = () => {
               </form>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-2 pt-2">
-              {[
-                { icon: <FaWhatsapp className="w-3.5 h-3.5" />, path: generateWhatsAppLink('general'), label: 'WhatsApp', color: 'hover:bg-emerald-600' },
-                { icon: <FaLinkedin className="w-3.5 h-3.5" />, path: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:bg-[#276F27]' },
-                { icon: <FaFacebook className="w-3.5 h-3.5" />, path: 'https://facebook.com', label: 'Facebook', color: 'hover:bg-[#276F27]' },
-                { icon: <FaInstagram className="w-3.5 h-3.5" />, path: 'https://instagram.com', label: 'Instagram', color: 'hover:bg-[#276F27]' },
-                { icon: <FaTwitter className="w-3.5 h-3.5" />, path: 'https://twitter.com', label: 'Twitter', color: 'hover:bg-[#276F27]' },
-                { icon: <FaYoutube className="w-3.5 h-3.5" />, path: 'https://youtube.com', label: 'YouTube', color: 'hover:bg-red-700' }
-              ].map((social, sIdx) => (
-                <a
-                  key={sIdx}
-                  href={social.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-8 h-8 rounded-xl bg-white/[0.05] border border-white/[0.1] hover:border-[#8ECA3C] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 hover:-translate-y-0.5 ${social.color}`}
-                  aria-label={social.label}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
+
 
           </div>
 
@@ -392,16 +371,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Legal Links */}
-          <div className="flex flex-wrap items-center justify-center gap-4 font-semibold text-slate-300">
-            <Link to="/privacy-policy" className="hover:text-[#8ECA3C] transition">Privacy Policy</Link>
-            <span>•</span>
-            <Link to="/terms" className="hover:text-[#8ECA3C] transition">Terms of Service</Link>
-            <span>•</span>
-            <a href="#cookies" className="hover:text-[#8ECA3C] transition">Cookie Policy</a>
-            <span>•</span>
-            <a href="#disclaimer" className="hover:text-[#8ECA3C] transition">Disclaimer</a>
-          </div>
+
 
           {/* IRDAI Certification Badge */}
           <div className="flex items-center gap-1.5 text-[#8ECA3C] bg-[#8ECA3C]/10 px-3.5 py-1.5 rounded-full border border-[#8ECA3C]/20 font-extrabold tracking-wider select-none shrink-0 text-[10px]">
