@@ -13,7 +13,7 @@ const BajajLogo = () => (
     <path d="M15 10C15 10 25 10 25 15C25 20 18 20 18 20C18 20 28 20 28 27C28 34 15 34 15 34V10Z" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
     <line x1="18" y1="20" x2="25" y2="20" stroke="white" strokeWidth="3"/>
     <text x="36" y="25" fill="white" fontFamily="sans-serif" fontWeight="900" fontSize="13">BAJAJ</text>
-    <text x="36" y="34" fill="#8ECA3C" fontFamily="sans-serif" fontWeight="700" fontSize="8">ALLIANZ</text>
+    <text x="36" y="34" fill="#1296DB" fontFamily="sans-serif" fontWeight="700" fontSize="8">ALLIANZ</text>
   </svg>
 );
 
@@ -92,7 +92,7 @@ const NivaBupaLogo = () => (
     <rect width="120" height="40" rx="4" fill="white"/>
     <circle cx="20" cy="20" r="10" fill="#005FA9"/>
     <text x="36" y="22" fill="#005FA9" fontFamily="sans-serif" fontWeight="900" fontSize="14">niva</text>
-    <text x="36" y="32" fill="#8ECA3C" fontFamily="sans-serif" fontWeight="900" fontSize="12">bupa</text>
+    <text x="36" y="32" fill="#1296DB" fontFamily="sans-serif" fontWeight="900" fontSize="12">bupa</text>
   </svg>
 );
 
@@ -281,15 +281,15 @@ const Partners = () => {
   };
 
   return (
-    <section id="partners-section" className="py-[70px] md:py-[100px] bg-[#F3F8F2] border-b border-slate-200/80 relative overflow-hidden select-none">
+    <section id="partners-section" className="py-[70px] md:py-[100px] bg-[#EAF6FC] border-b border-slate-200/80 relative overflow-hidden select-none">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold text-[#276F27] uppercase tracking-widest bg-[#276F27]/10 border border-[#276F27]/20 px-3.5 py-1.5 rounded-full inline-block">
+          <span className="text-xs font-bold text-[#075FC1] uppercase tracking-widest bg-[#075FC1]/10 border border-[#075FC1]/20 px-3.5 py-1.5 rounded-full inline-block">
             Our Insurance Network
           </span>
-          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#1E293B] mt-4">
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#062B5C] mt-4">
             Our Insurance Partners
           </h2>
           <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium">
@@ -308,8 +308,8 @@ const Partners = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-5 py-2.5 rounded-[14px] text-xs font-extrabold transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'bg-[#276F27] text-white shadow-md shadow-[#276F27]/20 scale-[1.02]'
-                      : 'text-slate-600 hover:text-[#276F27] hover:bg-[#F3F8F2]'
+                      ? 'bg-[#075FC1] text-white shadow-md shadow-[#075FC1]/20 scale-[1.02]'
+                      : 'text-slate-600 hover:text-[#075FC1] hover:bg-[#EAF6FC]'
                   }`}
                 >
                   {tab}
@@ -350,7 +350,7 @@ const Partners = () => {
                       width: `calc(${100 / visibleCards}% - ${(24 * (visibleCards - 1)) / visibleCards}px)`
                     }}
                   >
-                    <div className="bg-white border border-slate-100 hover:border-[#276F27]/30 rounded-[28px] p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-[280px] relative overflow-hidden group">
+                    <div className="bg-white border border-slate-100 hover:border-[#075FC1]/30 rounded-[28px] p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-[280px] relative overflow-hidden group">
                       
                       {/* Logo & Rating Header */}
                       <div className="flex items-center justify-between mb-4">
@@ -365,7 +365,7 @@ const Partners = () => {
                       </div>
 
                       {/* Name */}
-                      <h3 className="font-display font-extrabold text-[#1E293B] text-base group-hover:text-[#276F27] transition duration-300 leading-tight mb-3">
+                      <h3 className="font-display font-extrabold text-[#062B5C] text-base group-hover:text-[#075FC1] transition duration-300 leading-tight mb-3">
                         {company.name}
                       </h3>
 
@@ -373,11 +373,11 @@ const Partners = () => {
                       <div className="space-y-2 mb-6 text-xs text-slate-500 font-medium">
                         <div className="flex justify-between items-center">
                           <span>Claim Settled:</span>
-                          <span className="font-extrabold text-[#276F27]">{company.claimRatio}</span>
+                          <span className="font-extrabold text-[#075FC1]">{company.claimRatio}</span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span>Cashless Hospitals:</span>
-                          <span className="font-bold text-[#1E293B]">{company.hospitals}</span>
+                          <span className="font-bold text-[#062B5C]">{company.hospitals}</span>
                         </div>
                       </div>
 
@@ -386,8 +386,8 @@ const Partners = () => {
                         onClick={() => handleCompareClick(company)}
                         className={`w-full mt-auto py-3 px-4 rounded-xl font-extrabold text-xs transition flex items-center justify-center gap-2 cursor-pointer border ${
                           isSelected
-                            ? 'bg-[#276F27] border-[#276F27] text-white shadow-md'
-                            : 'bg-slate-50 border-slate-200/80 hover:bg-[#276F27]/5 hover:border-[#276F27] text-slate-700 hover:text-[#276F27]'
+                            ? 'bg-[#075FC1] border-[#075FC1] text-white shadow-md'
+                            : 'bg-slate-50 border-slate-200/80 hover:bg-[#075FC1]/5 hover:border-[#075FC1] text-slate-700 hover:text-[#075FC1]'
                         }`}
                       >
                         {isSelected ? (
@@ -414,7 +414,7 @@ const Partners = () => {
           {currentIndex > 0 && (
             <button
               onClick={handlePrev}
-              className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#276F27] hover:border-[#276F27] transition cursor-pointer z-20"
+              className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -424,7 +424,7 @@ const Partners = () => {
           {currentIndex < maxIndex && (
             <button
               onClick={handleNext}
-              className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#276F27] hover:border-[#276F27] transition cursor-pointer z-20"
+              className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

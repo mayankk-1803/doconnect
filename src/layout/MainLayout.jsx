@@ -16,7 +16,7 @@ const MainLayout = () => {
 
   return (
     <ErrorBoundary>
-      <div className="flex flex-col min-h-screen bg-[#F8FAF8]">
+      <div className="flex flex-col min-h-screen bg-[#F7FAFC]">
         {/* Navigation Reset */}
         <ScrollToTop />
 
@@ -50,7 +50,7 @@ const MainLayout = () => {
           draggable
           pauseOnHover
           theme="light"
-          toastClassName="rounded-2xl shadow-xl border border-emerald-100 font-sans"
+          toastClassName="rounded-2xl shadow-xl border border-slate-100 font-sans"
         />
       </div>
     </ErrorBoundary>
@@ -60,9 +60,9 @@ const MainLayout = () => {
 // Reusable elegant page loader during lazy routing
 const PageLoader = () => {
   return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 bg-[#F8FAF8]">
+    <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 bg-[#F7FAFC]">
       <div className="relative flex items-center justify-center">
-        <div className="w-20 h-20 border-4 border-[#276F27]/20 border-t-[#276F27] rounded-full animate-spin" />
+        <div className="w-20 h-20 border-4 border-[#075FC1]/20 border-t-[#075FC1] rounded-full animate-spin" />
         <img src="/Logo.png" alt="DoConnect" className="w-10 h-auto object-contain absolute" />
       </div>
       <p className="text-slate-600 font-display font-bold text-xs uppercase tracking-wider animate-pulse">

@@ -124,14 +124,14 @@ const Footer = () => {
   return (
     <footer 
       ref={footerRef} 
-      className="text-slate-300 relative overflow-hidden z-10 border-t border-[#8ECA3C]/20"
-      style={{ background: 'linear-gradient(180deg, #0B230B 0%, #051405 100%)' }}
+      className="text-slate-300 relative overflow-hidden z-10 border-t border-[#1296DB]/20"
+      style={{ background: 'linear-gradient(180deg, #062B5C 0%, #031733 100%)' }}
     >
-      {/* Decorative Ambient Green Accent Glows */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[#276F27]/20 rounded-full blur-[140px] pointer-events-none z-0" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-[#8ECA3C]/15 rounded-full blur-[140px] pointer-events-none z-0" />
+      {/* Decorative Ambient Blue/Cyan Accent Glows */}
+      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[#075FC1]/20 rounded-full blur-[140px] pointer-events-none z-0" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-[#1296DB]/15 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      {/* Decorative Top Border: Green ECG Line */}
+      {/* Decorative Top Border: Cyan ECG Line */}
       <div className="absolute top-0 left-0 w-full overflow-hidden pointer-events-none z-0 h-10">
         <svg
           className="w-full h-full fill-none pointer-events-none"
@@ -142,7 +142,7 @@ const Footer = () => {
           <path
             ref={pathRef}
             d="M 0,16 L 160,16 L 170,16 L 175,10 L 180,22 L 185,2 L 190,30 L 195,16 L 200,16 L 520,16 L 530,16 L 535,8 L 540,24 L 545,0 L 550,32 L 555,16 L 560,16 L 880,16 L 890,16 L 895,12 L 900,20 L 905,4 L 910,28 L 915,16 L 920,16 L 1240,16 L 1250,16 L 1255,9 L 1260,23 L 1265,1 L 1270,31 L 1275,16 L 1280,16 L 1440,16"
-            stroke="rgba(142, 202, 60, 0.4)"
+            stroke="rgba(18, 150, 219, 0.4)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -162,16 +162,16 @@ const Footer = () => {
         {/* Trust Badges Strip (Why Choose Us Cards) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {[
-            { icon: <Plus className="w-5 h-5 text-[#8ECA3C]" />, label: '10,000+ Cashless Hospitals', desc: 'Instant paperless approvals' },
-            { icon: <Heart className="w-5 h-5 text-[#8ECA3C]" />, label: '99.2% Claim Settlement', desc: 'Dedicated relations desk' },
-            { icon: <Activity className="w-5 h-5 text-[#8ECA3C]" />, label: 'Expert Certified Advisors', desc: 'Unbiased advisory support' },
-            { icon: <Shield className="w-5 h-5 text-[#8ECA3C]" />, label: '100% Encrypted & Safe', desc: 'IRDAI compliant process' }
+            { icon: <Plus className="w-5 h-5 text-[#32B7E8]" />, label: '10,000+ Cashless Hospitals', desc: 'Instant paperless approvals' },
+            { icon: <Heart className="w-5 h-5 text-[#32B7E8]" />, label: '99.2% Claim Settlement', desc: 'Dedicated relations desk' },
+            { icon: <Activity className="w-5 h-5 text-[#32B7E8]" />, label: 'Expert Certified Advisors', desc: 'Unbiased advisory support' },
+            { icon: <Shield className="w-5 h-5 text-[#32B7E8]" />, label: '100% Encrypted & Safe', desc: 'IRDAI compliant process' }
           ].map((item, idx) => (
             <div 
               key={idx} 
-              className="footer-badge-card bg-white/[0.04] border border-white/[0.08] backdrop-blur-md rounded-2xl p-5 hover:bg-white/[0.08] hover:border-[#8ECA3C]/30 transition-all duration-300 flex items-center gap-4 text-left group"
+              className="footer-badge-card bg-white/[0.04] border border-white/[0.08] backdrop-blur-md rounded-2xl p-5 hover:bg-white/[0.08] hover:border-[#1296DB]/30 transition-all duration-300 flex items-center gap-4 text-left group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#276F27]/40 border border-[#8ECA3C]/20 flex items-center justify-center group-hover:scale-110 transition duration-300 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#075FC1]/40 border border-[#1296DB]/20 flex items-center justify-center group-hover:scale-110 transition duration-300 shrink-0">
                 {item.icon}
               </div>
               <div>
@@ -194,7 +194,7 @@ const Footer = () => {
                 className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
               />
             </Link>
-            <p className="text-xs font-bold text-[#8ECA3C] tracking-wide uppercase select-none">
+            <p className="text-xs font-bold text-[#32B7E8] tracking-wide uppercase select-none">
               India's Premier Digital Insurance Marketplace
             </p>
             <p className="text-slate-400 text-xs leading-relaxed">
@@ -209,7 +209,7 @@ const Footer = () => {
 
           {/* Column 2: Insurance Products */}
           <div className="footer-grid-column space-y-5 text-left">
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white border-l-2 border-[#8ECA3C] pl-2.5">
+            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white border-l-2 border-[#1296DB] pl-2.5">
               Insurance Products
             </h4>
             <ul className="space-y-3 text-xs md:text-sm text-slate-400">
@@ -229,18 +229,18 @@ const Footer = () => {
                       href={item.path}
                       target="_blank"
                       rel="noopener noreferrer" 
-                      className="group flex items-center justify-between text-slate-400 hover:text-[#8ECA3C] transition-all duration-300 hover:pl-1.5"
+                      className="group flex items-center justify-between text-slate-400 hover:text-[#32B7E8] transition-all duration-300 hover:pl-1.5"
                     >
                       <span>{item.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-[#8ECA3C] shrink-0" />
+                      <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-[#32B7E8] shrink-0" />
                     </a>
                   ) : (
                     <Link 
                       to={item.path} 
-                      className="group flex items-center justify-between text-slate-400 hover:text-[#8ECA3C] transition-all duration-300 hover:pl-1.5"
+                      className="group flex items-center justify-between text-slate-400 hover:text-[#32B7E8] transition-all duration-300 hover:pl-1.5"
                     >
                       <span>{item.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-[#8ECA3C] shrink-0" />
+                      <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-[#32B7E8] shrink-0" />
                     </Link>
                   )}
                 </li>
@@ -250,7 +250,7 @@ const Footer = () => {
 
           {/* Column 3: Company & Support Links */}
           <div className="footer-grid-column space-y-5 text-left">
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white border-l-2 border-[#8ECA3C] pl-2.5">
+            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white border-l-2 border-[#1296DB] pl-2.5">
               Company & Legal
             </h4>
             <ul className="space-y-3 text-xs md:text-sm text-slate-400">
@@ -267,10 +267,10 @@ const Footer = () => {
                 <li key={idx}>
                   <Link 
                     to={item.path} 
-                    className="group flex items-center justify-between text-slate-400 hover:text-[#8ECA3C] transition-all duration-300 hover:pl-1.5"
+                    className="group flex items-center justify-between text-slate-400 hover:text-[#32B7E8] transition-all duration-300 hover:pl-1.5"
                   >
                     <span>{item.label}</span>
-                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-[#8ECA3C] shrink-0" />
+                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-[#32B7E8] shrink-0" />
                   </Link>
                 </li>
               ))}
@@ -279,14 +279,14 @@ const Footer = () => {
 
           {/* Column 4: Contact Info & Newsletter */}
           <div className="footer-grid-column space-y-4 text-left">
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white border-l-2 border-[#8ECA3C] pl-2.5 mb-2">
+            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-white border-l-2 border-[#1296DB] pl-2.5 mb-2">
               Reach Us & Connect
             </h4>
             
             <div className="space-y-2.5">
               {/* Address */}
-              <div className="flex items-center gap-3 bg-white/[0.03] border border-white/10 hover:border-[#8ECA3C]/30 rounded-xl p-2.5 transition duration-300 group">
-                <div className="w-7 h-7 rounded-lg bg-[#276F27]/40 group-hover:bg-[#276F27] flex items-center justify-center text-[#8ECA3C] group-hover:text-white transition shrink-0">
+              <div className="flex items-center gap-3 bg-white/[0.03] border border-white/10 hover:border-[#1296DB]/30 rounded-xl p-2.5 transition duration-300 group">
+                <div className="w-7 h-7 rounded-lg bg-[#075FC1]/40 group-hover:bg-[#075FC1] flex items-center justify-center text-[#32B7E8] group-hover:text-white transition shrink-0">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-[11px] text-slate-300 leading-tight">{BRAND_CONFIG.address}</span>
@@ -295,9 +295,9 @@ const Footer = () => {
               {/* Phone */}
               <a 
                 href={`tel:${BRAND_CONFIG.supportPhone.replace(/\s+/g, '')}`} 
-                className="flex items-center gap-3 bg-white/[0.03] border border-white/10 hover:border-[#8ECA3C]/30 rounded-xl p-2.5 transition duration-300 group"
+                className="flex items-center gap-3 bg-white/[0.03] border border-white/10 hover:border-[#1296DB]/30 rounded-xl p-2.5 transition duration-300 group"
               >
-                <div className="w-7 h-7 rounded-lg bg-[#276F27]/40 group-hover:bg-[#276F27] flex items-center justify-center text-[#8ECA3C] group-hover:text-white transition shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-[#075FC1]/40 group-hover:bg-[#075FC1] flex items-center justify-center text-[#32B7E8] group-hover:text-white transition shrink-0">
                   <Phone className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-[11px] text-slate-300 font-medium group-hover:text-white transition">{BRAND_CONFIG.supportPhone}</span>
@@ -306,9 +306,9 @@ const Footer = () => {
               {/* Email */}
               <a 
                 href={`mailto:${BRAND_CONFIG.supportEmail}`} 
-                className="flex items-center gap-3 bg-white/[0.03] border border-white/10 hover:border-[#8ECA3C]/30 rounded-xl p-2.5 transition duration-300 group"
+                className="flex items-center gap-3 bg-white/[0.03] border border-white/10 hover:border-[#1296DB]/30 rounded-xl p-2.5 transition duration-300 group"
               >
-                <div className="w-7 h-7 rounded-lg bg-[#276F27]/40 group-hover:bg-[#276F27] flex items-center justify-center text-[#8ECA3C] group-hover:text-white transition shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-[#075FC1]/40 group-hover:bg-[#075FC1] flex items-center justify-center text-[#32B7E8] group-hover:text-white transition shrink-0">
                   <Mail className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-[11px] text-slate-300 group-hover:text-white transition truncate">{BRAND_CONFIG.supportEmail}</span>
@@ -324,18 +324,16 @@ const Footer = () => {
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                   placeholder="Enter email address"
-                  className="w-full bg-white/5 border border-white/10 focus:border-[#8ECA3C] rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none transition"
+                  className="w-full bg-white/5 border border-white/10 focus:border-[#1296DB] rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none transition"
                 />
                 <button 
                   type="submit"
-                  className="px-3.5 py-2 rounded-xl bg-[#276F27] hover:bg-[#1B4D1B] text-white text-xs font-bold transition flex items-center justify-center cursor-pointer shrink-0"
+                  className="px-3.5 py-2 rounded-xl bg-[#075FC1] hover:bg-[#0B3B7A] text-white text-xs font-bold transition flex items-center justify-center cursor-pointer shrink-0"
                 >
                   <Send className="w-3.5 h-3.5" />
                 </button>
               </form>
             </div>
-
-
 
           </div>
 
@@ -353,7 +351,7 @@ const Footer = () => {
           ].map((pill, pIdx) => (
             <div 
               key={pIdx} 
-              className="footer-trust-pill inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-[10px] md:text-xs text-slate-300 select-none hover:border-[#8ECA3C]/40 hover:text-white transition duration-300 cursor-default"
+              className="footer-trust-pill inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-[10px] md:text-xs text-slate-300 select-none hover:border-[#1296DB]/40 hover:text-white transition duration-300 cursor-default"
             >
               {pill}
             </div>
@@ -371,10 +369,8 @@ const Footer = () => {
             </p>
           </div>
 
-
-
           {/* IRDAI Certification Badge */}
-          <div className="flex items-center gap-1.5 text-[#8ECA3C] bg-[#8ECA3C]/10 px-3.5 py-1.5 rounded-full border border-[#8ECA3C]/20 font-extrabold tracking-wider select-none shrink-0 text-[10px]">
+          <div className="flex items-center gap-1.5 text-[#32B7E8] bg-[#1296DB]/10 px-3.5 py-1.5 rounded-full border border-[#1296DB]/20 font-extrabold tracking-wider select-none shrink-0 text-[10px]">
             <ShieldCheck className="w-4 h-4" />
             <span>IRDAI Compliant</span>
           </div>

@@ -11,6 +11,7 @@ const CriticalIllness = lazy(() => import('../pages/CriticalIllness/CriticalIlln
 const TopUp = lazy(() => import('../pages/TopUp/TopUp'));
 const Claims = lazy(() => import('../pages/Claims/Claims'));
 const Motor = lazy(() => import('../pages/Motor/Motor'));
+const LifeInsurance = lazy(() => import('../pages/LifeInsurance/LifeInsurance'));
 const Travel = lazy(() => import('../pages/Travel/Travel'));
 const Hospitals = lazy(() => import('../pages/Hospitals/Hospitals'));
 const Compare = lazy(() => import('../pages/Compare/Compare'));
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
       { path: 'top-up', element: <TopUp /> },
       { path: 'claims', element: <Claims /> },
       { path: 'motor', element: <Motor /> },
+      { path: 'life', element: <LifeInsurance /> },
       { path: 'travel', element: <Travel /> },
       { path: 'hospitals', element: <Hospitals /> },
       { path: 'compare', element: <Compare /> },

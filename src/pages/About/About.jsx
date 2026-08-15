@@ -191,7 +191,7 @@ const About = () => {
                 key={idx}
                 className="bg-white border border-slate-100 rounded-3xl p-6 md:p-8 hover-card-effect animate-on-scroll flex flex-col justify-start"
               >
-                <div className="w-12 h-12 rounded-2xl bg-[#F8FAF8] border border-slate-100 flex items-center justify-center mb-6 shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-[#F7FAFC] border border-slate-100 flex items-center justify-center mb-6 shrink-0">
                   {card.icon}
                 </div>
                 <h3 className="font-display font-extrabold text-dark text-base mb-2.5 leading-tight">
@@ -225,7 +225,7 @@ const About = () => {
           
           {/* Professional Photo / Avatar Placeholder */}
           <div className="md:col-span-4 flex justify-center">
-            <div className="w-44 h-44 rounded-3xl bg-gradient-to-br from-primary to-accent border-4 border-[#F3F8F2] flex flex-col items-center justify-center text-white font-display font-black shadow-lg select-none relative group overflow-hidden">
+            <div className="w-44 h-44 rounded-3xl bg-gradient-to-br from-primary to-accent border-4 border-[#EAF6FC] flex flex-col items-center justify-center text-white font-display font-black shadow-lg select-none relative group overflow-hidden">
               <span className="text-5xl">SC</span>
               <span className="text-[10px] uppercase font-bold tracking-widest mt-1 opacity-90">Director</span>
               <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
