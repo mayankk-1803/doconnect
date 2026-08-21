@@ -262,15 +262,13 @@ const Hero = () => {
                 <ArrowRight className="w-4.5 h-4.5" />
               </button>
               
-              <a
-                href={generateWhatsAppLink('advisor')}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('open-callback-modal'))}
                 className="px-8 py-4 rounded-xl font-extrabold bg-white hover:bg-[#EAF6FC]/40 text-[#2F6FAF] border border-[#DCEAF4] text-xs md:text-sm shadow-2xs hover:shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 text-[#2F6FAF]" />
                 <span>Talk To Advisor</span>
-              </a>
+              </button>
             </div>
           </div>
 

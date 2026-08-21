@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8FBFD] relative border-b border-[#DCEAF4]">
+    <section ref={sectionRef} id="why-choose-us" className="pt-[100px] pb-[60px] md:py-[90px] lg:py-[120px] bg-[#F8FBFD] relative border-b border-[#DCEAF4] scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

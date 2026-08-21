@@ -50,7 +50,7 @@ const CtaSection = () => {
                 Chat with Expert Now
               </a>
               <button
-                onClick={() => redirectToWhatsApp('advisor', { subject: 'CTA Call back Request' })}
+                onClick={() => window.dispatchEvent(new CustomEvent('open-callback-modal'))}
                 className="px-8 py-4 rounded-2xl border border-[#DCEAF4] hover:border-[#2F6FAF] hover:bg-[#EAF6FC]/50 text-[#2F6FAF] font-semibold text-sm flex items-center justify-center gap-2 transition cursor-pointer"
               >
                 <Calendar className="w-5 h-5" />

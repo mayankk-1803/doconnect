@@ -11,7 +11,7 @@ export const BRAND_CONFIG = {
   supportPhone: '+91 76830 98648',
   directorName: 'Shubham Chauhan',
   directorTitle: 'Director',
-  address: '8th Floor, Capital Tower, Sector 45, Gurugram, Haryana, India - 122003',
+  address: 'B-52, Block - B Sector - 64 Noida 201301',
 };
 
 export const NAV_LINKS = [

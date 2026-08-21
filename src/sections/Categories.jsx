@@ -66,7 +66,7 @@ const Categories = () => {
     <section
       id="categories-section"
       ref={containerRef}
-      className="py-[70px] md:py-[100px] bg-white relative border-b border-[#DCEAF4]"
+      className="pt-[100px] pb-[70px] md:py-[100px] bg-white relative border-b border-[#DCEAF4] scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-6">
         

@@ -340,7 +340,7 @@ const Partners = () => {
   };
 
   return (
-    <section id="partners-section" className="py-[70px] md:py-[100px] bg-white border-b border-[#DCEAF4] relative overflow-hidden select-none">
+    <section id="partners-section" className="pt-[100px] pb-[70px] md:py-[100px] bg-white border-b border-[#DCEAF4] relative overflow-hidden select-none scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Title */}

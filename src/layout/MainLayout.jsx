@@ -7,6 +7,7 @@ import WhatsAppPopup from './WhatsAppPopup';
 import CompareBar from './CompareBar';
 import ScrollToTop from './ScrollToTop';
 import ErrorBoundary from '../components/common/ErrorBoundary';
+import CallbackModal from '../components/common/CallbackModal';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -37,6 +38,7 @@ const MainLayout = () => {
         <FloatingWhatsApp />
         <WhatsAppPopup />
         <CompareBar />
+        <CallbackModal />
 
         {/* Toast Container */}
         <ToastContainer

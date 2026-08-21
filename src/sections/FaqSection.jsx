@@ -52,7 +52,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="py-[60px] md:py-[90px] lg:py-[100px] bg-[#F8FBFD] relative border-b border-[#DCEAF4]">
+    <section className="pt-[100px] pb-[60px] md:py-[90px] lg:py-[100px] bg-[#F8FBFD] relative border-b border-[#DCEAF4] scroll-mt-24">
       <div className="max-w-3xl mx-auto px-6">
         
         {/* Header */}

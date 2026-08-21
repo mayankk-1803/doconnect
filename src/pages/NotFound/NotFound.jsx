@@ -38,15 +38,13 @@ const NotFound = () => {
               <ArrowLeft className="w-4 h-4" />
               Return Home
             </Link>
-            <a
-              href={generateWhatsAppLink('general')}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-callback-modal'))}
               className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-primary text-white font-semibold text-xs shadow-md shadow-primary/10 hover:bg-primary-dark transition-all cursor-pointer"
             >
               <MessageSquare className="w-4 h-4" />
               Talk to Advisor
-            </a>
+            </button>
           </div>
         </div>
       </div>
