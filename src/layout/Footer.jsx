@@ -189,7 +189,7 @@ const Footer = () => {
           <div className="footer-grid-column space-y-5 text-left">
             <Link to="/" className="flex items-center gap-3 group">
               <img
-                src="/logo.png"
+                src="/Logo.png"
                 alt={BRAND_CONFIG.name}
                 className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />

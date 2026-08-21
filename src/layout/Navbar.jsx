@@ -122,7 +122,7 @@ const Navbar = () => {
             aria-label="DoConnect Home"
           >
             <img
-              src="/logo.png"
+              src="/Logo.png"
               alt={BRAND_CONFIG.name}
               className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -229,7 +229,7 @@ const Navbar = () => {
         <div>
           <div className="flex items-center justify-between pb-6 border-b border-slate-100">
             <img
-              src="/logo.png"
+              src="/Logo.png"
               alt={BRAND_CONFIG.name}
               className="h-14 w-auto object-contain"
             />
