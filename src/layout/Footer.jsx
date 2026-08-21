@@ -189,7 +189,7 @@ const Footer = () => {
           <div className="footer-grid-column space-y-5 text-left">
             <Link to="/" className="flex items-center gap-3 group">
               <img
-                src="/Logo.png"
+                src="/logo.png"
                 alt={BRAND_CONFIG.name}
                 className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
@@ -215,8 +215,8 @@ const Footer = () => {
             <ul className="space-y-3 text-xs md:text-sm text-[#64798D]">
               {[
                 { label: 'Health Insurance', path: '/health-insurance' },
-                { label: 'Car Insurance', path: '/motor' },
-                { label: 'Bike Insurance', path: '/motor' },
+                { label: 'Car Insurance', path: '/motor?type=car' },
+                { label: 'Bike Insurance', path: '/motor?type=bike' },
                 { label: 'Life Insurance', path: 'https://wa.me/917683098648?text=Life%20Insurance' },
                 { label: 'Term Insurance', path: 'https://wa.me/917683098648?text=Term%20Insurance' },
                 { label: 'Travel Insurance', path: '/travel' },

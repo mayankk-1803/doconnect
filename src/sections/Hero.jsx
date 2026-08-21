@@ -16,8 +16,8 @@ import { generateWhatsAppLink } from '../utils/whatsapp';
 
 // Category Definitions mapping the main 8 categories
 const HERO_CATEGORIES = [
-  { id: 'car', title1: 'Car', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor' },
-  { id: 'bike', title1: 'Bike', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor' },
+  { id: 'car', title1: 'Car', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor?type=car' },
+  { id: 'bike', title1: 'Bike', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor?type=bike' },
   { id: 'health', title1: 'Health', title2: 'Insurance', badge: 'Upto 25% Off*', badgeColor: 'bg-[#2F6FAF]', path: '/health-insurance' },
   { id: 'term', title1: 'Term', title2: 'Insurance', badge: 'Save On Tax*', badgeColor: 'bg-[#2F6FAF]', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20a%20Term%20Insurance%20plan.' },
   { id: 'investment', title1: 'Investment', title2: 'Plans', badge: '', badgeColor: '', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20an%20Investment%20Plan.' },
@@ -229,9 +229,9 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         
         {/* Two-Column Premium Hero Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-x-12 lg:gap-y-6 items-center mb-16 relative">
           
-          {/* Left Column: Headline, Subtitle, Checkmarks, and CTAs (60% width on desktop) */}
+          {/* Cell 1: Headline (Title and Trust Badge) */}
           <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
             {/* Trust Badge Pill */}
             <div ref={badgeRef} className="inline-flex items-center gap-1.5 bg-[#EAF6FC] border border-[#2F6FAF]/25 px-4 py-1.5 rounded-full shadow-2xs">
@@ -246,50 +246,10 @@ const Hero = () => {
               India's Most Trusted <br />
               <span className="text-[#2F6FAF]">Digital Insurance Marketplace</span>
             </h1>
-
-            {/* Subtitle */}
-            <p ref={subtitleRef} className="text-slate-500 text-sm md:text-base font-medium leading-relaxed max-w-xl">
-              Compare quotes from 35+ leading insurers in 60 seconds. Get instant policy delivery, zero spam calls, and 24/7 dedicated claim assistance.
-            </p>
-
-            {/* Checkmarks / Trust Chips */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2 text-xs md:text-sm text-[#16324F] font-bold">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-[#2F6FAF] shrink-0" />
-                <span>IRDAI Approved</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-[#2F6FAF] shrink-0" />
-                <span>35+ Partners</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-[#2F6FAF] shrink-0" />
-                <span>10,000+ Cashless Hospitals</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div ref={ctaGroupRef} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-2">
-              <button
-                onClick={handleScrollToPartners}
-                className="px-8 py-4 rounded-xl font-extrabold bg-[#2F6FAF] hover:bg-[#245B91] text-white text-xs md:text-sm shadow-md shadow-[#2F6FAF]/25 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
-              >
-                <span>Compare Plans</span>
-                <ArrowRight className="w-4.5 h-4.5" />
-              </button>
-              
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent('open-callback-modal'))}
-                className="px-8 py-4 rounded-xl font-extrabold bg-white hover:bg-[#EAF6FC]/40 text-[#2F6FAF] border border-[#DCEAF4] text-xs md:text-sm shadow-2xs hover:shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
-              >
-                <Phone className="w-4 h-4 text-[#2F6FAF]" />
-                <span>Talk To Advisor</span>
-              </button>
-            </div>
           </div>
 
-          {/* Right Column: Family Image Composition with floating icon rings (40% width on desktop) */}
-          <div className="lg:col-span-5 relative flex items-center justify-center w-full min-h-[380px] lg:min-h-[460px]">
+          {/* Cell 2: Family Image Composition with floating icon rings (40% width on desktop) */}
+          <div className="lg:col-span-5 lg:row-span-2 relative flex items-center justify-center w-full min-h-[290px] sm:min-h-[380px] lg:min-h-[460px]">
             {/* Concentric dotted background rings */}
             <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full z-0 flex items-center justify-center pointer-events-none">
               <div className="absolute inset-0 border border-[#2F6FAF]/10 border-dashed rounded-full animate-spin-slow" />
@@ -340,7 +300,49 @@ const Hero = () => {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             </div>
+          </div>
 
+          {/* Cell 3: Headline Details, Checkmarks, and CTAs (60% width on desktop) */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
+            {/* Subtitle */}
+            <p ref={subtitleRef} className="text-slate-500 text-sm md:text-base font-medium leading-relaxed max-w-xl">
+              Compare quotes from 35+ leading insurers in 60 seconds. Get instant policy delivery, zero spam calls, and 24/7 dedicated claim assistance.
+            </p>
+
+            {/* Checkmarks / Trust Chips */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2 text-xs md:text-sm text-[#16324F] font-bold">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-[#2F6FAF] shrink-0" />
+                <span>IRDAI Approved</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-[#2F6FAF] shrink-0" />
+                <span>35+ Partners</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-[#2F6FAF] shrink-0" />
+                <span>10,000+ Cashless Hospitals</span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div ref={ctaGroupRef} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-2">
+              <button
+                onClick={handleScrollToPartners}
+                className="px-8 py-4 rounded-xl font-extrabold bg-[#2F6FAF] hover:bg-[#245B91] text-white text-xs md:text-sm shadow-md shadow-[#2F6FAF]/25 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+              >
+                <span>Compare Plans</span>
+                <ArrowRight className="w-4.5 h-4.5" />
+              </button>
+              
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('open-callback-modal'))}
+                className="px-8 py-4 rounded-xl font-extrabold bg-white hover:bg-[#EAF6FC]/40 text-[#2F6FAF] border border-[#DCEAF4] text-xs md:text-sm shadow-2xs hover:shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+              >
+                <Phone className="w-4 h-4 text-[#2F6FAF]" />
+                <span>Talk To Advisor</span>
+              </button>
+            </div>
           </div>
 
         </div>
