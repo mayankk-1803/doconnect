@@ -10,7 +10,12 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
   const { pathname } = useLocation();
+
+  const toggleMobileDropdown = (label) => {
+    setActiveMobileDropdown(prev => prev === label ? null : label);
+  };
 
   const navRef = useRef(null);
   const logoRef = useRef(null);
@@ -58,7 +63,15 @@ const Navbar = () => {
   useEffect(() => {
     setMobileOpen(false);
     setActiveDropdown(null);
+    setActiveMobileDropdown(null);
   }, [pathname]);
+
+  // Reset mobile dropdown when mobile menu closes
+  useEffect(() => {
+    if (!mobileOpen) {
+      setActiveMobileDropdown(null);
+    }
+  }, [mobileOpen]);
 
   // GSAP animated dropdown reveal
   const handleDropdownEnter = (label) => {
@@ -106,7 +119,7 @@ const Navbar = () => {
     <>
       <header
         ref={navRef}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 transform ${hidden ? '-translate-y-full' : 'translate-y-0'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 transform ${hidden || mobileOpen ? '-translate-y-full' : 'translate-y-0'
           } ${scrolled
             ? 'glass-navbar-light py-3.5'
             : 'bg-transparent py-5'
@@ -223,7 +236,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[290px] bg-white z-50 shadow-2xl transition-transform duration-300 transform lg:hidden p-6 flex flex-col justify-between overflow-y-auto ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 right-0 h-full w-full bg-white z-50 shadow-2xl transition-transform duration-300 transform lg:hidden p-6 flex flex-col justify-between overflow-y-auto ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
         <div>
@@ -244,27 +257,37 @@ const Navbar = () => {
           <nav className="mt-6 flex flex-col gap-4">
             {NAV_LINKS.filter(l => l.label !== 'Login').map((link) => {
               if (link.hasDropdown) {
+                const isOpen = activeMobileDropdown === link.label;
                 return (
                   <div key={link.label} className="flex flex-col gap-2">
-                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                      {link.label}
-                    </span>
-                    <div className="pl-3 border-l-2 border-[#2F6FAF]/20 flex flex-col gap-3 mt-1">
-                      {link.dropdownItems.map((item) => (
-                        <Link
-                          key={item.label}
-                          to={item.path}
-                          onClick={() => setMobileOpen(false)}
-                          className="text-xs font-semibold text-slate-700 hover:text-[#2F6FAF] transition"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
+                    <button
+                      onClick={() => toggleMobileDropdown(link.label)}
+                      className="flex items-center justify-between w-full text-left py-1 text-[14px] font-bold text-slate-700 hover:text-[#2F6FAF] focus:outline-none cursor-pointer"
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${
+                          isOpen ? 'rotate-180 text-[#2F6FAF]' : ''
+                        }`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="pl-3 border-l-2 border-[#2F6FAF]/20 flex flex-col gap-3 mt-1">
+                        {link.dropdownItems.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.path}
+                            onClick={() => setMobileOpen(false)}
+                            className="text-xs font-semibold text-slate-700 hover:text-[#2F6FAF] transition py-0.5"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
               }
-
               return (
                 <NavLink
                   key={link.label}

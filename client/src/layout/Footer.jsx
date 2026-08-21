@@ -316,7 +316,7 @@ const Footer = () => {
             </div>
 
             {/* Newsletter Subscription Form */}
-            <div className="pt-2">
+            {/* <div className="pt-2">
               <p className="text-[11px] font-bold text-[#16324F] mb-2">Subscribe to Insurance Insights</p>
               <form onSubmit={handleNewsletterSubmit} className="flex items-center gap-1.5">
                 <input
@@ -333,7 +333,7 @@ const Footer = () => {
                   <Send className="w-3.5 h-3.5" />
                 </button>
               </form>
-            </div>
+            </div> */}
 
           </div>
 

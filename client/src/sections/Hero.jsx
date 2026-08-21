@@ -216,7 +216,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef} 
-      className="relative overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-20 bg-white flex flex-col justify-center min-h-[92vh] w-full border-b border-[#DCEAF4]"
+      className="relative overflow-hidden pt-36 pb-12 sm:pt-40 lg:pt-44 lg:pb-20 bg-white flex flex-col justify-center min-h-[92vh] w-full border-b border-[#DCEAF4]"
     >
       {/* Ambient background glows in blue/cyan brand identity */}
       <div className="ambient-blob absolute top-[5%] left-[8%] w-[500px] h-[500px] bg-[#2F6FAF]/5 rounded-full blur-[110px] pointer-events-none z-0" />
@@ -256,7 +256,7 @@ const Hero = () => {
             {/* Core Family Photo Image Cutout (blends into white bg) */}
             <div className="relative z-10 w-full max-w-[420px] lg:max-w-none flex justify-center">
               <img 
-                src="/family.jpg" 
+                src="/family.png" 
                 alt="Protected Family" 
                 className="w-[92%] sm:w-[88%] h-auto object-contain select-none"
               />
