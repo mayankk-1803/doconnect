@@ -106,16 +106,14 @@ const Navbar = () => {
     <>
       <header
         ref={navRef}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 transform ${
-          hidden ? '-translate-y-full' : 'translate-y-0'
-        } ${
-          scrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 transform ${hidden ? '-translate-y-full' : 'translate-y-0'
+          } ${scrolled
             ? 'glass-navbar-light py-3.5'
             : 'bg-transparent py-5'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          
+
           {/* Official Brand Logo */}
           <Link
             to="/"
@@ -123,10 +121,10 @@ const Navbar = () => {
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="DoConnect Home"
           >
-            <img 
-              src="/Logo.png" 
+            <img
+              src="/logo.png"
               alt={BRAND_CONFIG.name}
-              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -142,15 +140,14 @@ const Navbar = () => {
                     onMouseEnter={() => handleDropdownEnter(link.label)}
                     onMouseLeave={() => handleDropdownLeave(link.label)}
                   >
-                    <button 
+                    <button
                       className="flex items-center gap-1 text-[14px] font-bold transition-colors focus:outline-none cursor-pointer text-slate-800 hover:text-[#2F6FAF]"
                     >
                       {link.label}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                        activeDropdown === link.label 
-                          ? 'rotate-180 text-[#2F6FAF]' 
-                          : 'text-slate-400'
-                      }`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === link.label
+                        ? 'rotate-180 text-[#2F6FAF]'
+                        : 'text-slate-400'
+                        }`} />
                     </button>
 
                     {/* GSAP dropdown menu panels */}
@@ -179,8 +176,7 @@ const Navbar = () => {
                   ref={(el) => (menuItemsRef.current[idx] = el)}
                   to={link.path}
                   className={({ isActive }) =>
-                    `text-[14px] font-bold transition-colors relative py-1 cursor-pointer ${
-                      isActive ? 'text-[#2F6FAF] font-extrabold' : 'text-slate-800 hover:text-[#2F6FAF]'
+                    `text-[14px] font-bold transition-colors relative py-1 cursor-pointer ${isActive ? 'text-[#2F6FAF] font-extrabold' : 'text-slate-800 hover:text-[#2F6FAF]'
                     }`
                   }
                 >
@@ -220,24 +216,22 @@ const Navbar = () => {
 
       {/* Drawer Overlay */}
       <div
-        className={`fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden ${
-          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
         onClick={() => setMobileOpen(false)}
       />
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[290px] bg-white z-50 shadow-2xl transition-transform duration-300 transform lg:hidden p-6 flex flex-col justify-between overflow-y-auto ${
-          mobileOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 h-full w-[290px] bg-white z-50 shadow-2xl transition-transform duration-300 transform lg:hidden p-6 flex flex-col justify-between overflow-y-auto ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div>
           <div className="flex items-center justify-between pb-6 border-b border-slate-100">
-            <img 
-              src="/Logo.png" 
-              alt={BRAND_CONFIG.name} 
-              className="h-10 w-auto object-contain"
+            <img
+              src="/logo.png"
+              alt={BRAND_CONFIG.name}
+              className="h-14 w-auto object-contain"
             />
             <button
               onClick={() => setMobileOpen(false)}
@@ -277,8 +271,7 @@ const Navbar = () => {
                   to={link.path}
                   onClick={() => setMobileOpen(false)}
                   className={({ isActive }) =>
-                    `text-[14px] font-bold py-1 transition-colors ${
-                      isActive ? 'text-[#2F6FAF] font-extrabold' : 'text-slate-700 hover:text-[#2F6FAF]'
+                    `text-[14px] font-bold py-1 transition-colors ${isActive ? 'text-[#2F6FAF] font-extrabold' : 'text-slate-700 hover:text-[#2F6FAF]'
                     }`
                   }
                 >

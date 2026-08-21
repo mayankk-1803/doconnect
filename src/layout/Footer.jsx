@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ShieldCheck, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Heart, 
-  Activity, 
-  Shield, 
-  Plus, 
-  ChevronRight, 
-  Stethoscope, 
+import {
+  ShieldCheck,
+  Mail,
+  Phone,
+  MapPin,
+  Heart,
+  Activity,
+  Shield,
+  Plus,
+  ChevronRight,
+  Stethoscope,
   Send
 } from 'lucide-react';
 import { BRAND_CONFIG } from '../constants';
@@ -122,8 +122,8 @@ const Footer = () => {
   };
 
   return (
-    <footer 
-      ref={footerRef} 
+    <footer
+      ref={footerRef}
       className="text-[#64798D] relative overflow-hidden z-10 border-t border-[#DCEAF4]"
       style={{ background: 'linear-gradient(180deg, #EAF6FC 0%, #F8FBFD 100%)' }}
     >
@@ -158,7 +158,7 @@ const Footer = () => {
       <Shield className="absolute bottom-24 left-[12%] w-20 h-20 text-[#2F6FAF]/[0.02] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-8 relative z-10">
-        
+
         {/* Trust Badges Strip (Why Choose Us Cards) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {[
@@ -167,8 +167,8 @@ const Footer = () => {
             { icon: <Activity className="w-5 h-5 text-[#2F6FAF]" />, label: 'Expert Certified Advisors', desc: 'Unbiased advisory support' },
             { icon: <Shield className="w-5 h-5 text-[#2F6FAF]" />, label: '100% Encrypted & Safe', desc: 'IRDAI compliant process' }
           ].map((item, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="footer-badge-card bg-white border border-[#DCEAF4] rounded-2xl p-5 hover:border-[#67B7E8]/50 transition-all duration-300 flex items-center gap-4 text-left group shadow-xs"
             >
               <div className="w-10 h-10 rounded-xl bg-[#2F6FAF]/10 border border-[#2F6FAF]/20 flex items-center justify-center group-hover:scale-110 transition duration-300 shrink-0">
@@ -184,14 +184,14 @@ const Footer = () => {
 
         {/* 4 Main Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-16">
-          
+
           {/* Column 1: Logo, Description & Compliance */}
           <div className="footer-grid-column space-y-5 text-left">
             <Link to="/" className="flex items-center gap-3 group">
-              <img 
-                src="/Logo.png" 
-                alt={BRAND_CONFIG.name} 
-                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              <img
+                src="/logo.png"
+                alt={BRAND_CONFIG.name}
+                className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
             <p className="text-xs font-bold text-[#2F6FAF] tracking-wide uppercase select-none">
@@ -225,18 +225,18 @@ const Footer = () => {
               ].map((item, idx) => (
                 <li key={idx}>
                   {item.path.startsWith('http') ? (
-                    <a 
+                    <a
                       href={item.path}
                       target="_blank"
-                      rel="noopener noreferrer" 
+                      rel="noopener noreferrer"
                       className="group flex items-center justify-between text-[#64798D] hover:text-[#2F6FAF] transition-all duration-300 hover:pl-1.5"
                     >
                       <span>{item.label}</span>
                       <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-[#2F6FAF] shrink-0" />
                     </a>
                   ) : (
-                    <Link 
-                      to={item.path} 
+                    <Link
+                      to={item.path}
                       className="group flex items-center justify-between text-[#64798D] hover:text-[#2F6FAF] transition-all duration-300 hover:pl-1.5"
                     >
                       <span>{item.label}</span>
@@ -265,8 +265,8 @@ const Footer = () => {
                 { label: 'Terms & Conditions', path: '/terms' }
               ].map((item, idx) => (
                 <li key={idx}>
-                  <Link 
-                    to={item.path} 
+                  <Link
+                    to={item.path}
                     className="group flex items-center justify-between text-[#64798D] hover:text-[#2F6FAF] transition-all duration-300 hover:pl-1.5"
                   >
                     <span>{item.label}</span>
@@ -282,7 +282,7 @@ const Footer = () => {
             <h4 className="font-display font-bold text-xs uppercase tracking-widest text-[#16324F] border-l-2 border-[#2F6FAF] pl-2.5 mb-2">
               Reach Us & Connect
             </h4>
-            
+
             <div className="space-y-2.5">
               {/* Address */}
               <div className="flex items-center gap-3 bg-white border border-[#DCEAF4] hover:border-[#67B7E8]/30 rounded-xl p-2.5 transition duration-300 group shadow-xs">
@@ -293,8 +293,8 @@ const Footer = () => {
               </div>
 
               {/* Phone */}
-              <a 
-                href={`tel:${BRAND_CONFIG.supportPhone.replace(/\s+/g, '')}`} 
+              <a
+                href={`tel:${BRAND_CONFIG.supportPhone.replace(/\s+/g, '')}`}
                 className="flex items-center gap-3 bg-white border border-[#DCEAF4] hover:border-[#67B7E8]/30 rounded-xl p-2.5 transition duration-300 group shadow-xs"
               >
                 <div className="w-7 h-7 rounded-lg bg-[#2F6FAF]/10 group-hover:bg-[#2F6FAF] flex items-center justify-center text-[#2F6FAF] group-hover:text-white transition shrink-0">
@@ -304,8 +304,8 @@ const Footer = () => {
               </a>
 
               {/* Email */}
-              <a 
-                href={`mailto:${BRAND_CONFIG.supportEmail}`} 
+              <a
+                href={`mailto:${BRAND_CONFIG.supportEmail}`}
                 className="flex items-center gap-3 bg-white border border-[#DCEAF4] hover:border-[#67B7E8]/30 rounded-xl p-2.5 transition duration-300 group shadow-xs"
               >
                 <div className="w-7 h-7 rounded-lg bg-[#2F6FAF]/10 group-hover:bg-[#2F6FAF] flex items-center justify-center text-[#2F6FAF] group-hover:text-white transition shrink-0">
@@ -319,14 +319,14 @@ const Footer = () => {
             <div className="pt-2">
               <p className="text-[11px] font-bold text-[#16324F] mb-2">Subscribe to Insurance Insights</p>
               <form onSubmit={handleNewsletterSubmit} className="flex items-center gap-1.5">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                   placeholder="Enter email address"
                   className="w-full bg-white border border-[#DCEAF4] focus:border-[#67B7E8] rounded-xl px-3 py-2 text-xs text-[#16324F] placeholder-slate-400 focus:outline-none transition shadow-xs"
                 />
-                <button 
+                <button
                   type="submit"
                   className="px-3.5 py-2 rounded-xl bg-[#2F6FAF] hover:bg-[#204E7C] text-white text-xs font-bold transition flex items-center justify-center cursor-pointer shrink-0"
                 >
@@ -349,8 +349,8 @@ const Footer = () => {
             '✓ Instant Digital Policy Issuance',
             '✓ 100% Encrypted Consultation'
           ].map((pill, pIdx) => (
-            <div 
-              key={pIdx} 
+            <div
+              key={pIdx}
               className="footer-trust-pill inline-flex items-center px-3.5 py-1.5 rounded-full bg-white border border-[#DCEAF4] text-[10px] md:text-xs text-[#64798D] select-none hover:border-[#67B7E8]/40 hover:text-[#16324F] transition duration-300 cursor-default shadow-xs"
             >
               {pill}
@@ -360,7 +360,7 @@ const Footer = () => {
 
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-2 flex flex-col lg:flex-row items-center justify-between gap-6 text-[11px] text-[#64798D] relative z-20">
-          
+
           {/* Copyright & Disclaimer */}
           <div className="flex flex-col gap-1 max-w-xl text-center lg:text-left">
             <p>© {new Date().getFullYear()} {BRAND_CONFIG.name} Insurance Marketplace. All rights reserved.</p>

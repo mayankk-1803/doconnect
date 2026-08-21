@@ -1,77 +1,99 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#276F27" />
-    <title>DoConnect | Premium Digital Insurance Marketplace</title>
-    <meta name="description" content="Compare & buy health, motor, life, term, and travel insurance plans from India's leading insurers with instant quotes and expert guidance." />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="DoConnect | Premium Digital Insurance Marketplace" />
-    <meta property="og:description" content="Compare 100+ insurance plans from India's top insurers. Save tax under Section 80D, get instant cashless approvals, and unbiased expert consults." />
-    <meta property="og:image" content="/Logo.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DoConnect | Premium Digital Insurance Marketplace" />
-    <meta name="twitter:description" content="Compare 100+ insurance plans from India's top insurers." />
-  </head>
-  <body>
-    <!-- Smooth Preloader -->
-    <div id="preloader" class="preloader-container">
-      <div class="spinner-ring"></div>
-      <div class="preloader-text">Loading DoConnect...</div>
-    </div>
-    
-    <style>
-      .preloader-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #F8FAFC;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        z-index: 99999;
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
-      }
-      .preloader-container.fade-out {
-        opacity: 0;
-        visibility: hidden;
-      }
-      .spinner-ring {
-        width: 56px;
-        height: 56px;
-        border: 4px solid #DCEAF4;
-        border-top: 4px solid #2F6FAF;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-      }
-      .preloader-text {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-        font-size: 11px;
-        font-weight: 700;
-        color: #64798D;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        animation: pulse-text 1.5s ease-in-out infinite;
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      @keyframes pulse-text {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
-      }
-    </style>
 
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#276F27" />
+  <title>DoConnect | Premium Digital Insurance Marketplace</title>
+  <meta name="description"
+    content="Compare & buy health, motor, life, term, and travel insurance plans from India's leading insurers with instant quotes and expert guidance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DoConnect | Premium Digital Insurance Marketplace" />
+  <meta property="og:description"
+    content="Compare 100+ insurance plans from India's top insurers. Save tax under Section 80D, get instant cashless approvals, and unbiased expert consults." />
+  <meta property="og:image" content="/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DoConnect | Premium Digital Insurance Marketplace" />
+  <meta name="twitter:description" content="Compare 100+ insurance plans from India's top insurers." />
+</head>
+
+<body>
+  <!-- Smooth Preloader -->
+  <div id="preloader" class="preloader-container">
+    <div class="spinner-ring"></div>
+    <div class="preloader-text">Loading DoConnect...</div>
+  </div>
+
+  <style>
+    .preloader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      z-index: 99999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .preloader-container.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner-ring {
+      width: 56px;
+      height: 56px;
+      border: 4px solid #DCEAF4;
+      border-top: 4px solid #2F6FAF;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    .preloader-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64798D;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: pulse-text 1.5s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse-text {
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

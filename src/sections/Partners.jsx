@@ -17,7 +17,10 @@ const PARTNERS_LIST = [
   { name: 'LIC', src: '/lic.jpg' },
   { name: 'Tata AIA Life', src: '/tataaia.jpg' },
   { name: 'Max Life Insurance', src: '/maxlife.jpg' },
-  { name: 'Digit Insurance', src: '/digit.jpg' }
+  { name: 'Digit Insurance', src: '/digit.jpg' },
+  {name:'HDFC LIFE',src :'hdfclife.jpg'},
+  {name:'ICICI Prudential',src:'icicipre.jpg'},
+  {name:'United India Insurance',src:'/united.jpg'}
 ];
 
 const Partners = () => {

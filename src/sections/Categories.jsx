@@ -68,7 +68,7 @@ const Categories = () => {
       ref={containerRef}
       className="pt-[100px] pb-[70px] md:py-[100px] bg-white relative border-b border-[#DCEAF4] scroll-mt-24"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="site-container">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
