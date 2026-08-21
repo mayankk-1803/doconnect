@@ -8,6 +8,15 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Disable automatic browser scroll restoration on page refresh
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    // Force scroll to top on initial mount/refresh
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
