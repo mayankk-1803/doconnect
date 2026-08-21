@@ -26,6 +26,22 @@ const HERO_CATEGORIES = [
   { id: 'travel', title1: 'Travel', title2: 'Insurance', badge: '', badgeColor: '', path: '/travel' }
 ];
 
+const PARTNERS_LIST = [
+  { name: 'Aditya Birla Group', src: '/adityabirlagroup.jpg' },
+  { name: 'ICICI Lombard', src: '/icicilombard.jpg' },
+  { name: 'Bajaj Allianz', src: '/bajaj.jpg' },
+  { name: 'Cigna', src: '/cigna.jpg' },
+  { name: 'HDFC ERGO', src: '/hdfcergo.jpg' },
+  { name: 'SBI General Insurance', src: '/sbideneral.jpg' },
+  { name: 'Star Health Insurance', src: '/star.jpg' },
+  { name: 'Tata AIG', src: '/tataaig.jpg' },
+  { name: 'Niva Bupa Health Insurance', src: '/nivabupa.jpg' },
+  { name: 'LIC', src: '/lic.jpg' },
+  { name: 'Tata AIA Life', src: '/tataaia.jpg' },
+  { name: 'Max Life Insurance', src: '/maxlife.jpg' },
+  { name: 'Digit Insurance', src: '/digit.jpg' }
+];
+
 const Hero = () => {
   const heroRef = useRef(null);
   const badgeRef = useRef(null);
@@ -374,6 +390,56 @@ const Hero = () => {
           </div>
         </div>
 
+        {/* Infinite Scrolling Logo Marquee */}
+        <div className="pt-8 pb-4 max-w-5xl mx-auto px-4 overflow-hidden relative">
+          <div className="text-center mb-8">
+            <span className="text-[10px] md:text-xs font-bold text-[#64798D] uppercase tracking-wider bg-[#EAF6FC] border border-[#DCEAF4] px-3.5 py-1.5 rounded-full inline-block">
+              Trusted by leading IRDAI-approved insurance providers
+            </span>
+          </div>
+
+          <div className="relative w-full overflow-hidden py-4">
+            {/* Fading glass gradients on sides for premium depth */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+            {/* Marquee Track */}
+            <div className="animate-marquee flex gap-5 items-center">
+              {/* First Set of Logos */}
+              {PARTNERS_LIST.map((partner, idx) => (
+                <div 
+                  key={`m1-${idx}`}
+                  className="flex-shrink-0 bg-white border border-[#DCEAF4] rounded-[20px] p-4 flex items-center justify-center h-20 w-36 md:w-40 shadow-2xs hover:shadow-md hover:border-[#2F6FAF]/35 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+                >
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img 
+                      src={partner.src} 
+                      alt={partner.name} 
+                      className="w-full h-full object-contain select-none pointer-events-none"
+                    />
+                  </div>
+                </div>
+              ))}
+              
+              {/* Second Set of Logos (Duplicated for seamless loop) */}
+              {PARTNERS_LIST.map((partner, idx) => (
+                <div 
+                  key={`m2-${idx}`}
+                  className="flex-shrink-0 bg-white border border-[#DCEAF4] rounded-[20px] p-4 flex items-center justify-center h-20 w-36 md:w-40 shadow-2xs hover:shadow-md hover:border-[#2F6FAF]/35 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+                >
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img 
+                      src={partner.src} 
+                      alt={partner.name} 
+                      className="w-full h-full object-contain select-none pointer-events-none"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Benefits of DoConnect Section (Transparent columns, no cards) */}
         <div className="py-16 max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -405,10 +471,10 @@ const Hero = () => {
                 <Users className="w-7 h-7" />
               </div>
               <h3 className="font-display font-extrabold text-base md:text-lg text-[#16324F] mb-3">
-                Over 17 Mn+ Happy Customers
+                Over 17 M+ Happy Customers
               </h3>
               <p className="text-[#64798D] text-xs leading-relaxed font-medium">
-                {BRAND_CONFIG.name} is becoming a household name in India. Till now we have been successful in providing a delightful experience to more than 17 Mn+ customers with the help of our transparent and quick process, a dedicated support team along with the availability of numerous insurers.
+                {BRAND_CONFIG.name} is becoming a household name in India. Till now we have been successful in providing a delightful experience to more than 17 M+ customers with the help of our transparent and quick process, a dedicated support team along with the availability of numerous insurers.
               </p>
             </div>
 
