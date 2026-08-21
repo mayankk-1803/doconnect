@@ -98,12 +98,12 @@ const Calculator = () => {
   }));
 
   return (
-    <section className="py-24 md:py-28 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden">
+    <section className="py-24 md:py-28 bg-gradient-to-b from-[#F8FBFD] to-[#EAF6FC] border-b border-[#DCEAF4] text-[#16324F] relative overflow-hidden">
       
-      {/* Subtle blurs for dark background depth */}
-      <div className="absolute top-0 right-0 w-[40%] h-[60%] bg-[#0F4C81]/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[35%] h-[55%] bg-[#14B86A]/10 rounded-full blur-[120px] pointer-events-none" />
-
+      {/* Subtle blurs for background depth */}
+      <div className="absolute top-0 right-0 w-[40%] h-[60%] bg-[#67B7E8]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[35%] h-[55%] bg-[#67B7E8]/5 rounded-full blur-[120px] pointer-events-none" />
+ 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header */}
@@ -111,25 +111,25 @@ const Calculator = () => {
           <span className="text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 border border-accent/20 px-3.5 py-1.5 rounded-full inline-block mb-3">
             Premium Estimator
           </span>
-          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white">
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#16324F]">
             Health Insurance Premium Calculator
           </h2>
-          <p className="text-slate-400 text-xs md:text-sm mt-3 leading-relaxed font-medium">
+          <p className="text-[#64798D] text-xs md:text-sm mt-3 leading-relaxed font-medium">
             Estimate your annual health insurance premium immediately by toggling policy variables. Clear estimations, zero hidden charges.
           </p>
         </div>
-
+ 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Inputs Panel (Left) */}
-          <div className="lg:col-span-7 bg-[#1E293B]/40 backdrop-blur-md border border-slate-800/80 rounded-[32px] p-8 md:p-10 flex flex-col justify-between shadow-xl">
+          <div className="lg:col-span-7 bg-white border border-[#DCEAF4] rounded-[32px] p-8 md:p-10 flex flex-col justify-between shadow-sm">
             <div className="space-y-8">
               
               {/* Larger Age Slider */}
               <div className="space-y-3.5">
                 <div className="flex justify-between items-center text-sm font-bold tracking-wide">
-                  <span className="text-slate-300 uppercase tracking-wider text-xs">Eldest Member Age</span>
-                  <span className="text-accent text-base font-extrabold bg-accent/10 px-4 py-1.5 rounded-xl border border-accent/20">
+                  <span className="text-[#64798D] uppercase tracking-wider text-xs">Eldest Member Age</span>
+                  <span className="text-primary text-base font-extrabold bg-primary/10 px-4 py-1.5 rounded-xl border border-primary/20">
                     {formValues.age} Years
                   </span>
                 </div>
@@ -137,36 +137,36 @@ const Calculator = () => {
                   type="range"
                   min="18"
                   max="75"
-                  className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary"
+                  className="w-full h-2.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-primary"
                   {...register('age')}
                 />
-                <div className="flex justify-between text-[10px] text-slate-500 font-extrabold uppercase tracking-widest">
+                <div className="flex justify-between text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">
                   <span>18 Years</span>
                   <span>75 Years</span>
                 </div>
               </div>
-
+ 
               {/* Grid selectors with larger sizing */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <SelectField
                   label="Who to Insure"
                   options={familyOptions}
-                  className="bg-slate-900/80 border-slate-800 text-white focus:ring-accent/10 focus:border-accent text-sm"
+                  className="bg-white border-[#DCEAF4] text-[#16324F] focus:ring-primary/10 focus:border-primary text-sm"
                   {...register('familyMembers')}
                 />
                 <SelectField
                   label="Coverage Required"
                   options={coverageOptions}
-                  className="bg-slate-900/80 border-slate-800 text-white focus:ring-accent/10 focus:border-accent text-sm"
+                  className="bg-white border-[#DCEAF4] text-[#16324F] focus:ring-primary/10 focus:border-primary text-sm"
                   {...register('coverage')}
                 />
               </div>
-
+ 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <SelectField
                   label="City of Residence"
                   options={cityOptions}
-                  className="bg-slate-900/80 border-slate-800 text-white focus:ring-accent/10 focus:border-accent text-sm"
+                  className="bg-white border-[#DCEAF4] text-[#16324F] focus:ring-primary/10 focus:border-primary text-sm"
                   {...register('city')}
                 />
                 
@@ -175,14 +175,14 @@ const Calculator = () => {
                   <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 block">
                     Smoking / Tobacco Status
                   </label>
-                  <div className="grid grid-cols-2 gap-2.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-850">
+                  <div className="grid grid-cols-2 gap-2.5 bg-slate-50 p-1.5 rounded-2xl border border-[#DCEAF4]">
                     {['No', 'Yes'].map((status) => (
                       <label
                         key={status}
                         className={`flex items-center justify-center py-3 rounded-xl text-sm font-bold cursor-pointer transition-all duration-200 ${
                           formValues.smokingStatus === status
-                            ? 'bg-primary text-white shadow-md'
-                            : 'bg-transparent text-slate-400 hover:text-slate-300'
+                            ? 'bg-primary text-white shadow-xs'
+                            : 'bg-transparent text-slate-500 hover:text-[#16324F]'
                         }`}
                       >
                         <input
@@ -197,10 +197,10 @@ const Calculator = () => {
                   </div>
                 </div>
               </div>
-
+ 
             </div>
-
-            <div className="border-t border-slate-800/80 pt-6 mt-8 flex items-center gap-3 text-xs text-slate-500 leading-snug">
+ 
+            <div className="border-t border-[#DCEAF4] pt-6 mt-8 flex items-center gap-3 text-xs text-slate-400 leading-snug">
               <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0" />
               <span>Calculated based on standard IRDAI basic rate charts for Tier 1 & Tier 2 parameters.</span>
             </div>

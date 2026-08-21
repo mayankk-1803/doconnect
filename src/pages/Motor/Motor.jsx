@@ -291,7 +291,7 @@ Please share the best suitable quotes and zero-dep features.`;
                 onClick={() => setSearchParams({ type: 'car' })}
                 className={`px-4 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center gap-1.5 ${
                   typeParam === 'car' 
-                    ? 'bg-[#075FC1] text-white shadow-md shadow-[#075FC1]/20' 
+                    ? 'bg-[#2F6FAF] text-white shadow-md shadow-[#2F6FAF]/20' 
                     : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80'
                 }`}
               >
@@ -302,7 +302,7 @@ Please share the best suitable quotes and zero-dep features.`;
                 onClick={() => setSearchParams({ type: 'bike' })}
                 className={`px-4 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center gap-1.5 ${
                   typeParam === 'bike' 
-                    ? 'bg-[#075FC1] text-white shadow-md shadow-[#075FC1]/20' 
+                    ? 'bg-[#2F6FAF] text-white shadow-md shadow-[#2F6FAF]/20' 
                     : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80'
                 }`}
               >
@@ -313,7 +313,7 @@ Please share the best suitable quotes and zero-dep features.`;
                 onClick={() => setSearchParams({ type: 'commercial' })}
                 className={`px-4 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center gap-1.5 ${
                   typeParam === 'commercial' 
-                    ? 'bg-[#075FC1] text-white shadow-md shadow-[#075FC1]/20' 
+                    ? 'bg-[#2F6FAF] text-white shadow-md shadow-[#2F6FAF]/20' 
                     : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80'
                 }`}
               >
@@ -331,7 +331,7 @@ Please share the best suitable quotes and zero-dep features.`;
           </div>
 
           <div className="md:col-span-4 flex justify-end">
-            <div className="w-20 h-20 rounded-2xl bg-[#075FC1]/10 border border-[#075FC1]/20 flex items-center justify-center text-[#075FC1]">
+            <div className="w-20 h-20 rounded-2xl bg-[#2F6FAF]/10 border border-[#2F6FAF]/20 flex items-center justify-center text-[#2F6FAF]">
               {typeParam === 'bike' ? <Bike className="w-10 h-10" /> : typeParam === 'commercial' ? <Truck className="w-10 h-10" /> : <Car className="w-10 h-10" />}
             </div>
           </div>
@@ -350,7 +350,7 @@ Please share the best suitable quotes and zero-dep features.`;
             <div className="space-y-6">
               {currentContent.whyCards.map((card, idx) => (
                 <div key={idx} className="flex gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#075FC1]/10 text-[#075FC1] flex items-center justify-center shrink-0 font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-[#2F6FAF]/10 text-[#2F6FAF] flex items-center justify-center shrink-0 font-bold">
                     0{idx + 1}
                   </div>
                   <div>
@@ -474,7 +474,7 @@ Please share the best suitable quotes and zero-dep features.`;
                 fullWidth
                 size="lg"
                 disabled={isSubmitting}
-                className="mt-6 bg-[#075FC1] hover:bg-[#0B3B7A]"
+                className="mt-6 bg-[#2F6FAF] hover:bg-[#245B91] cursor-pointer"
               >
                 {isSubmitting ? 'Processing...' : `Get Instant ${typeParam.toUpperCase()} Quote`}
               </Button>
@@ -491,7 +491,7 @@ Please share the best suitable quotes and zero-dep features.`;
           {/* Section 1: Detailed Overview */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-5">
-              <span className="text-xs font-bold text-[#075FC1] uppercase tracking-widest bg-[#075FC1]/10 border border-[#075FC1]/20 px-3.5 py-1.5 rounded-full inline-block">
+              <span className="text-xs font-bold text-[#2F6FAF] uppercase tracking-widest bg-[#2F6FAF]/10 border border-[#2F6FAF]/20 px-3.5 py-1.5 rounded-full inline-block">
                 Overview
               </span>
               <h2 className="font-display font-extrabold text-2xl md:text-3xl text-dark leading-tight">
@@ -510,7 +510,7 @@ Please share the best suitable quotes and zero-dep features.`;
               <ul className="space-y-3.5">
                 {currentContent.benefits.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#075FC1] mt-1 shrink-0" />
+                    <Check className="w-4 h-4 text-[#2F6FAF] mt-1 shrink-0" />
                     <div>
                       <span className="font-bold text-dark text-xs md:text-sm">{item.title}:</span>
                       <p className="text-slate-500 text-xs mt-0.5 leading-normal font-medium">{item.desc}</p>
@@ -524,7 +524,7 @@ Please share the best suitable quotes and zero-dep features.`;
           {/* Section 2: Comparison Table */}
           <div className="space-y-6">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-xs font-bold text-[#075FC1] uppercase tracking-widest bg-[#075FC1]/10 border border-[#075FC1]/20 px-3.5 py-1.5 rounded-full inline-block">
+              <span className="text-xs font-bold text-[#2F6FAF] uppercase tracking-widest bg-[#2F6FAF]/10 border border-[#2F6FAF]/20 px-3.5 py-1.5 rounded-full inline-block">
                 Comparison Guide
               </span>
               <h2 className="font-display font-extrabold text-2xl md:text-3xl text-dark">
@@ -541,7 +541,7 @@ Please share the best suitable quotes and zero-dep features.`;
                   <thead>
                     <tr className="bg-slate-50 border-b border-slate-100 text-dark font-display font-bold text-xs md:text-sm">
                       {currentContent.compHeader.map((h, hIdx) => (
-                        <th key={hIdx} className={`p-4 md:p-5 ${hIdx === 3 ? 'bg-[#EAF6FC]/50 text-[#075FC1]' : ''}`}>{h}</th>
+                        <th key={hIdx} className={`p-4 md:p-5 ${hIdx === 3 ? 'bg-[#EAF6FC]/50 text-[#2F6FAF]' : ''}`}>{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -551,7 +551,7 @@ Please share the best suitable quotes and zero-dep features.`;
                         <td className="p-4 md:p-5 font-bold text-slate-700">{row.feature}</td>
                         <td className="p-4 md:p-5 font-medium">{row.c1}</td>
                         <td className="p-4 md:p-5 font-medium">{row.c2}</td>
-                        <td className="p-4 md:p-5 font-bold text-[#075FC1] bg-[#EAF6FC]/20">{row.c3}</td>
+                        <td className="p-4 md:p-5 font-bold text-[#2F6FAF] bg-[#EAF6FC]/20">{row.c3}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -563,7 +563,7 @@ Please share the best suitable quotes and zero-dep features.`;
           {/* Section 3: Popular Add-ons */}
           <div className="space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-xs font-bold text-[#075FC1] uppercase tracking-widest bg-[#075FC1]/10 border border-[#075FC1]/20 px-3.5 py-1.5 rounded-full inline-block">
+              <span className="text-xs font-bold text-[#2F6FAF] uppercase tracking-widest bg-[#2F6FAF]/10 border border-[#2F6FAF]/20 px-3.5 py-1.5 rounded-full inline-block">
                 Add-on Covers
               </span>
               <h2 className="font-display font-extrabold text-2xl md:text-3xl text-dark">
@@ -588,13 +588,13 @@ Please share the best suitable quotes and zero-dep features.`;
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-8 shadow-xs space-y-4">
               <h3 className="font-display font-extrabold text-dark text-lg flex items-center gap-2">
-                <span className="w-2.5 h-2.5 bg-[#075FC1] rounded-full animate-pulse" />
+                <span className="w-2.5 h-2.5 bg-[#2F6FAF] rounded-full animate-pulse" />
                 What is Covered (Inclusions)
               </h3>
               <ul className="space-y-3">
                 {currentContent.inclusions.map((item, idx) => (
                   <li key={idx} className="flex gap-2.5 items-start text-xs md:text-sm">
-                    <Check className="w-4 h-4 text-[#075FC1] mt-1 shrink-0" />
+                    <Check className="w-4 h-4 text-[#2F6FAF] mt-1 shrink-0" />
                     <span className="font-medium text-slate-650 leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -620,7 +620,7 @@ Please share the best suitable quotes and zero-dep features.`;
           {/* Section 5: FAQs */}
           <div className="space-y-6 max-w-4xl mx-auto">
             <div className="text-center space-y-3">
-              <span className="text-xs font-bold text-[#075FC1] uppercase tracking-widest bg-[#075FC1]/10 border border-[#075FC1]/20 px-3.5 py-1.5 rounded-full inline-block">
+              <span className="text-xs font-bold text-[#2F6FAF] uppercase tracking-widest bg-[#2F6FAF]/10 border border-[#2F6FAF]/20 px-3.5 py-1.5 rounded-full inline-block">
                 FAQs
               </span>
               <h2 className="font-display font-extrabold text-2xl md:text-3xl text-dark">

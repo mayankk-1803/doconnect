@@ -52,7 +52,7 @@ const FloatingWhatsApp = () => {
         href={generateWhatsAppLink('general')}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-[#075FC1] text-white flex items-center justify-center shadow-lg hover:bg-[#0B3B7A] transition-colors shadow-[#075FC1]/30 cursor-pointer"
+        className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:bg-[#20BA5A] transition-colors shadow-[#25D366]/30 cursor-pointer"
         aria-label="Chat on WhatsApp"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}

@@ -34,17 +34,17 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-[60px] md:py-[90px] lg:py-[120px] bg-white relative border-b border-slate-100/50">
+    <section ref={sectionRef} className="py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8FBFD] relative border-b border-[#DCEAF4]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/10 border border-secondary/20 px-3.5 py-1.5 rounded-full">
+          <span className="text-xs font-bold text-[#2F6FAF] uppercase tracking-widest bg-[#EAF6FC] border border-[#DCEAF4] px-4 py-1.5 rounded-full inline-block">
             Our Advantage
           </span>
-          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-dark mt-4">
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#16324F] mt-4">
             Why Millions Trust {BRAND_CONFIG.name}
           </h2>
-          <p className="text-slate-500 text-sm md:text-base mt-3 leading-relaxed">
+          <p className="text-[#64798D] text-xs md:text-sm mt-3 leading-relaxed font-medium">
             We simplify complex jargon to help you choose the best plans. Secure your family's health with India's most transparent insurance advisors.
           </p>
         </div>

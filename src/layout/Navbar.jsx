@@ -110,7 +110,7 @@ const Navbar = () => {
           hidden ? '-translate-y-full' : 'translate-y-0'
         } ${
           scrolled
-            ? 'glass-navbar-dark py-3.5'
+            ? 'glass-navbar-light py-3.5'
             : 'bg-transparent py-5'
         }`}
       >
@@ -126,9 +126,7 @@ const Navbar = () => {
             <img 
               src="/Logo.png" 
               alt={BRAND_CONFIG.name}
-              className={`h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
-                scrolled ? 'brightness-0 invert' : ''
-              }`}
+              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -145,15 +143,13 @@ const Navbar = () => {
                     onMouseLeave={() => handleDropdownLeave(link.label)}
                   >
                     <button 
-                      className={`flex items-center gap-1 text-[14px] font-bold transition-colors focus:outline-none cursor-pointer ${
-                        scrolled ? 'text-white/90 hover:text-[#32B7E8]' : 'text-slate-800 hover:text-[#075FC1]'
-                      }`}
+                      className="flex items-center gap-1 text-[14px] font-bold transition-colors focus:outline-none cursor-pointer text-slate-800 hover:text-[#2F6FAF]"
                     >
                       {link.label}
                       <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
                         activeDropdown === link.label 
-                          ? 'rotate-180 text-[#32B7E8]' 
-                          : scrolled ? 'text-white/50' : 'text-slate-400'
+                          ? 'rotate-180 text-[#2F6FAF]' 
+                          : 'text-slate-400'
                       }`} />
                     </button>
 
@@ -167,7 +163,7 @@ const Navbar = () => {
                         <Link
                           key={item.label}
                           to={item.path}
-                          className="block w-full text-left px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-[#075FC1] hover:bg-[#EAF6FC] transition whitespace-nowrap"
+                          className="block w-full text-left px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-[#2F6FAF] hover:bg-[#EAF6FC] transition whitespace-nowrap"
                         >
                           {item.label}
                         </Link>
@@ -184,9 +180,7 @@ const Navbar = () => {
                   to={link.path}
                   className={({ isActive }) =>
                     `text-[14px] font-bold transition-colors relative py-1 cursor-pointer ${
-                      scrolled
-                        ? (isActive ? 'text-[#32B7E8] font-extrabold' : 'text-white/90 hover:text-[#32B7E8]')
-                        : (isActive ? 'text-[#075FC1] font-extrabold' : 'text-slate-800 hover:text-[#075FC1]')
+                      isActive ? 'text-[#2F6FAF] font-extrabold' : 'text-slate-800 hover:text-[#2F6FAF]'
                     }`
                   }
                 >
@@ -194,9 +188,7 @@ const Navbar = () => {
                     <>
                       {link.label}
                       {isActive && (
-                        <span className={`absolute bottom-0 left-0 w-full h-0.5 rounded-full animate-pulse ${
-                          scrolled ? 'bg-[#32B7E8]' : 'bg-[#075FC1]'
-                        }`} />
+                        <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-[#2F6FAF] animate-pulse" />
                       )}
                     </>
                   )}
@@ -209,11 +201,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-4">
             <button
               onClick={handleGetQuoteClick}
-              className={`px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${
-                scrolled 
-                  ? 'bg-[#1296DB] hover:bg-[#32B7E8] text-white shadow-[#1296DB]/20'
-                  : 'bg-[#075FC1] hover:bg-[#0B3B7A] text-white shadow-[#075FC1]/20'
-              }`}
+              className="px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer bg-[#2F6FAF] hover:bg-[#245B91] text-white shadow-[#2F6FAF]/20"
             >
               Get Quote
             </button>
@@ -222,9 +210,7 @@ const Navbar = () => {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 transition focus:outline-none cursor-pointer ${
-              scrolled ? 'text-white hover:text-[#32B7E8]' : 'text-slate-800 hover:text-[#075FC1]'
-            }`}
+            className="lg:hidden p-2 transition focus:outline-none cursor-pointer text-slate-800 hover:text-[#2F6FAF]"
             aria-label="Toggle Navigation"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -269,13 +255,13 @@ const Navbar = () => {
                     <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                       {link.label}
                     </span>
-                    <div className="pl-3 border-l-2 border-[#075FC1]/20 flex flex-col gap-3 mt-1">
+                    <div className="pl-3 border-l-2 border-[#2F6FAF]/20 flex flex-col gap-3 mt-1">
                       {link.dropdownItems.map((item) => (
                         <Link
                           key={item.label}
                           to={item.path}
                           onClick={() => setMobileOpen(false)}
-                          className="text-xs font-semibold text-slate-700 hover:text-[#075FC1] transition"
+                          className="text-xs font-semibold text-slate-700 hover:text-[#2F6FAF] transition"
                         >
                           {item.label}
                         </Link>
@@ -292,7 +278,7 @@ const Navbar = () => {
                   onClick={() => setMobileOpen(false)}
                   className={({ isActive }) =>
                     `text-[14px] font-bold py-1 transition-colors ${
-                      isActive ? 'text-[#075FC1] font-extrabold' : 'text-slate-700 hover:text-[#075FC1]'
+                      isActive ? 'text-[#2F6FAF] font-extrabold' : 'text-slate-700 hover:text-[#2F6FAF]'
                     }`
                   }
                 >
@@ -308,7 +294,7 @@ const Navbar = () => {
                 setMobileOpen(false);
                 handleGetQuoteClick(e);
               }}
-              className="w-full py-3 rounded-xl font-bold bg-[#075FC1] hover:bg-[#0B3B7A] text-white text-xs text-center shadow-md shadow-[#075FC1]/20 transition cursor-pointer"
+              className="w-full py-3 rounded-xl font-bold bg-[#2F6FAF] hover:bg-[#204E7C] text-white text-xs text-center shadow-md shadow-[#2F6FAF]/20 transition cursor-pointer"
             >
               Get Quote
             </button>

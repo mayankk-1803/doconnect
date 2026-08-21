@@ -16,7 +16,7 @@ const MainLayout = () => {
 
   return (
     <ErrorBoundary>
-      <div className="flex flex-col min-h-screen bg-[#F7FAFC]">
+      <div className="flex flex-col min-h-screen bg-[#F8FBFD]">
         {/* Navigation Reset */}
         <ScrollToTop />
 
@@ -60,10 +60,10 @@ const MainLayout = () => {
 // Reusable elegant page loader during lazy routing
 const PageLoader = () => {
   return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center gap-5 bg-[#F7FAFC] transition-opacity duration-300">
+    <div className="min-h-[60vh] flex flex-col items-center justify-center gap-5 bg-[#F8FBFD] transition-opacity duration-300">
       <div className="relative flex items-center justify-center">
-        <div className="w-14 h-14 border-4 border-slate-200/80 border-t-[#075FC1] rounded-full animate-spin" />
-        <span className="absolute font-display font-black text-xs text-[#075FC1] tracking-wider">DC</span>
+        <div className="w-14 h-14 border-4 border-slate-200/80 border-t-[#2F6FAF] rounded-full animate-spin" />
+        <span className="absolute font-display font-black text-xs text-[#2F6FAF] tracking-wider">DC</span>
       </div>
       <p className="text-slate-500 font-display font-extrabold text-[10px] uppercase tracking-widest animate-pulse">
         Loading...

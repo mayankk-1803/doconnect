@@ -96,11 +96,11 @@ const WhatsAppPopup = () => {
         </button>
 
         <div className="flex gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#EAF6FC] border border-[#075FC1]/20 flex items-center justify-center text-[#075FC1] shrink-0">
+          <div className="w-12 h-12 rounded-2xl bg-[#EAF6FC] border border-[#2F6FAF]/20 flex items-center justify-center text-[#2F6FAF] shrink-0">
             <MessageCircle className="w-6 h-6" />
           </div>
           <div>
-            <span className="text-xs font-bold text-[#075FC1] tracking-wide uppercase">
+            <span className="text-xs font-bold text-[#2F6FAF] tracking-wide uppercase">
               Advisor Active
             </span>
             <h4 className="font-display font-bold text-dark mt-1 text-[15px] leading-snug">
@@ -118,14 +118,14 @@ const WhatsAppPopup = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClose}
-            className="flex-1 py-2.5 rounded-2xl bg-[#075FC1] hover:bg-[#0B3B7A] text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-[#075FC1]/20 transition-all cursor-pointer"
+            className="flex-1 py-2.5 rounded-2xl bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-[#25D366]/20 transition-all cursor-pointer"
           >
             Chat on WhatsApp
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
           <button
             onClick={handleClose}
-            className="px-4 py-2.5 rounded-2xl border border-slate-100 hover:bg-slate-50 text-slate-600 font-semibold text-xs transition cursor-pointer"
+            className="px-4 py-2.5 rounded-2xl border border-[#DCEAF4] hover:bg-[#EAF6FC]/50 text-slate-600 font-semibold text-xs transition cursor-pointer"
           >
             Close
           </button>

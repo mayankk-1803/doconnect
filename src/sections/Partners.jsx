@@ -13,7 +13,7 @@ const BajajLogo = () => (
     <path d="M15 10C15 10 25 10 25 15C25 20 18 20 18 20C18 20 28 20 28 27C28 34 15 34 15 34V10Z" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
     <line x1="18" y1="20" x2="25" y2="20" stroke="white" strokeWidth="3"/>
     <text x="36" y="25" fill="white" fontFamily="sans-serif" fontWeight="900" fontSize="13">BAJAJ</text>
-    <text x="36" y="34" fill="#1296DB" fontFamily="sans-serif" fontWeight="700" fontSize="8">ALLIANZ</text>
+    <text x="36" y="34" fill="#67B7E8" fontFamily="sans-serif" fontWeight="700" fontSize="8">ALLIANZ</text>
   </svg>
 );
 
@@ -44,7 +44,7 @@ const CholaLogo = () => (
     <text x="38" y="22" fill="#0A3C76" fontFamily="sans-serif" fontWeight="900" fontSize="13">Chola</text>
     <path d="M78 18L81 22L84 18" stroke="#D1232A" strokeWidth="2"/>
     <text x="86" y="22" fill="#D1232A" fontFamily="sans-serif" fontWeight="900" fontSize="13">MS</text>
-    <text x="38" y="32" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="7" letterSpacing="1">GENERAL INSURANCE</text>
+    <text x="38" y="32" fill="#64798D" fontFamily="sans-serif" fontWeight="700" fontSize="7" letterSpacing="1">GENERAL INSURANCE</text>
   </svg>
 );
 
@@ -75,7 +75,7 @@ const DigitLogo = () => (
     <circle cx="20" cy="20" r="12" fill="#FF5722"/>
     <text x="16" y="26" fill="white" fontFamily="sans-serif" fontWeight="900" fontSize="16">d</text>
     <text x="38" y="22" fill="#1E293B" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="-1">digit</text>
-    <text x="38" y="31" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="7">INSURANCE</text>
+    <text x="38" y="31" fill="#64798D" fontFamily="sans-serif" fontWeight="700" fontSize="7">INSURANCE</text>
   </svg>
 );
 
@@ -92,7 +92,7 @@ const NivaBupaLogo = () => (
     <rect width="120" height="40" rx="4" fill="white"/>
     <circle cx="20" cy="20" r="10" fill="#005FA9"/>
     <text x="36" y="22" fill="#005FA9" fontFamily="sans-serif" fontWeight="900" fontSize="14">niva</text>
-    <text x="36" y="32" fill="#1296DB" fontFamily="sans-serif" fontWeight="900" fontSize="12">bupa</text>
+    <text x="36" y="32" fill="#67B7E8" fontFamily="sans-serif" fontWeight="900" fontSize="12">bupa</text>
   </svg>
 );
 
@@ -185,7 +185,7 @@ const renderCompanyLogo = (company) => {
 
 const CompanyCard = ({ company, isSelected, onCompareClick }) => {
   return (
-    <div className="bg-white border border-slate-100 hover:border-[#075FC1]/30 rounded-[28px] p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-[280px] relative overflow-hidden group">
+    <div className="bg-white border border-[#DCEAF4] hover:border-[#2F6FAF]/50 rounded-[28px] p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-[280px] relative overflow-hidden group">
       
       {/* Logo & Rating Header */}
       <div className="flex items-center justify-between mb-4">
@@ -200,7 +200,7 @@ const CompanyCard = ({ company, isSelected, onCompareClick }) => {
       </div>
 
       {/* Name */}
-      <h3 className="font-display font-extrabold text-[#062B5C] text-base group-hover:text-[#075FC1] transition duration-300 leading-tight mb-3">
+      <h3 className="font-display font-extrabold text-[#16324F] text-base group-hover:text-[#2F6FAF] transition duration-300 leading-tight mb-3">
         {company.name}
       </h3>
 
@@ -208,11 +208,11 @@ const CompanyCard = ({ company, isSelected, onCompareClick }) => {
       <div className="space-y-2 mb-6 text-xs text-slate-500 font-medium">
         <div className="flex justify-between items-center">
           <span>Claim Settled:</span>
-          <span className="font-extrabold text-[#075FC1]">{company.claimRatio}</span>
+          <span className="font-extrabold text-[#2F6FAF]">{company.claimRatio}</span>
         </div>
         <div className="flex justify-between items-center">
           <span>Cashless Hospitals:</span>
-          <span className="font-bold text-[#062B5C]">{company.hospitals}</span>
+          <span className="font-bold text-[#16324F]">{company.hospitals}</span>
         </div>
       </div>
 
@@ -221,8 +221,8 @@ const CompanyCard = ({ company, isSelected, onCompareClick }) => {
         onClick={() => onCompareClick(company)}
         className={`w-full mt-auto py-3 px-4 rounded-xl font-extrabold text-xs transition flex items-center justify-center gap-2 cursor-pointer border ${
           isSelected
-            ? 'bg-[#075FC1] border-[#075FC1] text-white shadow-md'
-            : 'bg-slate-50 border-slate-200/80 hover:bg-[#075FC1]/5 hover:border-[#075FC1] text-slate-700 hover:text-[#075FC1]'
+            ? 'bg-[#2F6FAF] border-[#2F6FAF] text-white shadow-md'
+            : 'bg-slate-50 border-slate-200/80 hover:bg-[#2F6FAF]/5 hover:border-[#2F6FAF] text-slate-700 hover:text-[#2F6FAF]'
         }`}
       >
         {isSelected ? (
@@ -340,15 +340,15 @@ const Partners = () => {
   };
 
   return (
-    <section id="partners-section" className="py-[70px] md:py-[100px] bg-[#EAF6FC] border-b border-slate-200/80 relative overflow-hidden select-none">
+    <section id="partners-section" className="py-[70px] md:py-[100px] bg-white border-b border-[#DCEAF4] relative overflow-hidden select-none">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold text-[#075FC1] uppercase tracking-widest bg-[#075FC1]/10 border border-[#075FC1]/20 px-3.5 py-1.5 rounded-full inline-block">
+          <span className="text-xs font-bold text-[#2F6FAF] uppercase tracking-widest bg-[#EAF6FC] border border-[#DCEAF4] px-3.5 py-1.5 rounded-full inline-block">
             Our Insurance Network
           </span>
-          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#062B5C] mt-4">
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#16324F] mt-4">
             Our Insurance Partners
           </h2>
           <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium">
@@ -367,8 +367,8 @@ const Partners = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-5 py-2.5 rounded-[14px] text-xs font-extrabold transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'bg-[#075FC1] text-white shadow-md shadow-[#075FC1]/20 scale-[1.02]'
-                      : 'text-slate-600 hover:text-[#075FC1] hover:bg-[#EAF6FC]'
+                      ? 'bg-[#2F6FAF] text-white shadow-md shadow-[#2F6FAF]/20 scale-[1.02]'
+                      : 'text-slate-600 hover:text-[#2F6FAF] hover:bg-[#EAF6FC]'
                   }`}
                 >
                   {tab}
@@ -443,7 +443,7 @@ const Partners = () => {
             {currentIndex > 0 && (
               <button
                 onClick={handlePrev}
-                className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
+                className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-[#DCEAF4] shadow-lg flex items-center justify-center text-slate-700 hover:text-[#2F6FAF] hover:border-[#2F6FAF] transition cursor-pointer z-20"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -453,7 +453,7 @@ const Partners = () => {
             {currentIndex < maxIndex && (
               <button
                 onClick={handleNext}
-                className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
+                className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-[#DCEAF4] shadow-lg flex items-center justify-center text-slate-700 hover:text-[#2F6FAF] hover:border-[#2F6FAF] transition cursor-pointer z-20"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>

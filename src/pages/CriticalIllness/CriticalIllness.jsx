@@ -48,23 +48,23 @@ const CriticalIllness = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Lump Sum vs Indemnity Comparison */}
-        <div className="bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 md:p-8 mb-12 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#EAF6FC] via-[#F8FBFD] to-[#EAF6FC] border border-[#DCEAF4] text-[#16324F] rounded-3xl p-6 md:p-8 mb-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none" />
           
-          <h3 className="font-display font-bold text-lg md:text-xl text-white mb-4 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-accent" />
+          <h3 className="font-display font-bold text-lg md:text-xl text-[#16324F] mb-4 flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-primary" />
             Critical Illness vs. Standard Health Insurance
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-[#64798D]">
             <div className="space-y-2">
-              <span className="font-bold text-white block">Standard Health (Indemnity)</span>
+              <span className="font-bold text-[#16324F] block">Standard Health (Indemnity)</span>
               <p className="text-xs leading-relaxed">
                 Pays for actual hospital expenses incurred (room charge, medicine bills, doctor visits). Payments are settled directly with the network hospital cashless, or reimbursed after discharge.
               </p>
             </div>
-            <div className="space-y-2 border-t md:border-t-0 md:border-l border-slate-700/60 pt-4 md:pt-0 md:pl-6">
-              <span className="font-bold text-accent block">Critical Illness (Benefit Plan)</span>
+            <div className="space-y-2 border-t md:border-t-0 md:border-l border-[#DCEAF4] pt-4 md:pt-0 md:pl-6">
+              <span className="font-bold text-primary block">Critical Illness (Benefit Plan)</span>
               <p className="text-xs leading-relaxed">
                 Pays the entire Sum Insured (e.g., ₹20 Lakhs) as a lump sum immediately upon diagnostic test proof of covered diseases like Cancer, Stroke, or Bypass surgery. You can use the money for out-of-country treatment or mortgage payments.
               </p>
