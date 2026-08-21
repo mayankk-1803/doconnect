@@ -8,22 +8,14 @@ const PARTNERS_LIST = [
   { name: 'Aditya Birla Group', src: '/adityabirlagroup.jpg' },
   { name: 'ICICI Lombard', src: '/icicilombard.jpg' },
   { name: 'Bajaj Allianz', src: '/bajaj.jpg' },
-  // { name: 'Cigna', src: '/cigna.jpg' },
   { name: 'HDFC ERGO', src: '/hdfcergo.jpg' },
-  // { name: 'SBI General Insurance', src: '/sbideneral.jpg' },
   { name: 'Star Health Insurance', src: '/star.jpg' },
   { name: 'Tata AIG', src: '/tataaig.jpg' },
   { name: 'Niva Bupa ', src: '/nivabupa.jpg' },
   {name : 'Manipal Cigna',src:'/manipalcigna.png'},
   {name :'Reliance ' , src:'/reliance.jpg'},
-  {name :'Care Health',src:'/care.jpg'},
-  // { name: 'LIC', src: '/lic.jpg' },
-  // { name: 'Tata AIA Life', src: '/tataaia.jpg' },
-  // { name: 'Max Life Insurance', src: '/maxlife.jpg' },
-  // { name: 'Digit Insurance', src: '/digit.jpg' },
-  // {name:'HDFC LIFE',src :'hdfclife.jpg'},
-  // {name:'ICICI Prudential',src:'icicipre.jpg'},
-  // {name:'United India Insurance',src:'/united.jpg'}
+  {name :'Care Health',src:'/care.jpg'}
+ 
 ];
 
 const Partners = () => {
