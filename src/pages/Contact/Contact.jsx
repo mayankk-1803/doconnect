@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/common/Breadcrumb';
 import InputField from '../../components/forms/InputField';
 import TextareaField from '../../components/forms/TextareaField';
 import Button from '../../components/ui/Button';
-import { redirectToWhatsApp } from '../../utils/whatsapp';
+import { sendEmailEnquiry } from '../../utils/email';
 import { Mail, Phone, MapPin, ShieldCheck, User } from 'lucide-react';
 import { BRAND_CONFIG } from '../../constants';
 import { toast } from 'react-toastify';
@@ -27,27 +27,33 @@ const Contact = () => {
 
   const breadcrumbItems = [{ label: 'Contact Us', path: '/contact' }];
 
-  const onSubmit = (data) => {
-    toast.loading('Redirecting to WhatsApp...', { id: 'contact-toast' });
+  const onSubmit = async (data) => {
+    toast.loading('Sending your enquiry by mail...', { id: 'contact-toast' });
     
-    // Slight delay for toast visibility
-    setTimeout(() => {
+    try {
+      await sendEmailEnquiry(data);
       toast.update('contact-toast', {
-        render: 'Thank you for your enquiry!',
+        render: 'Thank you! Your enquiry has been sent by mail.',
         type: 'success',
         isLoading: false,
-        autoClose: 3000
+        autoClose: 4000
       });
-      redirectToWhatsApp('contact', data);
       reset();
-    }, 1200);
+    } catch (error) {
+      toast.update('contact-toast', {
+        render: error.message || 'Could not send enquiry by mail. Please try again.',
+        type: 'error',
+        isLoading: false,
+        autoClose: 4000
+      });
+    }
   };
 
   return (
     <>
       <SEO
         title="Contact Our Insurance Advisors"
-        description="Get in touch with SecureHealth advisors. Submit your questions or consult our relations desk directly on WhatsApp."
+        description="Get in touch with SecureHealth advisors. Submit your questions or consult our relations desk directly via email."
         keywords="contact advisor, insurance support phone, securehealth office"
         path="/contact"
       />
@@ -80,7 +86,7 @@ const Contact = () => {
                   Get Instant Resolution
                 </h3>
                 <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
-                  Call our toll-free support line or trigger WhatsApp chats to connect with our claims and relations specialists.
+                  Call our toll-free support line or submit an enquiry via mail to connect with our claims and relations specialists.
                 </p>
               </div>
 
@@ -153,7 +159,7 @@ const Contact = () => {
               Submit Inquiry
             </h3>
             <p className="text-slate-500 text-xs mb-6">
-              Fill details below. Clicking submit opens WhatsApp with your pre-filled inquiry.
+              Fill details below to send your enquiry by mail.
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -210,7 +216,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="mt-6"
               >
-                {isSubmitting ? 'Redirecting...' : 'Submit Enquiry via WhatsApp'}
+                {isSubmitting ? 'Sending Mail...' : 'Submit Enquiry by Mail'}
               </Button>
             </form>
           </div>
