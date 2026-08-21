@@ -40,8 +40,8 @@ const Categories = () => {
       gsap.to(card, {
         y: -10,
         scale: 1.02,
-        boxShadow: '0 25px 35px -5px rgba(39, 111, 39, 0.12), 0 12px 12px -5px rgba(39, 111, 39, 0.04)',
-        borderColor: 'rgba(39, 111, 39, 0.3)',
+        boxShadow: '0 25px 35px -5px rgba(7, 95, 193, 0.12), 0 12px 12px -5px rgba(7, 95, 193, 0.04)',
+        borderColor: 'rgba(7, 95, 193, 0.3)',
         duration: 0.35,
         ease: 'power2.out'
       });
@@ -55,7 +55,7 @@ const Categories = () => {
         y: 0,
         scale: 1,
         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
-        borderColor: 'rgba(241, 245, 249, 1)',
+        borderColor: 'rgba(226, 232, 240, 1)',
         duration: 0.3,
         ease: 'power2.inOut'
       });
@@ -72,10 +72,10 @@ const Categories = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-[#276F27] uppercase tracking-widest bg-[#F3F8F2] border border-[#276F27]/20 px-4 py-1.5 rounded-full inline-block mb-3">
+          <span className="text-xs font-bold text-[#075FC1] uppercase tracking-widest bg-[#EAF6FC] border border-[#075FC1]/20 px-4 py-1.5 rounded-full inline-block mb-3">
             Coverage Options
           </span>
-          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#1E293B]">
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#062B5C]">
             Explore Insurance Categories
           </h2>
           <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium">
@@ -84,31 +84,33 @@ const Categories = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
           {CATEGORIES.map((cat, idx) => {
             const IconComponent = Icons[cat.icon] || Icons.Shield;
-            
+            const ctaLabel = cat.cta || cat.ctaText || 'Get Quote';
+            const cardDesc = cat.description || cat.desc;
+
             return (
               <div
                 key={cat.id}
                 ref={(el) => (cardRefs.current[idx] = el)}
                 onMouseEnter={() => handleCardMouseEnter(idx)}
                 onMouseLeave={() => handleCardMouseLeave(idx)}
-                className="bg-white border border-slate-100 rounded-3xl p-6 md:p-8 shadow-xs flex flex-col items-center text-center transition-all duration-300 select-none h-full relative group overflow-hidden"
+                className="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-7 shadow-xs flex flex-col items-center text-center transition-all duration-300 select-none h-full relative group overflow-hidden"
               >
                 {/* Badge Tag */}
                 {cat.badge && (
-                  <span className="absolute top-4 right-4 bg-[#8ECA3C]/20 text-[#276F27] border border-[#8ECA3C]/40 text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded-full select-none">
+                  <span className="absolute top-4 right-4 bg-[#1296DB]/15 text-[#075FC1] border border-[#1296DB]/30 text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded-full select-none">
                     {cat.badge}
                   </span>
                 )}
 
-                {/* Green accent line on hover */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#276F27] to-[#8ECA3C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Blue accent line on hover */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#075FC1] to-[#1296DB] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Image & Icon container */}
-                <div className="relative mb-6 shrink-0">
-                  <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-xs border border-slate-100 bg-[#F8FAF8] group-hover:scale-105 transition-transform duration-300">
+                <div className="relative mb-5 shrink-0">
+                  <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-xs border border-slate-100 bg-[#F7FAFC] group-hover:scale-105 transition-transform duration-300">
                     <img 
                       src={cat.image} 
                       alt={cat.title} 
@@ -116,18 +118,37 @@ const Categories = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl bg-gradient-to-tr from-[#276F27] to-[#8ECA3C] flex items-center justify-center text-white shadow-md">
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl bg-gradient-to-tr from-[#075FC1] to-[#1296DB] flex items-center justify-center text-white shadow-md">
                     <IconComponent className="w-4 h-4" />
                   </div>
                 </div>
 
-                <h3 className="font-display font-extrabold text-[#1E293B] text-base mb-2 leading-tight">
+                <h3 className="font-display font-extrabold text-[#062B5C] text-base md:text-lg mb-2 leading-tight">
                   {cat.title}
                 </h3>
 
-                <p className="text-slate-500 text-xs leading-relaxed mb-6 font-medium flex-grow">
-                  {cat.desc}
+                <p className="text-slate-600 text-xs leading-relaxed mb-4 font-medium">
+                  {cardDesc}
                 </p>
+
+                {/* Key Coverage Tags */}
+                {cat.coverage && cat.coverage.length > 0 && (
+                  <div className="flex flex-wrap items-center justify-center gap-1.5 mb-6 w-full">
+                    {cat.coverage.slice(0, 4).map((cov, cIdx) => (
+                      <span
+                        key={cIdx}
+                        className="text-[10px] font-semibold text-[#075FC1] bg-[#EAF6FC] border border-[#075FC1]/15 px-2 py-0.5 rounded-md"
+                      >
+                        {cov}
+                      </span>
+                    ))}
+                    {cat.coverage.length > 4 && (
+                      <span className="text-[10px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded-md">
+                        +{cat.coverage.length - 4} more
+                      </span>
+                    )}
+                  </div>
+                )}
 
                 {/* Button Link */}
                 {cat.path.startsWith('http') ? (
@@ -135,16 +156,16 @@ const Categories = () => {
                     href={cat.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 rounded-xl bg-[#276F27] hover:bg-[#1B4D1B] text-white text-xs font-bold transition-all duration-300 w-full mt-auto block text-center shadow-md shadow-[#276F27]/10 hover:shadow-lg active:scale-[0.98]"
+                    className="px-5 py-3 rounded-xl bg-[#075FC1] hover:bg-[#0B3B7A] text-white text-xs font-bold transition-all duration-300 w-full mt-auto block text-center shadow-md shadow-[#075FC1]/15 hover:shadow-lg active:scale-[0.98]"
                   >
-                    {cat.ctaText}
+                    {ctaLabel}
                   </a>
                 ) : (
                   <Link
                     to={cat.path}
-                    className="px-5 py-3 rounded-xl bg-[#276F27] hover:bg-[#1B4D1B] text-white text-xs font-bold transition-all duration-300 w-full mt-auto block text-center shadow-md shadow-[#276F27]/10 hover:shadow-lg active:scale-[0.98] cursor-pointer"
+                    className="px-5 py-3 rounded-xl bg-[#075FC1] hover:bg-[#0B3B7A] text-white text-xs font-bold transition-all duration-300 w-full mt-auto block text-center shadow-md shadow-[#075FC1]/15 hover:shadow-lg active:scale-[0.98] cursor-pointer"
                   >
-                    {cat.ctaText}
+                    {ctaLabel}
                   </Link>
                 )}
               </div>

@@ -57,7 +57,7 @@ const Timeline = () => {
     {
       num: '1',
       title: 'Choose Plan',
-      desc: 'Browse and select from top-rated health, motor, life, travel, or pet plans tailored for you.',
+      desc: 'Browse and select from top-rated health, motor, life, or travel plans tailored for you.',
       icon: <Search className="w-5 h-5" />,
       color: 'bg-primary text-white border-primary/20'
     },

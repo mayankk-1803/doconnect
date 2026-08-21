@@ -84,7 +84,7 @@ const WhatsAppPopup = () => {
         className="bg-white rounded-3xl shadow-2xl border border-slate-100 p-5 relative overflow-hidden"
       >
         {/* Accent bubble background decorations */}
-        <div className="absolute top-[-20px] right-[-20px] w-24 h-24 bg-emerald-50 rounded-full -z-10" />
+        <div className="absolute top-[-20px] right-[-20px] w-24 h-24 bg-[#EAF6FC] rounded-full -z-10" />
 
         {/* Close Button */}
         <button
@@ -96,11 +96,11 @@ const WhatsAppPopup = () => {
         </button>
 
         <div className="flex gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
+          <div className="w-12 h-12 rounded-2xl bg-[#EAF6FC] border border-[#075FC1]/20 flex items-center justify-center text-[#075FC1] shrink-0">
             <MessageCircle className="w-6 h-6" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-emerald-600 tracking-wide uppercase">
+            <span className="text-xs font-bold text-[#075FC1] tracking-wide uppercase">
               Advisor Active
             </span>
             <h4 className="font-display font-bold text-dark mt-1 text-[15px] leading-snug">
@@ -118,7 +118,7 @@ const WhatsAppPopup = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClose}
-            className="flex-1 py-2.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20 transition-all cursor-pointer"
+            className="flex-1 py-2.5 rounded-2xl bg-[#075FC1] hover:bg-[#0B3B7A] text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-[#075FC1]/20 transition-all cursor-pointer"
           >
             Chat on WhatsApp
             <ArrowRight className="w-3.5 h-3.5" />
