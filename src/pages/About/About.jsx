@@ -221,19 +221,10 @@ const About = () => {
         </div>
 
         {/* Shubham Chauhan Director Card */}
-        <div className="leadership-card bg-white border border-slate-200/80 rounded-[36px] p-8 md:p-12 shadow-sm hover:shadow-md transition-all duration-300 max-w-4xl mx-auto text-left grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div className="leadership-card bg-white border border-slate-200/80 rounded-[36px] p-8 md:p-12 shadow-sm hover:shadow-md transition-all duration-300 max-w-3xl mx-auto text-left space-y-4">
           
-          {/* Professional Photo / Avatar Placeholder */}
-          <div className="md:col-span-4 flex justify-center">
-            <div className="w-44 h-44 rounded-3xl bg-gradient-to-br from-primary to-accent border-4 border-[#EAF6FC] flex flex-col items-center justify-center text-white font-display font-black shadow-lg select-none relative group overflow-hidden">
-              <span className="text-5xl">SC</span>
-              <span className="text-[10px] uppercase font-bold tracking-widest mt-1 opacity-90">Director</span>
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-
           {/* Biography & Contact Links */}
-          <div className="md:col-span-8 space-y-4">
+          <div className="space-y-4">
             <div>
               <h3 className="font-display font-extrabold text-2xl md:text-3xl text-dark">Shubham Chauhan</h3>
               <span className="text-xs font-extrabold text-primary bg-primary/10 border border-primary/20 px-3.5 py-1 rounded-full inline-block mt-1.5 uppercase tracking-wider">

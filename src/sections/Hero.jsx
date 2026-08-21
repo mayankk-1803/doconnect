@@ -208,39 +208,70 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         
-        {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          
-          {/* Trust Badge Pill */}
-          <div ref={badgeRef} className="inline-flex items-center gap-2 bg-[#EAF6FC] border border-[#075FC1]/20 px-4 py-1.5 rounded-full mb-5 shadow-xs">
-            <ShieldCheck className="w-4 h-4 text-[#075FC1]" />
-            <span className="text-xs font-extrabold text-[#075FC1] uppercase tracking-wider">
-              IRDAI Certified Digital Insurance Marketplace
-            </span>
+        {/* Section Header as a Premium Banner Card */}
+        <div className="bg-gradient-to-r from-blue-50/50 via-white to-blue-50/30 border border-slate-200/80 rounded-[36px] p-8 md:p-10 shadow-lg max-w-5xl mx-auto mb-14 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden text-left">
+          {/* Decorative background accents */}
+          <div className="absolute left-0 bottom-0 w-32 h-32 bg-[#075FC1]/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute right-0 top-0 w-40 h-40 bg-[#1296DB]/10 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Left Column: Doctor / Advisor Image */}
+          <div className="w-40 h-40 md:w-48 md:h-48 shrink-0 relative flex items-center justify-center bg-gradient-to-br from-blue-100/40 to-cyan-100/30 rounded-2xl overflow-hidden border border-blue-100/50 shadow-inner">
+            <img 
+              src="/doctor.jpg" 
+              alt="Insurance Specialist" 
+              className="w-full h-full object-cover object-top scale-105"
+            />
           </div>
 
-          {/* Main Headline */}
-          <h1 
-            ref={headingRef}
-            className="font-display font-extrabold text-3xl sm:text-5xl lg:text-[56px] text-[#062B5C] leading-[1.15] tracking-tight"
-          >
-            India's Most Trusted <br className="hidden sm:inline" />
-            <span className="text-gradient">Digital Insurance Marketplace</span>
-          </h1>
+          {/* Middle Column: Headline, Subtitle, and Trust Checkmarks */}
+          <div className="flex-grow space-y-4">
+            {/* Trust Badge Pill */}
+            <div ref={badgeRef} className="inline-flex items-center gap-1.5 bg-[#EAF6FC] border border-[#075FC1]/20 px-3 py-1 rounded-full shadow-2xs">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#075FC1]" />
+              <span className="text-[10px] font-extrabold text-[#075FC1] uppercase tracking-wider">
+                IRDAI Certified Digital Insurance Marketplace
+              </span>
+            </div>
 
-          {/* Subtitle Description */}
-          <p 
-            ref={subtitleRef}
-            className="text-slate-600 text-sm sm:text-base md:text-lg mt-4 leading-relaxed max-w-2xl mx-auto font-medium"
-          >
-            Compare quotes from 35+ leading insurers in 60 seconds. Get instant policy delivery, zero spam calls, and 24/7 dedicated claim assistance.
-          </p>
+            {/* Title */}
+            <h1 ref={headingRef} className="font-display font-extrabold text-2xl md:text-3xl lg:text-4xl text-[#062B5C] leading-tight">
+              India's Most Trusted <br className="hidden sm:inline" />
+              <span className="text-gradient">Digital Insurance Marketplace</span>
+            </h1>
 
-          {/* Primary Action Buttons */}
-          <div ref={ctaGroupRef} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* Subtitle */}
+            <p ref={subtitleRef} className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed max-w-xl">
+              Compare quotes from 35+ leading insurers in 60 seconds. Get instant policy delivery, zero spam calls, and 24/7 dedicated claim assistance.
+            </p>
+
+            {/* Checkmarks / Trust Chips */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1.5 text-xs text-slate-600 font-bold">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>IRDAI Approved</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>35+ Partners</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>10,000+ Cashless Hospitals</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: CTA Buttons */}
+          <div ref={ctaGroupRef} className="shrink-0 flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto justify-center">
             <button
               onClick={handleScrollToPartners}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl font-extrabold bg-[#075FC1] hover:bg-[#0B3B7A] text-white text-sm shadow-lg shadow-[#075FC1]/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+              className="w-full md:w-44 px-6 py-3.5 rounded-xl font-extrabold bg-[#075FC1] hover:bg-[#0B3B7A] text-white text-xs shadow-md shadow-[#075FC1]/20 transition cursor-pointer flex items-center justify-center gap-2"
             >
               <span>Compare Plans</span>
               <ArrowRight className="w-4 h-4" />
@@ -250,31 +281,11 @@ const Hero = () => {
               href={generateWhatsAppLink('advisor')}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl font-extrabold bg-white hover:bg-[#EAF6FC] text-slate-800 border border-slate-200 text-sm shadow-xs transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+              className="w-full md:w-44 px-6 py-3.5 rounded-xl font-extrabold bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-xs shadow-2xs transition cursor-pointer flex items-center justify-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-[#075FC1]" />
               <span>Talk To Advisor</span>
             </a>
-          </div>
-
-          {/* Quick Trust Chips */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-600">
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#075FC1]" />
-              <span>IRDAI Approved</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#075FC1]" />
-              <span>35+ Insurance Partners</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#075FC1]" />
-              <span>10,000+ Cashless Hospitals</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#075FC1]" />
-              <span>Fast Claims Assistance</span>
-            </div>
           </div>
         </div>
 

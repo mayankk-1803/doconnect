@@ -183,19 +183,78 @@ const renderCompanyLogo = (company) => {
   );
 };
 
+const CompanyCard = ({ company, isSelected, onCompareClick }) => {
+  return (
+    <div className="bg-white border border-slate-100 hover:border-[#075FC1]/30 rounded-[28px] p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-[280px] relative overflow-hidden group">
+      
+      {/* Logo & Rating Header */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="w-[100px] h-[34px] rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-2xs shrink-0 group-hover:scale-105 transition-transform duration-300 relative">
+          {renderCompanyLogo(company)}
+        </div>
+        
+        <div className="flex items-center gap-1 bg-amber-50 border border-amber-100 rounded-lg px-2.5 py-1 text-amber-700 font-extrabold text-[11px]">
+          <Star className="w-3.5 h-3.5 fill-amber-500 stroke-none" />
+          <span>{company.rating}</span>
+        </div>
+      </div>
+
+      {/* Name */}
+      <h3 className="font-display font-extrabold text-[#062B5C] text-base group-hover:text-[#075FC1] transition duration-300 leading-tight mb-3">
+        {company.name}
+      </h3>
+
+      {/* Details specs */}
+      <div className="space-y-2 mb-6 text-xs text-slate-500 font-medium">
+        <div className="flex justify-between items-center">
+          <span>Claim Settled:</span>
+          <span className="font-extrabold text-[#075FC1]">{company.claimRatio}</span>
+        </div>
+        <div className="flex justify-between items-center">
+          <span>Cashless Hospitals:</span>
+          <span className="font-bold text-[#062B5C]">{company.hospitals}</span>
+        </div>
+      </div>
+
+      {/* Compare Desk Action */}
+      <button
+        onClick={() => onCompareClick(company)}
+        className={`w-full mt-auto py-3 px-4 rounded-xl font-extrabold text-xs transition flex items-center justify-center gap-2 cursor-pointer border ${
+          isSelected
+            ? 'bg-[#075FC1] border-[#075FC1] text-white shadow-md'
+            : 'bg-slate-50 border-slate-200/80 hover:bg-[#075FC1]/5 hover:border-[#075FC1] text-slate-700 hover:text-[#075FC1]'
+        }`}
+      >
+        {isSelected ? (
+          <>
+            <Check className="w-4 h-4 stroke-[3]" />
+            <span>Comparing Plan</span>
+          </>
+        ) : (
+          <>
+            <Plus className="w-4 h-4" />
+            <span>Compare Desk</span>
+          </>
+        )}
+      </button>
+
+    </div>
+  );
+};
+
 const Partners = () => {
-  const [activeTab, setActiveTab] = useState('General');
+  const [activeTab, setActiveTab] = useState('All');
   const [currentIndex, setCurrentIndex] = useState(0);
   const { comparedPlans, addToCompare, removeFromCompare } = useCompare();
   const carouselTrackRef = useRef(null);
   const tabsContainerRef = useRef(null);
 
-  const TABS = ['General', 'Car', 'Bike', 'Health', 'Term', 'Life', 'Investment', 'Business', 'Travel'];
+  const TABS = ['All', 'General', 'Car', 'Bike', 'Health', 'Term', 'Life', 'Investment', 'Business', 'Travel'];
 
   // Filter companies based on active tab
-  const filteredCompanies = partnerCompanies.filter((company) =>
-    company.categories.includes(activeTab)
-  );
+  const filteredCompanies = activeTab === 'All'
+    ? partnerCompanies
+    : partnerCompanies.filter((company) => company.categories.includes(activeTab));
 
   // Responsive visible cards count
   const [visibleCards, setVisibleCards] = useState(4);
@@ -267,7 +326,7 @@ const Partners = () => {
     );
 
     if (!matchingPlan) {
-      toast.error(`No comparative plans found in database for ${company.name} under ${activeTab} category.`);
+      toast.error(`No comparative plans found in database for ${company.name} under ${activeTab === 'All' ? 'selected' : activeTab} category.`);
       return;
     }
 
@@ -319,118 +378,89 @@ const Partners = () => {
           </div>
         </div>
 
-        {/* Carousel Window */}
-        <div className="relative max-w-6xl mx-auto px-4">
-          
-          {/* Track slider */}
-          <div
-            className="overflow-hidden"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div
-              ref={carouselTrackRef}
-              className="flex transition-transform duration-500 ease-out gap-6"
-              style={{
-                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`
-              }}
-            >
-              {filteredCompanies.map((company) => {
-                const matchingPlan = plansData.find(
-                  (plan) => plan.companyId === company.id || plan.companyName.toLowerCase() === company.name.toLowerCase()
-                );
-                const isSelected = matchingPlan && comparedPlans.some((p) => p.id === matchingPlan.id);
+        {/* Content Display: Wrapping Grid for All, Carousel for individual categories */}
+        {activeTab === 'All' ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+            {filteredCompanies.map((company) => {
+              const matchingPlan = plansData.find(
+                (plan) => plan.companyId === company.id || plan.companyName.toLowerCase() === company.name.toLowerCase()
+              );
+              const isSelected = matchingPlan && comparedPlans.some((p) => p.id === matchingPlan.id);
 
-                return (
-                  <div
-                    key={company.id}
-                    className="w-full flex-shrink-0"
-                    style={{
-                      width: `calc(${100 / visibleCards}% - ${(24 * (visibleCards - 1)) / visibleCards}px)`
-                    }}
-                  >
-                    <div className="bg-white border border-slate-100 hover:border-[#075FC1]/30 rounded-[28px] p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-[280px] relative overflow-hidden group">
-                      
-                      {/* Logo & Rating Header */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="w-[100px] h-[34px] rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-2xs shrink-0 group-hover:scale-105 transition-transform duration-300 relative">
-                          {renderCompanyLogo(company)}
-                        </div>
-                        
-                        <div className="flex items-center gap-1 bg-amber-50 border border-amber-100 rounded-lg px-2.5 py-1 text-amber-700 font-extrabold text-[11px]">
-                          <Star className="w-3.5 h-3.5 fill-amber-500 stroke-none" />
-                          <span>{company.rating}</span>
-                        </div>
-                      </div>
-
-                      {/* Name */}
-                      <h3 className="font-display font-extrabold text-[#062B5C] text-base group-hover:text-[#075FC1] transition duration-300 leading-tight mb-3">
-                        {company.name}
-                      </h3>
-
-                      {/* Details specs */}
-                      <div className="space-y-2 mb-6 text-xs text-slate-500 font-medium">
-                        <div className="flex justify-between items-center">
-                          <span>Claim Settled:</span>
-                          <span className="font-extrabold text-[#075FC1]">{company.claimRatio}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span>Cashless Hospitals:</span>
-                          <span className="font-bold text-[#062B5C]">{company.hospitals}</span>
-                        </div>
-                      </div>
-
-                      {/* Compare Desk Action */}
-                      <button
-                        onClick={() => handleCompareClick(company)}
-                        className={`w-full mt-auto py-3 px-4 rounded-xl font-extrabold text-xs transition flex items-center justify-center gap-2 cursor-pointer border ${
-                          isSelected
-                            ? 'bg-[#075FC1] border-[#075FC1] text-white shadow-md'
-                            : 'bg-slate-50 border-slate-200/80 hover:bg-[#075FC1]/5 hover:border-[#075FC1] text-slate-700 hover:text-[#075FC1]'
-                        }`}
-                      >
-                        {isSelected ? (
-                          <>
-                            <Check className="w-4 h-4 stroke-[3]" />
-                            <span>Comparing Plan</span>
-                          </>
-                        ) : (
-                          <>
-                            <Plus className="w-4 h-4" />
-                            <span>Compare Desk</span>
-                          </>
-                        )}
-                      </button>
-
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+              return (
+                <CompanyCard
+                  key={company.id}
+                  company={company}
+                  isSelected={isSelected}
+                  onCompareClick={handleCompareClick}
+                />
+              );
+            })}
           </div>
-
-          {/* Previous Button Arrow */}
-          {currentIndex > 0 && (
-            <button
-              onClick={handlePrev}
-              className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
+        ) : (
+          <div className="relative max-w-6xl mx-auto px-4">
+            
+            {/* Track slider */}
+            <div
+              className="overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-          )}
+              <div
+                ref={carouselTrackRef}
+                className="flex transition-transform duration-500 ease-out gap-6"
+                style={{
+                  transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`
+                }}
+              >
+                {filteredCompanies.map((company) => {
+                  const matchingPlan = plansData.find(
+                    (plan) => plan.companyId === company.id || plan.companyName.toLowerCase() === company.name.toLowerCase()
+                  );
+                  const isSelected = matchingPlan && comparedPlans.some((p) => p.id === matchingPlan.id);
 
-          {/* Next Button Arrow */}
-          {currentIndex < maxIndex && (
-            <button
-              onClick={handleNext}
-              className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          )}
+                  return (
+                    <div
+                      key={company.id}
+                      className="w-full flex-shrink-0"
+                      style={{
+                        width: `calc(${100 / visibleCards}% - ${(24 * (visibleCards - 1)) / visibleCards}px)`
+                      }}
+                    >
+                      <CompanyCard
+                        company={company}
+                        isSelected={isSelected}
+                        onCompareClick={handleCompareClick}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
 
-        </div>
+            {/* Previous Button Arrow */}
+            {currentIndex > 0 && (
+              <button
+                onClick={handlePrev}
+                className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+            )}
+
+            {/* Next Button Arrow */}
+            {currentIndex < maxIndex && (
+              <button
+                onClick={handleNext}
+                className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-700 hover:text-[#075FC1] hover:border-[#075FC1] transition cursor-pointer z-20"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            )}
+
+          </div>
+        )}
       </div>
     </section>
   );
