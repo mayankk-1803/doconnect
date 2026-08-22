@@ -23,36 +23,38 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  const footerRef = useRef(null);
+  const containerRef = useRef(null);
   const pathRef = useRef(null);
   const [emailInput, setEmailInput] = useState('');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Draw SVG stroke line on scroll
+      // 1. Draw SVG stroke line on scroll (scrubbed dynamically)
       gsap.fromTo(
         pathRef.current,
-        { strokeDashoffset: 1500 },
+        { strokeDashoffset: 2000 },
         {
           strokeDashoffset: 0,
-          duration: 2.2,
-          ease: 'power2.out',
+          ease: 'none',
           scrollTrigger: {
-            trigger: footerRef.current,
-            start: 'top 95%',
+            trigger: containerRef.current,
+            start: 'top bottom',
+            end: 'bottom bottom',
+            scrub: 1.5,
           }
         }
       );
 
       // 2. Pulse heartbeat animation loop
       gsap.to(pathRef.current, {
-        scaleY: 1.05,
-        stroke: 'rgba(142, 202, 60, 0.4)',
+        scaleY: 1.08,
+        strokeWidth: 3,
+        opacity: 0.95,
         transformOrigin: 'center center',
-        duration: 1,
+        duration: 1.2,
         yoyo: true,
         repeat: -1,
-        repeatDelay: 3,
+        repeatDelay: 2.5,
         ease: 'power1.inOut'
       });
 
@@ -67,7 +69,7 @@ const Footer = () => {
           stagger: 0.1,
           ease: 'power2.out',
           scrollTrigger: {
-            trigger: footerRef.current,
+            trigger: containerRef.current,
             start: 'top 85%',
           }
         }
@@ -106,7 +108,7 @@ const Footer = () => {
           }
         }
       );
-    }, footerRef);
+    }, containerRef);
 
     return () => ctx.revert();
   }, []);
@@ -122,35 +124,43 @@ const Footer = () => {
   };
 
   return (
-    <footer
-      ref={footerRef}
-      className="text-[#64798D] relative overflow-hidden z-10 border-t border-[#DCEAF4]"
-      style={{ background: 'linear-gradient(180deg, #EAF6FC 0%, #F8FBFD 100%)' }}
-    >
-      {/* Decorative Ambient Blue/Cyan Accent Glows */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[#2F6FAF]/5 rounded-full blur-[140px] pointer-events-none z-0" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-[#67B7E8]/5 rounded-full blur-[140px] pointer-events-none z-0" />
-
+    <div ref={containerRef} className="relative">
       {/* Decorative Top Border: Cyan ECG Line */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden pointer-events-none z-0 h-10">
+      <div className="relative w-full overflow-visible pointer-events-none z-20 h-8 -mb-4">
         <svg
           className="w-full h-full fill-none pointer-events-none"
           viewBox="0 0 1440 32"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <defs>
+            <linearGradient id="heartbeat-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#10B981" />
+              <stop offset="50%" stopColor="#22C55E" />
+              <stop offset="100%" stopColor="#4ADE80" />
+            </linearGradient>
+          </defs>
           <path
             ref={pathRef}
             d="M 0,16 L 160,16 L 170,16 L 175,10 L 180,22 L 185,2 L 190,30 L 195,16 L 200,16 L 520,16 L 530,16 L 535,8 L 540,24 L 545,0 L 550,32 L 555,16 L 560,16 L 880,16 L 890,16 L 895,12 L 900,20 L 905,4 L 910,28 L 915,16 L 920,16 L 1240,16 L 1250,16 L 1255,9 L 1260,23 L 1265,1 L 1270,31 L 1275,16 L 1280,16 L 1440,16"
-            stroke="rgba(47, 111, 175, 0.25)"
+            stroke="url(#heartbeat-gradient)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeDasharray="1500"
-            strokeDashoffset="1500"
+            strokeDasharray="2000"
+            strokeDashoffset="2000"
+            opacity="0.65"
           />
         </svg>
       </div>
+
+      <footer
+        className="text-[#64798D] relative overflow-hidden z-10"
+        style={{ background: 'linear-gradient(180deg, #EAF6FC 0%, #F8FBFD 100%)' }}
+      >
+        {/* Decorative Ambient Blue/Cyan Accent Glows */}
+        <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[#2F6FAF]/5 rounded-full blur-[140px] pointer-events-none z-0" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-[#67B7E8]/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
       {/* Ambient background icons */}
       <Stethoscope className="absolute top-24 left-[5%] w-24 h-24 text-[#2F6FAF]/[0.02] pointer-events-none z-0" />
@@ -379,7 +389,8 @@ const Footer = () => {
 
       </div>
     </footer>
-  );
+  </div>
+);
 };
 
 export default Footer;

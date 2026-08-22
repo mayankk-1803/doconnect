@@ -32,7 +32,24 @@ const InsuranceCard = ({ plan }) => {
     });
   };
 
-  // Helper to map companies to avatars/emoji logos
+  // Helper to map companies to actual logo images
+  const getCompanyLogo = (companyId) => {
+    switch (companyId) {
+      case 'star-health': return '/star.jpg';
+      case 'care-health': return '/care.jpg';
+      case 'niva-bupa': return '/nivabupa.jpg';
+      case 'hdfc-ergo': return '/hdfcergo.jpg';
+      case 'icici-lombard': return '/icicilombard.jpg';
+      case 'tata-aig': return '/tataaig.jpg';
+      case 'bajaj-allianz': return '/bajaj.jpg';
+      case 'reliance-general': case 'reliance': return '/reliance.jpg';
+      case 'aditya-birla': return '/adityabirlagroup.jpg';
+      case 'manipal-cigna': return '/manipalcigna.png';
+      default: return null;
+    }
+  };
+
+  // Helper to map companies to avatars/emoji logos as fallback
   const getCompanyEmoji = (companyId) => {
     switch (companyId) {
       case 'star-health': return '⭐';
@@ -59,8 +76,16 @@ const InsuranceCard = ({ plan }) => {
       <div>
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl font-bold">
-              {getCompanyEmoji(plan.companyId)}
+            <div className="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center overflow-hidden shrink-0">
+              {getCompanyLogo(plan.companyId) ? (
+                <img
+                  src={getCompanyLogo(plan.companyId)}
+                  alt={plan.companyName}
+                  className="w-full h-full object-contain p-1.5"
+                />
+              ) : (
+                <span className="text-2xl font-bold">{getCompanyEmoji(plan.companyId)}</span>
+              )}
             </div>
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">

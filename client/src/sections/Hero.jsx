@@ -21,7 +21,6 @@ const HERO_CATEGORIES = [
   { id: 'health', title1: 'Health', title2: 'Insurance', badge: 'Upto 25% Off*', badgeColor: 'bg-[#2F6FAF]', path: '/health-insurance' },
   { id: 'term', title1: 'Term', title2: 'Insurance', badge: 'Save On Tax*', badgeColor: 'bg-[#2F6FAF]', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20a%20Term%20Insurance%20plan.' },
   { id: 'investment', title1: 'Investment', title2: 'Plans', badge: '', badgeColor: '', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20an%20Investment%20Plan.' },
-  { id: 'business', title1: 'Corporate', title2: 'Insurance', badge: 'NEW', badgeColor: 'bg-red-500', path: '/contact' },
   { id: 'life', title1: 'Family Health', title2: 'Insurance', badge: '', badgeColor: '', path: '/family-insurance' },
   { id: 'travel', title1: 'Travel', title2: 'Insurance', badge: '', badgeColor: '', path: '/travel' }
 ];

@@ -8,6 +8,7 @@ import { ChevronRight, Home } from 'lucide-react';
  * @param {Array} props.items - List of breadcrumb links [{ label: 'Name', path: '/path' }]
  */
 const Breadcrumb = ({ items = [] }) => {
+  return null;
   return (
     <nav className="flex items-center flex-wrap gap-1.5 text-xs font-semibold text-slate-500 py-3" aria-label="Breadcrumb">
       <Link
