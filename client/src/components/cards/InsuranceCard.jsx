@@ -44,6 +44,7 @@ const InsuranceCard = ({ plan }) => {
       case 'bajaj-allianz': return '/bajaj.jpg';
       case 'reliance-general': case 'reliance': return '/reliance.jpg';
       case 'aditya-birla': return '/adityabirlagroup.jpg';
+      
       case 'manipal-cigna': return '/manipalcigna.png';
       default: return null;
     }

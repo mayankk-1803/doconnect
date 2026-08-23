@@ -11,14 +11,14 @@ import { Helmet } from 'react-helmet-async';
  * @param {string} [props.ogImage] - Social share image
  */
 const SEO = ({ title, description, keywords, path = '', ogImage }) => {
-  const defaultTitle = 'SecureHealth | Premium Health Insurance Comparison';
-  const defaultDesc = "Compare and find the best health insurance plans from India's top providers. Secure your family with cashless hospital network treatments.";
-  const defaultKeywords = 'health insurance, family floater, senior citizen health insurance, critical illness cover, cashless hospital, securehealth';
+  const defaultTitle = 'DoConnect | Premium Digital Insurance Marketplace';
+  const defaultDesc = "Compare & buy health, motor, life, term, and travel insurance plans from India's leading insurers with instant quotes and expert guidance.";
+  const defaultKeywords = 'health insurance, motor insurance, life insurance, term insurance, travel insurance, digital insurance marketplace, doconnect';
   const defaultImage = 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&auto=format&fit=crop&q=80';
   
-  const siteUrl = 'https://securehealth.in';
+  const siteUrl = 'https://doconnectservices.com';
   const canonicalUrl = `${siteUrl}${path}`;
-  const displayTitle = title ? `${title} | SecureHealth` : defaultTitle;
+  const displayTitle = title ? `${title} | DoConnect` : defaultTitle;
 
   return (
     <Helmet>
@@ -34,7 +34,7 @@ const SEO = ({ title, description, keywords, path = '', ogImage }) => {
       <meta property="og:description" content={description || defaultDesc} />
       <meta property="og:image" content={ogImage || defaultImage} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:site_name" content="SecureHealth" />
+      <meta property="og:site_name" content="DoConnect" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

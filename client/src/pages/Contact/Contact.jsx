@@ -53,8 +53,8 @@ const Contact = () => {
     <>
       <SEO
         title="Contact Our Insurance Advisors"
-        description="Get in touch with SecureHealth advisors. Submit your questions or consult our relations desk directly via email."
-        keywords="contact advisor, insurance support phone, securehealth office"
+        description="Get in touch with DoConnect advisors. Submit your questions or consult our relations desk directly via email."
+        keywords="contact advisor, insurance support phone, doconnect office"
         path="/contact"
       />
 

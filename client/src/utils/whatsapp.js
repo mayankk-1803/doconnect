@@ -78,7 +78,7 @@ Please call me back.`;
       break;
 
     default:
-      text = `Hello SecureHealth,
+      text = `Hello DoConnect,
 
 I am interested in exploring Health Insurance plans. Please connect me with a senior advisor.`;
   }

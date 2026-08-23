@@ -87,7 +87,7 @@ const HealthInsurance = () => {
       <SEO
         title="Compare Health Insurance Plans online"
         description="Compare health policies, filter by sum insured, age limit, claim settlement ratio, and cashless network empanelled clinics. Buy directly on WhatsApp."
-        keywords="health policy search, cashless hospital filters, best health plan comparison, securehealth"
+        keywords="health policy search, cashless hospital filters, best health plan comparison, doconnect"
         path="/health-insurance"
       />
 

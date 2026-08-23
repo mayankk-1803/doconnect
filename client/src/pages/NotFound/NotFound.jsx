@@ -9,7 +9,7 @@ const NotFound = () => {
     <>
       <SEO
         title="Page Not Found"
-        description="The page you are looking for does not exist on SecureHealth."
+        description="The page you are looking for does not exist on DoConnect."
       />
 
       <div className="min-h-[70vh] bg-bg-light flex flex-col items-center justify-center p-6 text-center">

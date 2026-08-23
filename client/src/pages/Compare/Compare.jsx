@@ -30,7 +30,7 @@ const Compare = () => {
       <SEO
         title="Compare Health Insurance side-by-side"
         description="Detailed side-by-side comparison of coverage limit, waiting period, room rent, copay, cashless hospitals, and claim settlement ratios."
-        keywords="health plan comparison table, compare policy details online, securehealth"
+        keywords="health plan comparison table, compare policy details online, doconnect"
         path="/compare"
       />
 

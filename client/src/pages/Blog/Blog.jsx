@@ -39,7 +39,7 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumb items={breadcrumbItems} />
           <h1 className="font-display font-extrabold text-3xl md:text-4xl text-dark mt-2">
-            SecureHealth Knowledge Center
+            DoConnect Knowledge Center
           </h1>
           <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mt-1.5">
             Your comprehensive reference library for health topics, insurance terms, claims timelines, and Section 80D tax declarations.

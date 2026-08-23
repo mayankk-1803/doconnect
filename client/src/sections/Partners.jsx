@@ -14,6 +14,8 @@ const PARTNERS_LIST = [
   { name: 'Niva Bupa ', src: '/nivabupa.jpg' },
   {name : 'Manipal Cigna',src:'/manipalcigna.png'},
   {name :'Reliance ' , src:'/reliance.jpg'},
+  {name:'IFFCO-TOKIO General Insurance',src:'/iffco.webp'},
+  {name:'SBI General Insurance',src:'/sbi.png'},
   {name :'Care Health',src:'/care.jpg'}
  
 ];
@@ -58,7 +60,7 @@ const Partners = () => {
             Our Insurance Network
           </span>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[#16324F] mt-4">
-            Our Partners*
+            Our Partners
           </h2>
           <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium">
             Compare policies from India's leading IRDAI-approved insurance providers with zero sales pressure and instant digital issuance.
