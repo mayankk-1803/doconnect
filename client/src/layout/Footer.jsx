@@ -210,11 +210,11 @@ const Footer = () => {
             <p className="text-[#64798D] text-xs leading-relaxed">
               Compare 100+ health, motor, life, and travel insurance policies from top-rated Indian insurance companies. Transparent pricing, direct issuance, and 24/7 claim assistance.
             </p>
-            <div className="bg-white border border-[#DCEAF4] rounded-2xl p-4 text-[10px] text-[#64798D] leading-normal space-y-1 select-none shadow-xs">
+            {/* <div className="bg-white border border-[#DCEAF4] rounded-2xl p-4 text-[10px] text-[#64798D] leading-normal space-y-1 select-none shadow-xs">
               <p className="font-extrabold text-[#16324F]">{BRAND_CONFIG.name} Legal Compliance</p>
               <p>IRDAI Reg: IRDAI/DC/PR/2026/045</p>
               <p>CIN: U67200HR2026PTC123456</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Column 2: Insurance Products */}
@@ -352,7 +352,7 @@ const Footer = () => {
         {/* Horizontal Trust Chips Strip */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10 border-b border-[#DCEAF4] pb-10">
           {[
-            '✓ IRDAI Registered Broker',
+            // '✓ IRDAI Registered Broker',
             '✓ 10,000+ Cashless Hospitals',
             '✓ 24×7 Claims Desk Support',
             '✓ 99.2% Claim Settlement Ratio',
@@ -380,10 +380,10 @@ const Footer = () => {
           </div>
 
           {/* IRDAI Certification Badge */}
-          <div className="flex items-center gap-1.5 text-[#2F6FAF] bg-[#2F6FAF]/10 px-3.5 py-1.5 rounded-full border border-[#2F6FAF]/20 font-extrabold tracking-wider select-none shrink-0 text-[10px]">
+          {/* <div className="flex items-center gap-1.5 text-[#2F6FAF] bg-[#2F6FAF]/10 px-3.5 py-1.5 rounded-full border border-[#2F6FAF]/20 font-extrabold tracking-wider select-none shrink-0 text-[10px]">
             <ShieldCheck className="w-4 h-4" />
             <span>IRDAI Compliant</span>
-          </div>
+          </div> */}
 
         </div>
 

@@ -147,10 +147,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="border-t border-slate-800 pt-6 mt-8 flex items-center gap-2.5 text-xs text-slate-400">
-              <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0" />
-              <span>IRDAI Certified Registration Number: IRDA/SH/1234/2026</span>
-            </div>
+            
           </div>
 
           {/* Right Column: Premium Contact Form */}

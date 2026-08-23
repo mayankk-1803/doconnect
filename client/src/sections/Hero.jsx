@@ -233,7 +233,7 @@ const Hero = () => {
             <div ref={badgeRef} className="inline-flex items-center gap-1.5 bg-[#EAF6FC] border border-[#2F6FAF]/25 px-4 py-1.5 rounded-full shadow-2xs">
               <ShieldCheck className="w-4 h-4 text-[#2F6FAF]" />
               <span className="text-[10px] font-extrabold text-[#2F6FAF] uppercase tracking-wider">
-                IRDAI Certified Digital Insurance Marketplace
+                Trusted Digital Insurance Marketplace
               </span>
             </div>
 
@@ -309,7 +309,7 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2 text-xs md:text-sm text-[#16324F] font-bold">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-[#2F6FAF] shrink-0" />
-                <span>IRDAI Approved</span>
+                
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-[#2F6FAF] shrink-0" />
