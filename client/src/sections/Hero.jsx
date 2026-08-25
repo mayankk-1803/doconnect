@@ -16,8 +16,7 @@ import { generateWhatsAppLink } from '../utils/whatsapp';
 
 // Category Definitions mapping the main 8 categories
 const HERO_CATEGORIES = [
-  { id: 'car', title1: 'Car', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor?type=car' },
-  { id: 'bike', title1: 'Bike', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor?type=bike' },
+  { id: 'motor', title1: 'Motor', title2: 'Insurance', badge: '', badgeColor: '', path: '/motor' },
   { id: 'health', title1: 'Health', title2: 'Insurance', badge: 'Upto 25% Off*', badgeColor: 'bg-[#2F6FAF]', path: '/health-insurance' },
   { id: 'term', title1: 'Term', title2: 'Insurance', badge: 'Save On Tax*', badgeColor: 'bg-[#2F6FAF]', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20a%20Term%20Insurance%20plan.' },
   { id: 'investment', title1: 'Investment', title2: 'Plans', badge: '', badgeColor: '', path: 'https://wa.me/917683098648?text=Hello%20DoConnect%2C%20I%20am%20interested%20in%20an%20Investment%20Plan.' },
@@ -96,10 +95,12 @@ const Hero = () => {
 
   // Helper to render high-res modern flat colorful SVG icons matching the PolicyBazaar layout style
   const renderCategorySvg = (catId) => {
+    const svgClass = "w-14 h-14 md:w-16 md:h-16 transition-transform duration-300";
     switch (catId) {
+      case 'motor':
       case 'car':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Windshield */}
             <path d="M15.5 25L18.5 15.5C18.9 14.2 20.1 13.5 21.5 13.5H26.5C27.9 13.5 29.1 14.2 29.5 15.5L32.5 25H15.5Z" fill="#67B7E8" />
             {/* Body */}
@@ -116,7 +117,7 @@ const Hero = () => {
         );
       case 'bike':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Wheels */}
             <circle cx="15" cy="30" r="7" stroke="#2F6FAF" strokeWidth="3" fill="none" />
             <circle cx="15" cy="30" r="3" fill="#16324F" />
@@ -134,7 +135,7 @@ const Hero = () => {
         );
       case 'health':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Heart background */}
             <path d="M24 39.5L21.4 37.1C12.2 28.8 6 23.2 6 16.2C6 10.6 10.4 6.2 16 6.2C19.2 6.2 22.2 7.7 24 10.1C25.8 7.7 28.8 6.2 32 6.2C37.6 6.2 42 10.6 42 16.2C42 23.2 35.8 28.8 26.6 37.1L24 39.5Z" fill="#2F6FAF" />
             {/* Plus Sign */}
@@ -143,7 +144,7 @@ const Hero = () => {
         );
       case 'term':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Canopy */}
             <path d="M24 10C14 10 9 17 8 23H40C39 17 34 10 24 10Z" fill="#2F6FAF" />
             {/* Umbrella Panels */}
@@ -157,7 +158,7 @@ const Hero = () => {
         );
       case 'investment':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Coin Circle */}
             <circle cx="24" cy="24" r="16" fill="#2F6FAF" />
             <circle cx="24" cy="24" r="12" stroke="#67B7E8" strokeWidth="1.5" strokeDasharray="3 3" fill="none" />
@@ -170,7 +171,7 @@ const Hero = () => {
         );
       case 'business':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Building */}
             <rect x="10" y="18" width="28" height="20" rx="3" fill="#2F6FAF" />
             {/* Awning */}
@@ -187,7 +188,7 @@ const Hero = () => {
         );
       case 'life':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Adult Person (Blue) */}
             <circle cx="20" cy="18" r="5" fill="#2F6FAF" />
             <path d="M12 34C12 28.4772 16.4772 24 22 24H23C25.7614 24 28 26.2386 28 29V34H12Z" fill="#2F6FAF" />
@@ -198,7 +199,7 @@ const Hero = () => {
         );
       case 'travel':
         return (
-          <svg className="w-12 h-12 transition-transform duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Money Sack / Bag (Blue) */}
             <path d="M24 10C20 10 18 14 17 18C15 20 14 24 14 29C14 34.5 18.5 39 24 39C29.5 39 34 34.5 34 29C34 24 33 20 31 18C30 14 28 10 24 10Z" fill="#2F6FAF" />
             {/* Tie Bow (Cyan) */}
@@ -344,8 +345,8 @@ const Hero = () => {
         </div>
 
         {/* Categories Grid (Quick Access Shortcuts matching PolicyBazaar layout style) */}
-        <div className="bg-white border border-slate-200/50 rounded-[32px] p-6 md:p-10 shadow-xl shadow-slate-100/50 max-w-5xl mx-auto mb-12 relative z-20">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-10 justify-items-center justify-center">
+        <div className="bg-white border border-slate-200/50 rounded-[40px] p-8 md:p-10 shadow-2xl shadow-slate-100/60 max-w-5xl mx-auto mb-16 relative z-20">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 md:gap-x-12 gap-y-12 justify-items-center justify-center">
             {HERO_CATEGORIES.map((cat, idx) => {
               const isExternal = cat.path.startsWith('http');
               const ItemElement = isExternal ? 'a' : Link;
@@ -361,7 +362,7 @@ const Hero = () => {
                   className="flex flex-col items-center group relative cursor-pointer select-none"
                 >
                   {/* Icon Container */}
-                  <div className="relative mb-3 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                  <div className="relative mb-4 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
                     {/* Badge */}
                     {cat.badge && (
                       <span className={`absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap text-white text-[8px] md:text-[9px] font-extrabold px-1.5 py-0.5 rounded-[4px] shadow-xs uppercase tracking-wide ${cat.badgeColor}`}>
@@ -373,7 +374,7 @@ const Hero = () => {
                   </div>
 
                   {/* Text Label */}
-                  <div className="text-center font-sans font-bold text-slate-700 text-[11px] md:text-[13px] leading-tight group-hover:text-[#2F6FAF] transition-colors duration-200">
+                  <div className="text-center font-sans font-bold text-slate-700 text-[13px] md:text-[15px] leading-snug group-hover:text-[#2F6FAF] transition-colors duration-200">
                     <span>{cat.title1}</span>
                     {cat.title2 && (
                       <>

@@ -6,7 +6,7 @@ import Breadcrumb from '../../components/common/Breadcrumb';
 import InputField from '../../components/forms/InputField';
 import SelectField from '../../components/forms/SelectField';
 import Button from '../../components/ui/Button';
-import { Car, Bike, Truck, ShieldCheck, Zap, HelpCircle, Check, X, ChevronDown, Wrench, Shield, AlertTriangle } from 'lucide-react';
+import { Car, Bike, Truck, ShieldCheck, Zap, HelpCircle, Check, X, ChevronDown, Wrench, Shield, AlertTriangle, Headphones } from 'lucide-react';
 import { toast } from 'react-toastify';
 import citiesData from '../../data/cities.json';
 import { BRAND_CONFIG } from '../../constants';
@@ -192,7 +192,9 @@ const MOTOR_CONTENT_MAP = {
 
 const Motor = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const typeParam = searchParams.get('type') || 'car';
+  const selectedType = searchParams.get('type');
+  const hasType = ['car', 'bike', 'commercial'].includes(selectedType);
+  const typeParam = hasType ? selectedType : 'car';
   const currentContent = MOTOR_CONTENT_MAP[typeParam] || MOTOR_CONTENT_MAP.car;
 
   const {
@@ -270,6 +272,148 @@ Please share the best suitable quotes and zero-dep features.`;
     label: c.name
   }));
 
+  if (!hasType) {
+    const selectBreadcrumb = [{ label: 'Motor Insurance', path: '/motor' }];
+    return (
+      <>
+        <SEO
+          title="Motor Insurance - Compare Car & Bike Insurance Online | DoConnect"
+          description="Protect your vehicle against accidents, theft, and third-party liabilities. Compare car, bike, and commercial vehicle insurance quotes from top insurers instantly."
+          keywords="car insurance, bike insurance, motor third party cover, commercial vehicle insurance"
+          path="/motor"
+        />
+
+        {/* Header Strip */}
+        <div 
+          className="relative bg-cover bg-center bg-no-repeat py-24 text-white overflow-hidden border-b border-slate-200/20"
+          style={{ backgroundImage: `url('https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80')` }}
+        >
+          {/* Premium Dark Overlay for text readability */}
+          <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-[1px]" />
+          
+          <div className="relative max-w-7xl mx-auto px-6 text-center space-y-4 z-10">
+            <div className="flex justify-center mb-2">
+              <Breadcrumb items={selectBreadcrumb} />
+            </div>
+            <h1 className="font-display font-extrabold text-3xl md:text-5xl text-white leading-tight">
+              Motor Insurance Solutions
+            </h1>
+            <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
+              Choose the type of vehicle you want to insure to compare quotes and get customized plans instantly on WhatsApp.
+            </p>
+          </div>
+        </div>
+
+        {/* Option Selection Grid */}
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Car Option */}
+            <div
+              onClick={() => setSearchParams({ type: 'car' })}
+              className="bg-white border border-[#DCEAF4] hover:border-[#2F6FAF]/40 rounded-[32px] p-8 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer text-center flex flex-col items-center justify-between group h-full"
+            >
+              <div className="space-y-6 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-[24px] bg-[#2F6FAF]/10 text-[#2F6FAF] flex items-center justify-center group-hover:scale-110 transition duration-300">
+                  <Car className="w-10 h-10" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-display font-extrabold text-dark text-xl group-hover:text-[#2F6FAF] transition-colors">
+                    Car Insurance
+                  </h3>
+                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+                    Protect your four-wheeler with 5,000+ cashless garage networks, zero depreciation add-on, and engine protection.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 px-6 py-3 bg-[#EAF6FC] hover:bg-[#2F6FAF] text-[#2F6FAF] group-hover:text-white rounded-xl font-bold text-sm transition-all duration-300 w-full">
+                Get Car Quote
+              </div>
+            </div>
+
+            {/* Bike Option */}
+            <div
+              onClick={() => setSearchParams({ type: 'bike' })}
+              className="bg-white border border-[#DCEAF4] hover:border-[#2F6FAF]/40 rounded-[32px] p-8 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer text-center flex flex-col items-center justify-between group h-full"
+            >
+              <div className="space-y-6 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-[24px] bg-[#2F6FAF]/10 text-[#2F6FAF] flex items-center justify-center group-hover:scale-110 transition duration-300">
+                  <Bike className="w-10 h-10" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-display font-extrabold text-dark text-xl group-hover:text-[#2F6FAF] transition-colors">
+                    Bike Insurance
+                  </h3>
+                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+                    Insure your two-wheeler starting from just ₹1.5/day. Easy 2-minute instant renewal without physical inspection.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 px-6 py-3 bg-[#EAF6FC] hover:bg-[#2F6FAF] text-[#2F6FAF] group-hover:text-white rounded-xl font-bold text-sm transition-all duration-300 w-full">
+                Get Bike Quote
+              </div>
+            </div>
+
+            {/* Commercial Option */}
+            <div
+              onClick={() => setSearchParams({ type: 'commercial' })}
+              className="bg-white border border-[#DCEAF4] hover:border-[#2F6FAF]/40 rounded-[32px] p-8 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer text-center flex flex-col items-center justify-between group h-full"
+            >
+              <div className="space-y-6 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-[24px] bg-[#2F6FAF]/10 text-[#2F6FAF] flex items-center justify-center group-hover:scale-110 transition duration-300">
+                  <Truck className="w-10 h-10" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-display font-extrabold text-dark text-xl group-hover:text-[#2F6FAF] transition-colors">
+                    Commercial Insurance
+                  </h3>
+                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+                    Protect trucks, cabs, buses, and commercial fleets. Paid driver cover and heavy vehicle highway towing assistance.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 px-6 py-3 bg-[#EAF6FC] hover:bg-[#2F6FAF] text-[#2F6FAF] group-hover:text-white rounded-xl font-bold text-sm transition-all duration-300 w-full">
+                Get Commercial Quote
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Benefits/Info Strip below selection for aesthetics */}
+        <div className="border-t border-slate-100 bg-[#F7FAFC] py-12">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
+              <div className="w-12 h-12 rounded-xl bg-[#2F6FAF]/10 text-[#2F6FAF] flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-[#16324F] text-base">IRDAI Approved</h4>
+                <p className="text-slate-500 text-xs leading-relaxed">All quotes and insurance plans are authorized directly by insurance providers in India.</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
+              <div className="w-12 h-12 rounded-xl bg-[#2F6FAF]/10 text-[#2F6FAF] flex items-center justify-center shrink-0">
+                <Zap className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-[#16324F] text-base">Instant Quote Delivery</h4>
+                <p className="text-slate-500 text-xs leading-relaxed">Skip the line. Get instant policy options directly on WhatsApp within 60 seconds.</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
+              <div className="w-12 h-12 rounded-xl bg-[#2F6FAF]/10 text-[#2F6FAF] flex items-center justify-center shrink-0">
+                <Headphones className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-[#16324F] text-base">24/7 Claim Assistance</h4>
+                <p className="text-slate-500 text-xs leading-relaxed">Our relations team will guide you through approval and cashless garage coordinates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <SEO
@@ -287,6 +431,12 @@ Please share the best suitable quotes and zero-dep features.`;
 
             {/* Motor Type Selector Sub-Tabs */}
             <div className="flex flex-wrap gap-2 pt-2">
+              <button
+                onClick={() => setSearchParams({})}
+                className="px-4 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center gap-1.5 bg-white text-slate-500 hover:bg-slate-100 border border-slate-200/85"
+              >
+                ← Back to Selection
+              </button>
               <button
                 onClick={() => setSearchParams({ type: 'car' })}
                 className={`px-4 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center gap-1.5 ${

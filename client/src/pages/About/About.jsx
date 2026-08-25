@@ -111,13 +111,19 @@ const About = () => {
       />
 
       {/* Breadcrumb Header */}
-      <div className="bg-[#F1F5F9] border-b border-slate-200/80 py-12">
-        <div className="max-w-7xl mx-auto px-6">
+      <div 
+        className="relative bg-cover bg-center bg-no-repeat py-20 text-white overflow-hidden border-b border-slate-200/20"
+        style={{ backgroundImage: `url(/about.jpg)` }}
+      >
+        {/* Dark Overlay for premium text contrast */}
+        <div className="absolute inset-0 bg-slate-950/50" />
+        
+        <div className="relative max-w-7xl mx-auto px-6 z-10">
           <Breadcrumb items={breadcrumbItems} />
-          <h1 className="font-display font-extrabold text-3xl md:text-5xl text-dark mt-3 tracking-tight">
+          <h1 className="font-display font-extrabold text-3xl md:text-5xl text-white mt-3 tracking-tight">
             About Our Journey & Vision
           </h1>
-          <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl mt-2 font-medium">
+          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-3xl mt-2 font-medium opacity-90">
             Helping families across India compare and purchase the right insurance plans with transparent pricing, expert advice, and technology-driven service.
           </p>
         </div>

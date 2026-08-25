@@ -77,45 +77,24 @@ export const CATEGORIES = [
     image: 'https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop'
   },
   {
-    id: 'car',
-    title: 'Car Insurance',
-    desc: 'Protect your car against accidents, theft, natural disasters, and third-party liabilities with the right motor insurance plan.',
-    description: 'Protect your car against accidents, theft, natural disasters, and third-party liabilities with the right motor insurance plan.',
+    id: 'motor',
+    title: 'Motor Insurance',
+    desc: 'Protect your car or two-wheeler against accidents, theft, natural disasters, and third-party liabilities.',
+    description: 'Protect your car or two-wheeler against accidents, theft, natural disasters, and third-party liabilities.',
     coverage: [
       'Comprehensive Cover',
       'Third-Party Liability',
-      'Own Damage',
+      'Own Damage Cover',
       'Zero Depreciation',
       'Roadside Assistance',
-      'Engine Protection',
       'Personal Accident Cover'
     ],
-    cta: 'Get Car Quote',
-    ctaText: 'Get Car Quote',
+    cta: 'Explore Motor Plans',
+    ctaText: 'Explore Motor Plans',
     icon: 'Car',
-    path: '/motor?type=car',
-    badge: 'Instant',
+    path: '/motor',
+    badge: 'Popular',
     image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop'
-  },
-  {
-    id: 'bike',
-    title: 'Bike Insurance',
-    desc: 'Get reliable protection for your two-wheeler against accidents, theft, damage, and third-party liabilities.',
-    description: 'Get reliable protection for your two-wheeler against accidents, theft, damage, and third-party liabilities.',
-    coverage: [
-      'Comprehensive Bike Insurance',
-      'Third-Party Cover',
-      'Own Damage',
-      'Personal Accident Cover',
-      'Zero Depreciation',
-      'Roadside Assistance'
-    ],
-    cta: 'Get Bike Quote',
-    ctaText: 'Get Bike Quote',
-    icon: 'Bike',
-    path: '/motor?type=bike',
-    badge: 'New',
-    image: 'https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop'
   },
   {
     id: 'term',
