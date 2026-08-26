@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const PARTNERS_LIST = [
   { name: 'Aditya Birla Group', src: '/adityabirlagroup.jpg' },
   { name: 'ICICI Lombard', src: '/icicilombard.jpg' },
-  { name: 'Bajaj Allianz', src: '/bajaj.jpg' },
+  {name :'Care Health',src:'/care.jpg'},
   { name: 'HDFC ERGO', src: '/hdfcergo.jpg' },
   { name: 'Star Health Insurance', src: '/star.jpg' },
   { name: 'Tata AIG', src: '/tataaig.jpg' },
@@ -16,7 +16,7 @@ const PARTNERS_LIST = [
   {name :'Reliance ' , src:'/reliance.jpg'},
   {name:'IFFCO-TOKIO General Insurance',src:'/iffco.webp'},
   {name:'SBI General Insurance',src:'/sbi.png'},
-  {name :'Care Health',src:'/care.jpg'}
+  { name: 'Bajaj Allianz', src: '/bajaj.jpg' }
  
 ];
 

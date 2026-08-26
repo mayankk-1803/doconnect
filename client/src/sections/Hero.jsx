@@ -101,18 +101,24 @@ const Hero = () => {
       case 'car':
         return (
           <svg className={svgClass} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Windshield */}
-            <path d="M15.5 25L18.5 15.5C18.9 14.2 20.1 13.5 21.5 13.5H26.5C27.9 13.5 29.1 14.2 29.5 15.5L32.5 25H15.5Z" fill="#67B7E8" />
-            {/* Body */}
-            <path d="M10 24C10 22.3431 11.3431 21 13 21H35C36.6569 21 38 22.3431 38 24V31C38 32.6569 36.6569 34 35 34H13C11.3431 34 10 32.6569 10 31V24Z" fill="#2F6FAF" />
-            {/* Wheels */}
-            <rect x="13" y="32" width="6" height="4" rx="2" fill="#16324F" />
-            <rect x="29" y="32" width="6" height="4" rx="2" fill="#16324F" />
-            {/* Lights */}
-            <circle cx="14" cy="27.5" r="2.5" fill="#FDE047" />
-            <circle cx="34" cy="27.5" r="2.5" fill="#FDE047" />
-            {/* Grill */}
-            <rect x="20" y="27" width="8" height="2" rx="1" fill="#67B7E8" opacity="0.8" />
+            {/* Main Body */}
+            <path d="M 7 28 C 7 24 10 23 12 23 C 13.5 23 15 23 17 15.5 C 17.5 14.5 18.5 14.5 19.5 14.5 H 29 C 30 14.5 30.8 15 31.2 15.8 L 35 23 H 40 C 41.5 23 42 24.5 42 26 C 42 27.5 41.5 29 40 29 H 9 C 7.5 29 7 28.5 7 28 Z" fill="#2F6FAF" />
+            {/* Windows */}
+            <path d="M 18.5 16 H 23.5 V 21.5 H 15 L 18.5 16 Z" fill="#67B7E8" />
+            <path d="M 25 16 H 28.5 L 32.5 21.5 H 25 V 16 Z" fill="#67B7E8" />
+            {/* Door Handles */}
+            <rect x="20.5" y="24" width="2.5" height="1" rx="0.5" fill="#16324F" />
+            <rect x="27.5" y="24" width="2.5" height="1" rx="0.5" fill="#16324F" />
+            {/* Headlight */}
+            <path d="M 41.5 24.5 C 42 24.5 42.5 25 42.5 25.5 C 42.5 26 42 26.5 41.5 26.5 H 40 V 24.5 H 41.5 Z" fill="#FDE047" />
+            {/* Bottom Trim */}
+            <rect x="20.5" y="28.5" width="7" height="1" rx="0.5" fill="#16324F" />
+            {/* Rear Wheel */}
+            <circle cx="15" cy="29" r="5" fill="#16324F" />
+            <circle cx="15" cy="29" r="2" fill="#67B7E8" />
+            {/* Front Wheel */}
+            <circle cx="33" cy="29" r="5" fill="#16324F" />
+            <circle cx="33" cy="29" r="2" fill="#67B7E8" />
           </svg>
         );
       case 'bike':
